@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 import * as WebBrowser from 'expo-web-browser';
-import { makeRedirectUri, useAuthRequest } from 'expo-auth-session';
+import { makeRedirectUri, useAuthRequest, ResponseType } from 'expo-auth-session';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
@@ -26,6 +26,7 @@ export default function Login() {
 
   const [request, response, promptAsync] = useAuthRequest(
     {
+      responseType: ResponseType.Token,
       clientId: '049fe9081d41496db42660d5035b8346',
       scopes: [
         'user-read-recently-played',
@@ -56,8 +57,8 @@ export default function Login() {
 
   React.useEffect(() => {
     async function verifyExitsCode() {
-      const code = await AsyncStorage.getItem('code');
-      if (code) {
+      const access_token = await AsyncStorage.getItem('access_token');
+      if (access_token ) {
         goToResumeScreen();
       }
     }
@@ -68,8 +69,8 @@ export default function Login() {
   React.useEffect(() => {
     async function setCode() {
       if (response?.type === 'success') {
-        const { code } = response.params;
-        await AsyncStorage.setItem('code', code);
+        const { access_token } = response.params;
+        await AsyncStorage.setItem('access_token', access_token);
         goToResumeScreen()
       }
     }

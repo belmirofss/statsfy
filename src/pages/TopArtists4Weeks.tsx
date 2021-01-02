@@ -1,8 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Text } from 'react-native';
 
 export default function TopArtists4Weeks() {
     return (
-        <View>TopArtists4Weeks works</View>
+        <Text>TopArtists4Weeks works</Text>
     );
 }
