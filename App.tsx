@@ -1,21 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { useFonts } from 'expo-font';
+
+
+import clearSansRegular from './src/fonts/ClearSans-Regular.ttf';
+import clearSansBold from './src/fonts/ClearSans-Bold.ttf';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    clearSansRegular,
+    clearSansBold,
+  });
+
+  if(!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
