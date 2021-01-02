@@ -73,8 +73,38 @@ const TopStackNavigator = () => {
     );
 }
 
+const StatsStackNavigator = () => {
+    return (
+        <StackNavigator.Navigator screenOptions={screenOptionStyle}>
+            <StackNavigator.Screen
+                name="Stats"
+                component={Top}
+                options={{
+                    title: 'Stats'
+                }}
+            />
+        </StackNavigator.Navigator>
+    );
+}
+
+const AccountStackNavigator = () => {
+    return (
+        <StackNavigator.Navigator screenOptions={screenOptionStyle}>
+            <StackNavigator.Screen
+                name="Account"
+                component={Top}
+                options={{
+                    title: 'Account'
+                }}
+            />
+        </StackNavigator.Navigator>
+    );
+}
+
 export { 
     MainStackNavigator, 
     ResumeStackNavigator,
-    TopStackNavigator
+    StatsStackNavigator,
+    TopStackNavigator,
+    AccountStackNavigator
 };
