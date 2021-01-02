@@ -2,7 +2,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { ResumeStackNavigator, TopStackNavigator, AccountStackNavigator, StatsStackNavigator } from './StackNavigator'
+import { ResumeStackNavigator, StatsStackNavigator, TopTracksStackNavigator, TopArtistsStackNavigator } from './StackNavigator'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
@@ -18,7 +18,7 @@ export default function BottomTabNavigator() {
         },
         labelStyle: {
           fontSize: 14,
-          fontWeight: 'bold'
+          fontFamily: 'clearSansBold'
         }
       }}>
         <Tab.Screen
@@ -32,32 +32,32 @@ export default function BottomTabNavigator() {
           }}
         />
         <Tab.Screen 
-          name="Tops" 
-          component={TopStackNavigator}
+          name="TopTracksStackNavigator" 
+          component={TopTracksStackNavigator}
           options={{
-            title: 'Top',
+            title: 'Top tracks',
             tabBarIcon: ({ color }) => {
-              return <MaterialCommunityIcons name="podium-gold" size={24} color={color} />; 
+              return <MaterialCommunityIcons name="music" size={24} color={color} />; 
             }
           }}
         />
         <Tab.Screen 
-          name="Stats" 
+          name="TopArtistsStackNavigator" 
+          component={TopArtistsStackNavigator}
+          options={{
+            title: 'Top artists',
+            tabBarIcon: ({ color }) => {
+              return <MaterialCommunityIcons name="star-outline" size={24} color={color} />; 
+            }
+          }}
+        />
+        <Tab.Screen 
+          name="StatsStackNavigator" 
           component={StatsStackNavigator}
           options={{
             title: 'Stats',
             tabBarIcon: ({ color }) => {
               return <MaterialCommunityIcons name="chart-line-variant" size={24} color={color} />; 
-            }
-          }}
-        />
-        <Tab.Screen 
-          name="Account" 
-          component={AccountStackNavigator}
-          options={{
-            title: 'Account',
-            tabBarIcon: ({ color }) => {
-              return <MaterialCommunityIcons name="account-settings-outline" size={24} color={color} />; 
             }
           }}
         />

@@ -6,8 +6,11 @@ const StackNavigator = createStackNavigator();
 
 import Login from '../pages/Login';
 import Resume from '../pages/Resume';
-import Top from '../pages/Top';
+import Stats from '../pages/Stats';
+
 import BottomTabNavigator from './BottomTabNavigator';
+import { TopTabArtistsNavigator, TopTabTracksNavigator } from './TopTabNavigator';
+
 
 const screenOptionStyle: StackNavigationOptions  = {
     headerTitleAlign: 'left',
@@ -17,10 +20,13 @@ const screenOptionStyle: StackNavigationOptions  = {
     },
     headerTitleStyle: {
         color: '#1ED760',
-        fontWeight: 'bold',
+        fontFamily: 'clearSansBold',
         fontSize: 24
     },
-    headerLeft: () => { return null }
+    headerLeft: () => { return null },
+    cardStyle: {
+        backgroundColor: 'white'
+    }
 };
 
 const MainStackNavigator = () => {
@@ -59,14 +65,28 @@ const ResumeStackNavigator = () => {
     );
 }
 
-const TopStackNavigator = () => {
+const TopTracksStackNavigator = () => {
     return (
         <StackNavigator.Navigator screenOptions={screenOptionStyle}>
             <StackNavigator.Screen
-                name="Top"
-                component={Top}
+                name="TopTabTracksNavigator"
+                component={TopTabTracksNavigator}
                 options={{
-                    title: 'Top tracks and artists'
+                    title: 'Top tracks'
+                }}
+            />
+        </StackNavigator.Navigator>
+    );
+}
+
+const TopArtistsStackNavigator = () => {
+    return (
+        <StackNavigator.Navigator screenOptions={screenOptionStyle}>
+            <StackNavigator.Screen
+                name="TopTabArtistsNavigator"
+                component={TopTabArtistsNavigator}
+                options={{
+                    title: 'Top artists'
                 }}
             />
         </StackNavigator.Navigator>
@@ -78,23 +98,9 @@ const StatsStackNavigator = () => {
         <StackNavigator.Navigator screenOptions={screenOptionStyle}>
             <StackNavigator.Screen
                 name="Stats"
-                component={Top}
+                component={Stats}
                 options={{
                     title: 'Stats'
-                }}
-            />
-        </StackNavigator.Navigator>
-    );
-}
-
-const AccountStackNavigator = () => {
-    return (
-        <StackNavigator.Navigator screenOptions={screenOptionStyle}>
-            <StackNavigator.Screen
-                name="Account"
-                component={Top}
-                options={{
-                    title: 'Account'
                 }}
             />
         </StackNavigator.Navigator>
@@ -105,6 +111,6 @@ export {
     MainStackNavigator, 
     ResumeStackNavigator,
     StatsStackNavigator,
-    TopStackNavigator,
-    AccountStackNavigator
+    TopTracksStackNavigator,
+    TopArtistsStackNavigator
 };
