@@ -22,7 +22,7 @@ export default function RankingTopArtists(props: RankingTopArtistsProps) {
                             title={item.name} 
                             id={item.id} 
                             image={item.images[0]}
-                            position={index + 1} 
+                            position={index + 4} 
                         />
                     )
                 }) 

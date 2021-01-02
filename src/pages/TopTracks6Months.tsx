@@ -8,7 +8,7 @@ export default function TopTracks6Months() {
     const [tracks, setTracks] = React.useState<SimplifiedTrack[]>([]);
 
     React.useEffect(() => {
-        SpotifyApi.listTopTracks('medium_term').then(response => setTracks(response.data.items))
+        SpotifyApi.listTopTracks('medium_term', 0).then(response => setTracks(response.data.items))
     }, []);
 
     return (

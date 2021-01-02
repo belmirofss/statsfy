@@ -14,20 +14,20 @@ api.interceptors.request.use(
 )
 
 const SpotifyApi = {
-    listTopTracks: (timeRange: 'long_term' | 'medium_term' | 'short_term'): Promise<AxiosResponse<any>> => {
+    listTopTracks: (timeRange: 'long_term' | 'medium_term' | 'short_term', page: number): Promise<AxiosResponse<any>> => {
         return api.get('v1/me/top/tracks', {
             params: {
-                limit: 20,
-                offset: 0,
+                limit: 10,
+                offset: page,
                 time_range: timeRange
             }
         })
     },
-    listTopArtists: (timeRange: 'long_term' | 'medium_term' | 'short_term'): Promise<AxiosResponse<any>> => {
+    listTopArtists: (timeRange: 'long_term' | 'medium_term' | 'short_term', page: number): Promise<AxiosResponse<any>> => {
         return api.get('v1/me/top/artists', {
             params: {
-                limit: 20,
-                offset: 0,
+                limit: 10,
+                offset: page,
                 time_range: timeRange
             }
         })

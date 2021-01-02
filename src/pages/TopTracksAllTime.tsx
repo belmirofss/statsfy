@@ -10,7 +10,7 @@ export default function TopTracksAllTime() {
     const [tracks, setTracks] = React.useState<SimplifiedTrack[]>([]);
 
     React.useEffect(() => {
-        SpotifyApi.listTopTracks('long_term').then(response => setTracks(response.data.items))
+        SpotifyApi.listTopTracks('long_term', 0).then(response => setTracks(response.data.items))
     }, []);
 
     return (
