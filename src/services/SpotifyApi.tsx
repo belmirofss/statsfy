@@ -22,6 +22,15 @@ const SpotifyApi = {
                 time_range: timeRange
             }
         })
+    },
+    listTopArtists: (timeRange: 'long_term' | 'medium_term' | 'short_term'): Promise<AxiosResponse<any>> => {
+        return api.get('v1/me/top/artists', {
+            params: {
+                limit: 20,
+                offset: 0,
+                time_range: timeRange
+            }
+        })
     }
 }
 
