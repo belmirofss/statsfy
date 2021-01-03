@@ -10,14 +10,20 @@ import Routes from './src/routes/Routes';
 
 import { AuthProvider } from './src/contexts/Auth';
 
+import AppLoading from 'expo-app-loading';
+
 export default function App() {  
   const [fontsLoaded] = useFonts({
     clearSansRegular,
     clearSansBold,
   });
 
+  React.useEffect(() => {}, [fontsLoaded]);
+
   if(!fontsLoaded) {
-    return null;
+    return (
+      <AppLoading />
+    );
   }
 
   return (

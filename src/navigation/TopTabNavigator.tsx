@@ -25,7 +25,7 @@ const tabBarOptions: MaterialTopTabBarOptions = {
 
 const TopTabArtistsNavigator = () => {
     return (
-        <Tab.Navigator tabBarOptions={tabBarOptions}>
+        <Tab.Navigator tabBarOptions={tabBarOptions} lazy={true}>
             <Tab.Screen 
                 name="TopArtistsAllTime" 
                 component={TopArtistsAllTime} 
@@ -53,7 +53,7 @@ const TopTabArtistsNavigator = () => {
 
 const TopTabTracksNavigator = () => {
     return (
-        <Tab.Navigator tabBarOptions={tabBarOptions}>
+        <Tab.Navigator tabBarOptions={tabBarOptions} lazy={true}>
             <Tab.Screen 
                 name="TopTracksAllTime" 
                 component={TopTracksAllTime} 

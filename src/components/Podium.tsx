@@ -4,6 +4,8 @@ import { View, StyleSheet, Image, Dimensions, Text } from 'react-native';
 import { PodiumItem } from '../interfaces/PodiumItem';
 import { PodiumProps } from '../interfaces/PodiumProps';
 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 interface otherPodiumProps extends PodiumItem {
     position: number;
 }
@@ -11,6 +13,7 @@ interface otherPodiumProps extends PodiumItem {
 const WinnerPodium = (props: PodiumItem) => {
     return (
         <View style={podiumStyles.winner}>
+            <MaterialCommunityIcons name="crown" size={24} color='gold' />
             <Text style={podiumStyles.positionText}>1</Text>
             <Image
                 style={podiumStyles.bigImage}
@@ -28,6 +31,7 @@ const WinnerPodium = (props: PodiumItem) => {
 const OtherPodium = (props: otherPodiumProps) => {
     return (
         <View style={podiumStyles.others}>
+            <MaterialCommunityIcons name="medal" size={20} color={props.position === 2 ? 'silver' : '#804A00'} />
             <Text style={podiumStyles.positionText}>{props.position}</Text>
             <Image
                 style={podiumStyles.smallImage}

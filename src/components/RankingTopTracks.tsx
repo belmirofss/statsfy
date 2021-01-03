@@ -24,7 +24,7 @@ export default function RankingTopTracks(props: RankingTopTracksProps) {
                             id={item.id} 
                             subTitle={item.artists.map(item => item.name).join(', ')}
                             image={item.album.images[0]}
-                            position={index + 1} 
+                            position={index + 4} 
                         />
                     )
                 }) 
