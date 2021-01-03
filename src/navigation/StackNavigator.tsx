@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 
@@ -7,8 +7,12 @@ const StackNavigator = createStackNavigator();
 import Login from '../pages/Login';
 import Resume from '../pages/Resume';
 
+import HeaderRight from '../components/HeaderRight';
+
 import BottomTabNavigator from './BottomTabNavigator';
 import { TopTabArtistsNavigator, TopTabTracksNavigator } from './TopTabNavigator';
+import Account from '../pages/Account';
+import About from '../pages/About';
 
 const screenOptionStyle: StackNavigationOptions  = {
     headerTitleAlign: 'left',
@@ -27,6 +31,7 @@ const screenOptionStyle: StackNavigationOptions  = {
     }
 };
 
+
 const AuthStackNavigator = () => {
     return (
         <StackNavigator.Navigator screenOptions={screenOptionStyle}>
@@ -35,6 +40,14 @@ const AuthStackNavigator = () => {
                 component={Login}
                 options={{
                     headerShown: false
+                }}
+            />
+            <StackNavigator.Screen
+                name="About"
+                component={About}
+                options={{
+                    title: 'About app',
+                    headerRight: () => <HeaderRight showBackButton/>
                 }}
             />
         </StackNavigator.Navigator>
@@ -51,6 +64,22 @@ const AppStackNavigator = () => {
                     headerShown: false
                 }}
             />
+            <StackNavigator.Screen
+                name="Account"
+                component={Account}
+                options={{
+                    title: 'Account',
+                    headerRight: () => <HeaderRight showBackButton/>
+                }}
+            />
+            <StackNavigator.Screen
+                name="About"
+                component={About}
+                options={{
+                    title: 'About the app',
+                    headerRight: () => <HeaderRight showBackButton/>
+                }}
+            />
         </StackNavigator.Navigator>
     );
 };
@@ -63,7 +92,8 @@ const ResumeStackNavigator = () => {
                 name="Resume"
                 component={Resume}
                 options={{
-                    title: 'Resume'
+                    title: 'Resume',
+                    headerRight: () => <HeaderRight showAccountButton/>
                 }}
             />
         </StackNavigator.Navigator>
@@ -77,7 +107,8 @@ const TopTracksStackNavigator = () => {
                 name="TopTabTracksNavigator"
                 component={TopTabTracksNavigator}
                 options={{
-                    title: 'Top tracks'
+                    title: 'Top tracks',
+                    headerRight: () => <HeaderRight showAccountButton/>
                 }}
             />
         </StackNavigator.Navigator>
@@ -91,7 +122,8 @@ const TopArtistsStackNavigator = () => {
                 name="TopTabArtistsNavigator"
                 component={TopTabArtistsNavigator}
                 options={{
-                    title: 'Top artists'
+                    title: 'Top artists',
+                    headerRight: () => <HeaderRight showAccountButton/>
                 }}
             />
         </StackNavigator.Navigator>

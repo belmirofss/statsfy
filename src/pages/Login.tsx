@@ -6,6 +6,7 @@ import { makeRedirectUri, useAuthRequest, ResponseType } from 'expo-auth-session
 
 import logo from '../images/logo_statsfy.png';
 import AuthContext from '../contexts/Auth';
+import { useNavigation } from '@react-navigation/native';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -17,6 +18,7 @@ const discovery = {
 export default function Login() {
 
   const { authenticate } = useContext(AuthContext);
+  const navigation = useNavigation();
 
   const [request, response, promptAsync] = useAuthRequest(
     {
@@ -77,6 +79,10 @@ export default function Login() {
         disabled={!request}>
           <Text style={styles.loginText}>Log in</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.aboutButton} onPress={() => navigation.navigate('About')}>
+        <Text style={styles.aboutText}>About the app</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -116,6 +122,20 @@ const styles = StyleSheet.create({
     loginText: {
       textAlign: 'center',
       color: 'white',
+      fontSize: 24,
+      fontFamily: 'clearSansBold',
+    },
+    aboutButton: {
+      backgroundColor: 'gainsboro',
+      paddingHorizontal: 8,
+      paddingVertical: 16,
+      width: '100%',
+      borderRadius: 100,
+      marginTop: 8
+    },
+    aboutText: {
+      textAlign: 'center',
+      color: 'black',
       fontSize: 24,
       fontFamily: 'clearSansBold',
     }

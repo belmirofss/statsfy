@@ -76,6 +76,7 @@ export default function ResumeTops() {
                 <Text style={styles.titleText}>Top</Text>
                 <Picker
                     style={styles.pickerTracksOrArtists}
+                    itemStyle={styles.pickerItem}
                     selectedValue={mode} 
                     onValueChange={(value) => setMode(value as 'tracks' | 'artists')}>
                     <Picker.Item label="Tracks" value="tracks" />
@@ -114,11 +115,9 @@ const styles = StyleSheet.create({
         fontFamily: 'clearSansBold',
         width: 150,
         borderRadius: 100,
-
+        backgroundColor: 'white'
     },
     pickerItem: {
-        fontSize: 16,
-        fontFamily: 'clearSansRegular',
-        color: 'red'
+        color: 'black'
     }
 })
