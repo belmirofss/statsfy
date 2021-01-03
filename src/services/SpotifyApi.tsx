@@ -13,7 +13,7 @@ const SpotifyApi = {
                 offset: 0,
                 time_range: timeRange
             }
-        })
+        });
     },
     listTopArtists: (timeRange: 'long_term' | 'medium_term' | 'short_term'): Promise<AxiosResponse<any>> => {
         return api.get('v1/me/top/artists', {
@@ -22,7 +22,15 @@ const SpotifyApi = {
                 offset: 0,
                 time_range: timeRange
             }
-        })
+        });
+    },
+    listRecentlyPlayedTracks: (): Promise<AxiosResponse<any>> => {
+        return api.get('v1/me/player/recently-played', {
+            params: {
+                limit: 50,
+                offset: 0
+            }
+        });
     }
 }
 

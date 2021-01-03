@@ -13,7 +13,6 @@ export default function TopArtists4Weeks() {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 24,
-      backgroundColor: 'white'
+      padding: 24
     }
 });
