@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 import * as WebBrowser from 'expo-web-browser';
 import { makeRedirectUri, useAuthRequest, ResponseType } from 'expo-auth-session';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
 import logo from '../images/logo_statsfy.png';
-import { useNavigation } from '@react-navigation/native';
+import AuthContext from '../contexts/auth';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -18,11 +17,7 @@ const discovery = {
 
 export default function Login() {
 
-  const navigation = useNavigation();
-
-  function goToResumeScreen() {
-    navigation.navigate('App');
-  }
+  const { authenticate } = useContext(AuthContext);
 
   const [request, response, promptAsync] = useAuthRequest(
     {
@@ -59,7 +54,7 @@ export default function Login() {
     async function verifyExitsCode() {
       const access_token = await AsyncStorage.getItem('access_token');
       if (access_token ) {
-        goToResumeScreen();
+        authenticate();
       }
     }
 
@@ -71,7 +66,7 @@ export default function Login() {
       if (response?.type === 'success') {
         const { access_token } = response.params;
         await AsyncStorage.setItem('access_token', access_token);
-        goToResumeScreen()
+        authenticate();
       }
     }
     

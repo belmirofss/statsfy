@@ -27,9 +27,9 @@ const screenOptionStyle: StackNavigationOptions  = {
     }
 };
 
-const MainStackNavigator = () => {
+const AuthStackNavigator = () => {
     return (
-        <StackNavigator.Navigator screenOptions={screenOptionStyle} initialRouteName="Login">
+        <StackNavigator.Navigator screenOptions={screenOptionStyle}>
             <StackNavigator.Screen
                 name="Login"
                 component={Login}
@@ -37,6 +37,13 @@ const MainStackNavigator = () => {
                     headerShown: false
                 }}
             />
+        </StackNavigator.Navigator>
+    );
+};
+
+const AppStackNavigator = () => {
+    return (
+        <StackNavigator.Navigator screenOptions={screenOptionStyle}>
             <StackNavigator.Screen
                 name="App"
                 component={BottomTabNavigator}
@@ -47,6 +54,7 @@ const MainStackNavigator = () => {
         </StackNavigator.Navigator>
     );
 };
+
 
 const ResumeStackNavigator = () => {
     return (
@@ -91,7 +99,8 @@ const TopArtistsStackNavigator = () => {
 }
 
 export { 
-    MainStackNavigator, 
+    AuthStackNavigator,
+    AppStackNavigator, 
     ResumeStackNavigator,
     TopTracksStackNavigator,
     TopArtistsStackNavigator
