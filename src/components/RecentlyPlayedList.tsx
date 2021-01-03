@@ -34,7 +34,8 @@ export default function RecentlyPlayedList() {
                         return (
                             <ListPosition
                                 key={index}
-                                title={item.track.name} 
+                                title={item.track.name}
+                                date={item.played_at}
                                 subTitle={item.track.artists.map(item => item.name).join(', ')}
                                 image={item.track.album.images[0]}
                             />
