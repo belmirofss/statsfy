@@ -26,7 +26,7 @@ export default function RecentlyPlayedList() {
     }
 
     return (
-        <View style={styles.container}>
+        <View>
             <Text style={styles.titleText}>Recently played</Text>
             <View style={styles.containerItems}>
                 {
@@ -49,9 +49,6 @@ export default function RecentlyPlayedList() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'white'
-    },
     containerItems: {
         marginTop: 8,
         flexWrap: 'wrap',
@@ -59,7 +56,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },  
     loadingContainer: {
-        maxHeight: 300
+        height: 300
     },
     titleText: {
         fontSize: 18,

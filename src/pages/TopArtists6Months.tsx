@@ -13,6 +13,6 @@ export default function TopArtists6Months() {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 24
+      paddingHorizontal: 24
     }
 });

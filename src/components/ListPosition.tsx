@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
     timerText: {
         color: 'white',
         fontSize: 11,
-        marginLeft: 2
+        marginLeft: 2,
+        fontFamily: 'clearSansRegular'
     }
 });
