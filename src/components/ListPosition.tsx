@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
             width: -1,
             height: 1
         },
-        textShadowRadius:  5
+        textShadowRadius: 5
     },
     subTitleText: {
         fontSize: 12,

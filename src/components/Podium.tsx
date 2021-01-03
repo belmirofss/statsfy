@@ -13,7 +13,7 @@ interface otherPodiumProps extends PodiumItem {
 const WinnerPodium = (props: PodiumItem) => {
     return (
         <View style={podiumStyles.winner}>
-            <MaterialCommunityIcons name="crown" size={24} color='gold' />
+            <MaterialCommunityIcons name="crown" size={28} color='gold' />
             <Text style={podiumStyles.positionText}>1</Text>
             <Image
                 style={podiumStyles.bigImage}
@@ -31,7 +31,7 @@ const WinnerPodium = (props: PodiumItem) => {
 const OtherPodium = (props: otherPodiumProps) => {
     return (
         <View style={podiumStyles.others}>
-            <MaterialCommunityIcons name="medal" size={20} color={props.position === 2 ? 'silver' : '#804A00'} />
+            <MaterialCommunityIcons name="medal" size={24} color={props.position === 2 ? 'silver' : '#804A00'} />
             <Text style={podiumStyles.positionText}>{props.position}</Text>
             <Image
                 style={podiumStyles.smallImage}
@@ -92,13 +92,13 @@ const podiumStyles = StyleSheet.create({
         borderRadius: 100
     },
     positionText: {
-        fontSize: 18,
+        fontSize: 22,
         marginBottom: 6,
         textAlign: 'center',
         fontFamily: 'clearSansBold',
     },
     titleText: {
-        fontSize: 12,
+        fontSize: 14,
         marginTop: 6,
         textAlign: 'center',
         fontFamily: 'clearSansBold',
@@ -106,7 +106,7 @@ const podiumStyles = StyleSheet.create({
         width: widthWindow * 0.24390243902
     },
     subTitleText: {
-        fontSize: 11,
+        fontSize: 12,
         textAlign: 'center',
         fontFamily: 'clearSansRegular',
         whiteSpace: 'pre-wrap',

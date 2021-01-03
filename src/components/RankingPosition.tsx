@@ -29,12 +29,14 @@ export default function RankingPosition(props: RankingPositionProps) {
 const styles = StyleSheet.create({
     container: {
       flexDirection: 'row',
-      marginVertical: 6
+      marginVertical: 4
     },
     innerContainer: {
         flexDirection: 'row',
-        padding: 8,
+        height: 100,
         flex: 1,
+        alignItems: 'center',
+        padding: 8,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -47,7 +49,8 @@ const styles = StyleSheet.create({
     },
     wrapperTitleAndSubTitle: {
         marginLeft: 8,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        flex: 1
     },
     positionWrapper: {
         width: 36,
@@ -62,17 +65,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     image: {
-        height: 50,
-        width: 50,
+        height: 75,
+        width: 75,
         borderRadius: 100
     },
     titleText: {
-        fontSize: 12,
+        fontSize: 14,
         fontFamily: 'clearSansBold',
         whiteSpace: 'pre-wrap',
     },
     subTitleText: {
-        fontSize: 11,
+        fontSize: 12,
         fontFamily: 'clearSansRegular',
         whiteSpace: 'pre-wrap',
         color: 'gray',
