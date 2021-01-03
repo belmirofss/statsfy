@@ -16,7 +16,7 @@ export default function RankingTopTracks(props: RankingTopTracksProps) {
             }))}/>
 
             { 
-                props.tracks.slice(2).map((item, index) => {
+                props.tracks.slice(3).map((item, index) => {
                     return (
                         <RankingPosition
                             key={index}

@@ -15,7 +15,7 @@ export default function RankingTopArtists(props: RankingTopArtistsProps) {
             }))}/>
 
             { 
-                props.artists.slice(2).map((item, index) => {
+                props.artists.slice(3).map((item, index) => {
                     return (
                         <RankingPosition
                             key={index}

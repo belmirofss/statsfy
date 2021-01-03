@@ -3,10 +3,9 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 import * as WebBrowser from 'expo-web-browser';
 import { makeRedirectUri, useAuthRequest, ResponseType } from 'expo-auth-session';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import logo from '../images/logo_statsfy.png';
-import AuthContext from '../contexts/auth';
+import AuthContext from '../contexts/Auth';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -51,26 +50,10 @@ export default function Login() {
   );
 
   React.useEffect(() => {
-    async function verifyExitsCode() {
-      const access_token = await AsyncStorage.getItem('access_token');
-      if (access_token ) {
-        authenticate();
-      }
+    if (response?.type === 'success') {
+      const { access_token } = response.params;
+      authenticate(access_token);
     }
-
-    verifyExitsCode();
-  }, []);
-
-  React.useEffect(() => {
-    async function setCode() {
-      if (response?.type === 'success') {
-        const { access_token } = response.params;
-        await AsyncStorage.setItem('access_token', access_token);
-        authenticate();
-      }
-    }
-    
-    setCode();
   }, [response]);
 
   return (

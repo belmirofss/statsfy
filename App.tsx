@@ -6,9 +6,9 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import clearSansRegular from './src/fonts/ClearSans-Regular.ttf';
 import clearSansBold from './src/fonts/ClearSans-Bold.ttf';
-import Routes from './src/navigation/Routes';
+import Routes from './src/routes/Routes';
 
-import { AuthProvider } from './src/contexts/auth';
+import { AuthProvider } from './src/contexts/Auth';
 
 export default function App() {  
   const [fontsLoaded] = useFonts({
