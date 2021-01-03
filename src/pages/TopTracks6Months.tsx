@@ -1,29 +1,20 @@
 import React from 'react';
-import Loading from '../components/Loading';
+import { StyleSheet, View } from 'react-native';
 
 import RankingTopTracks from '../components/RankingTopTracks';
-import { SimplifiedTrack } from '../interfaces/SimplifiedTrack';
-import SpotifyApi from '../services/SpotifyApi';
 
 export default function TopTracks6Months() {
-    const [tracks, setTracks] = React.useState<SimplifiedTrack[]>([]);
-    const [isLoading, setIsLoading] = React.useState<boolean>(false);
-
-    React.useEffect(() => {
-        setIsLoading(true);
-        SpotifyApi.listTopTracks('medium_term').then(response => {
-            setTracks(response.data.items);
-            setIsLoading(false);
-        })
-    }, []);
-
-    if (isLoading) {
-        return (
-            <Loading />
-        )
-    }
-
     return (
-        <RankingTopTracks tracks={tracks}/>
+        <View style={styles.container}>
+            <RankingTopTracks timeRange="medium_term" />
+        </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 24,
+      backgroundColor: 'white'
+    }
+});

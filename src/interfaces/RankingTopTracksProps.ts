@@ -1,5 +1,3 @@
-import { SimplifiedTrack } from "./SimplifiedTrack";
-
 export interface RankingTopTracksProps {
-    tracks: SimplifiedTrack[];
+    timeRange: 'long_term' | 'medium_term' | 'short_term';
 }

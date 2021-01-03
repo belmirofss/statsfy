@@ -1,5 +1,3 @@
-import { SimplifiedArtist } from "./SimplifiedArtist";
-
 export interface RankingTopArtistsProps {
-    artists: SimplifiedArtist[];
+    timeRange: 'long_term' | 'medium_term' | 'short_term';
 }
