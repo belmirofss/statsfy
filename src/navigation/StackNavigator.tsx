@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 
@@ -6,11 +6,9 @@ const StackNavigator = createStackNavigator();
 
 import Login from '../pages/Login';
 import Resume from '../pages/Resume';
-import Stats from '../pages/Stats';
 
 import BottomTabNavigator from './BottomTabNavigator';
 import { TopTabArtistsNavigator, TopTabTracksNavigator } from './TopTabNavigator';
-
 
 const screenOptionStyle: StackNavigationOptions  = {
     headerTitleAlign: 'left',
@@ -40,7 +38,7 @@ const MainStackNavigator = () => {
                 }}
             />
             <StackNavigator.Screen
-                name="Auth"
+                name="App"
                 component={BottomTabNavigator}
                 options={{
                     headerShown: false
@@ -49,7 +47,6 @@ const MainStackNavigator = () => {
         </StackNavigator.Navigator>
     );
 };
-
 
 const ResumeStackNavigator = () => {
     return (
@@ -93,24 +90,9 @@ const TopArtistsStackNavigator = () => {
     );
 }
 
-const StatsStackNavigator = () => {
-    return (
-        <StackNavigator.Navigator screenOptions={screenOptionStyle}>
-            <StackNavigator.Screen
-                name="Stats"
-                component={Stats}
-                options={{
-                    title: 'Stats'
-                }}
-            />
-        </StackNavigator.Navigator>
-    );
-}
-
 export { 
     MainStackNavigator, 
     ResumeStackNavigator,
-    StatsStackNavigator,
     TopTracksStackNavigator,
     TopArtistsStackNavigator
 };

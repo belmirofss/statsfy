@@ -37,14 +37,14 @@ const TopTabArtistsNavigator = () => {
                 name="TopArtists6Months" 
                 component={TopArtists6Months}
                 options={{
-                    title: '6 months',
+                    title: 'Last 6 months',
                 }}
             />
             <Tab.Screen 
                 name="TopArtists4Weeks" 
                 component={TopArtists4Weeks}
                 options={{
-                    title: '4 weeks',
+                    title: 'Last 4 weeks',
                 }}
             />
         </Tab.Navigator>
@@ -65,14 +65,14 @@ const TopTabTracksNavigator = () => {
                 name="TopTracks6Months" 
                 component={TopTracks6Months}
                 options={{
-                    title: '6 months',
+                    title: 'Last 6 months',
                 }}
             />
             <Tab.Screen 
                 name="TopTracks4Weeks" 
                 component={TopTracks4Weeks}
                 options={{
-                    title: '4 weeks',
+                    title: 'Last 4 weeks',
                 }}
             />
         </Tab.Navigator>

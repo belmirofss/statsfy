@@ -8,7 +8,7 @@ export default function TopArtists6Months() {
     const [artists, setArtists] = React.useState<SimplifiedArtist[]>([]);
 
     React.useEffect(() => {
-        SpotifyApi.listTopArtists('medium_term', 0).then(response => setArtists(response.data.items))
+        SpotifyApi.listTopArtists('medium_term').then(response => setArtists(response.data.items))
     }, []);
 
     return (

@@ -21,7 +21,7 @@ export default function Login() {
   const navigation = useNavigation();
 
   function goToResumeScreen() {
-    navigation.navigate('Auth')
+    navigation.navigate('App');
   }
 
   const [request, response, promptAsync] = useAuthRequest(

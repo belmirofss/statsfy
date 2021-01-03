@@ -7,7 +7,7 @@ export default function TopArtistsAllTime() {
     const [artists, setArtists] = React.useState<SimplifiedArtist[]>([]);
 
     React.useEffect(() => {
-        SpotifyApi.listTopArtists('long_term', 0).then(response => setArtists(response.data.items))
+        SpotifyApi.listTopArtists('long_term').then(response => setArtists(response.data.items))
     }, []);
 
     return (

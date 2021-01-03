@@ -13,21 +13,31 @@ api.interceptors.request.use(
     }
 )
 
+api.interceptors.response.use(
+    response => response,
+    async error => {
+        if (error.response.status === 401) {
+            console.log("COMO FAÇO PARA DESLOGAR?");
+        }
+        return Promise.reject(error)
+    }
+)
+
 const SpotifyApi = {
-    listTopTracks: (timeRange: 'long_term' | 'medium_term' | 'short_term', page: number): Promise<AxiosResponse<any>> => {
+    listTopTracks: (timeRange: 'long_term' | 'medium_term' | 'short_term'): Promise<AxiosResponse<any>> => {
         return api.get('v1/me/top/tracks', {
             params: {
-                limit: 10,
-                offset: page,
+                limit: 50,
+                offset: 0,
                 time_range: timeRange
             }
         })
     },
-    listTopArtists: (timeRange: 'long_term' | 'medium_term' | 'short_term', page: number): Promise<AxiosResponse<any>> => {
+    listTopArtists: (timeRange: 'long_term' | 'medium_term' | 'short_term'): Promise<AxiosResponse<any>> => {
         return api.get('v1/me/top/artists', {
             params: {
-                limit: 10,
-                offset: page,
+                limit: 50,
+                offset: 0,
                 time_range: timeRange
             }
         })

@@ -2,7 +2,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { ResumeStackNavigator, StatsStackNavigator, TopTracksStackNavigator, TopArtistsStackNavigator } from './StackNavigator'
+import { ResumeStackNavigator, TopTracksStackNavigator, TopArtistsStackNavigator } from './StackNavigator'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
@@ -48,16 +48,6 @@ export default function BottomTabNavigator() {
             title: 'Top artists',
             tabBarIcon: ({ color }) => {
               return <MaterialCommunityIcons name="star-outline" size={24} color={color} />; 
-            }
-          }}
-        />
-        <Tab.Screen 
-          name="StatsStackNavigator" 
-          component={StatsStackNavigator}
-          options={{
-            title: 'Stats',
-            tabBarIcon: ({ color }) => {
-              return <MaterialCommunityIcons name="chart-line-variant" size={24} color={color} />; 
             }
           }}
         />
