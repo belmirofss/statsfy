@@ -9,6 +9,7 @@ import TopArtists4Weeks from '../pages/TopArtists4Weeks';
 import TopTracksAllTime from '../pages/TopTracksAllTime';
 import TopTracks6Months from '../pages/TopTracks6Months';
 import TopTracks4Weeks from '../pages/TopTracks4Weeks';
+import { StyleProp, ViewStyle } from 'react-native';
 
 const tabBarOptions: MaterialTopTabBarOptions = {
     activeTintColor: '#1ED760',
@@ -23,9 +24,16 @@ const tabBarOptions: MaterialTopTabBarOptions = {
     }
 }
 
+const sceneContainerStyle: StyleProp<ViewStyle> = {
+    backgroundColor: 'white'
+}
+
 const TopTabArtistsNavigator = () => {
     return (
-        <Tab.Navigator tabBarOptions={tabBarOptions} lazy={true}>
+        <Tab.Navigator 
+            tabBarOptions={tabBarOptions} 
+            lazy={true}
+            sceneContainerStyle={sceneContainerStyle}>
             <Tab.Screen 
                 name="TopArtistsAllTime" 
                 component={TopArtistsAllTime} 
@@ -53,7 +61,10 @@ const TopTabArtistsNavigator = () => {
 
 const TopTabTracksNavigator = () => {
     return (
-        <Tab.Navigator tabBarOptions={tabBarOptions} lazy={true}>
+        <Tab.Navigator 
+            tabBarOptions={tabBarOptions} 
+            lazy={true}
+            sceneContainerStyle={sceneContainerStyle}>
             <Tab.Screen 
                 name="TopTracksAllTime" 
                 component={TopTracksAllTime} 

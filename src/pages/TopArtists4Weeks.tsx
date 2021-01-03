@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native';
 import Loading from '../components/Loading';
 import RankingTopArtists from '../components/RankingTopArtists';
 import { SimplifiedArtist } from '../interfaces/SimplifiedArtist';

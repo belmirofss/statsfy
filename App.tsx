@@ -28,9 +28,9 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <AuthProvider>
-        <Routes />
-      </AuthProvider>
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
     </NavigationContainer>
   );
 }

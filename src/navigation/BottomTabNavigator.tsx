@@ -8,18 +8,22 @@ const Tab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
     return (
-      <Tab.Navigator tabBarOptions={{
-        activeTintColor: '#1ED760',
-        inactiveTintColor: 'black',
-        tabStyle: {
-          borderTopWidth: 0,
+      <Tab.Navigator 
+        tabBarOptions={{
+          activeTintColor: '#1ED760',
+          inactiveTintColor: 'black',
+          tabStyle: {
+            borderTopWidth: 0,
+            backgroundColor: 'white'
+          },
+          labelStyle: {
+            fontSize: 14,
+            fontFamily: 'clearSansBold'
+          }
+        }}
+        sceneContainerStyle={{
           backgroundColor: 'white'
-        },
-        labelStyle: {
-          fontSize: 14,
-          fontFamily: 'clearSansBold'
-        }
-      }}>
+        }}>
         <Tab.Screen
           name="Resume" 
           component={ResumeStackNavigator}
@@ -42,7 +46,7 @@ export default function BottomTabNavigator() {
         />
         <Tab.Screen 
           name="TopArtistsStackNavigator" 
-          component={TopArtistsStackNavigator}
+          component={TopTracksStackNavigator}
           options={{
             title: 'Top artists',
             tabBarIcon: ({ color }) => {
