@@ -45,7 +45,7 @@ const OtherPodium = (props: otherPodiumProps) => {
 export default function Podium(props: PodiumProps) {
     const items = props.data;
 
-    if (items.length === 3) {
+    if (items.length > 2) {
         return (
             <View style={styles.container}>
                 <OtherPodium position={2} id={items[1].id} title={items[1].title} subTitle={items[1].subTitle} image={items[1].image}/>
