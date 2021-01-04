@@ -1,9 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
+
+import logo from '../images/logo_statsfy.png';
 
 export default function About() {
     return (
         <View style={styles.container}>
+            <Image
+                style={styles.logoImage}
+                source={logo}
+            />
+
             <Text style={styles.title}>
                 All your data is saved solely and exclusively on your device.
             </Text>
@@ -24,6 +31,12 @@ export default function About() {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 24
+    },
+    logoImage: {
+        width: 150, 
+        height: 48,
+        marginVertical: 24,
+        marginHorizontal: 'auto'
     },
     wrapperText: {
         marginTop: 4

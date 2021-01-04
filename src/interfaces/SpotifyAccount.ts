@@ -9,4 +9,5 @@ export interface SpotifyAccount {
     id: string;
     images: Image[];
     product: "free" | "premium";
+    email: string;
 }

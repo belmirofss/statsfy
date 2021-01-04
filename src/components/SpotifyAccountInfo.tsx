@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import { SpotifyAccount } from '../interfaces/SpotifyAccount';
 import SpotifyApi from '../services/SpotifyApi';
 import Loading from './Loading';
@@ -25,25 +25,49 @@ export default function SpotifyAccountInfo() {
     }
 
     return (
-        <View>
-            <Text style={styles.titleText}>Your Spotify account</Text>
+        <View style={styles.container}>
+            <Image
+                style={styles.profileImage}
+                source={{
+                    uri: spotifyAccountInfo.images[0].url
+                }}
+            />
 
-            <View style={styles.wrapperInfos}>
-
-            </View>
+            <Text style={styles.nameText}>[{spotifyAccountInfo.country.toUpperCase()}] { spotifyAccountInfo.display_name }</Text>
+            <Text style={styles.emailText}>{spotifyAccountInfo.email} | {spotifyAccountInfo.product} account</Text>
         </View>
     );
 }
 
+const widthWindow = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        flexDirection: 'column'
+    },
     loadingContainer: {
         height: 200
     },
-    titleText: {
-        fontSize: 24,
-        fontFamily: 'clearSansBold',
+    profileImage: {
+        borderRadius: 100,
+        width: 125,
+        height: 125
     },
-    wrapperInfos: {
-        marginTop: 8
+    nameText: {
+        fontSize: 16,
+        marginTop: 6,
+        textAlign: 'center',
+        fontFamily: 'clearSansBold',
+        whiteSpace: 'pre-wrap',
+        width: widthWindow
+    },
+    emailText: {
+        fontSize: 13,
+        textAlign: 'center',
+        fontFamily: 'clearSansRegular',
+        whiteSpace: 'pre-wrap',
+        color: 'gray',
+        width: widthWindow
     }
 })
