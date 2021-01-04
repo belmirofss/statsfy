@@ -79,7 +79,7 @@ const podiumStyles = StyleSheet.create({
     others: {
         alignItems: 'center',
         flexDirection: 'column',
-        marginTop: 50,
+        marginTop: 64,
     },
     bigImage: {
         height: widthWindow * 0.30487804878,
