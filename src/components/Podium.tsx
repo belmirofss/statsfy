@@ -79,7 +79,7 @@ const podiumStyles = StyleSheet.create({
     others: {
         alignItems: 'center',
         flexDirection: 'column',
-        marginTop: widthWindow * 0.08536585365,
+        marginTop: 50,
     },
     bigImage: {
         height: widthWindow * 0.30487804878,
@@ -98,19 +98,19 @@ const podiumStyles = StyleSheet.create({
         fontFamily: 'clearSansBold',
     },
     titleText: {
-        fontSize: 14,
+        fontSize: 16,
         marginTop: 6,
         textAlign: 'center',
         fontFamily: 'clearSansBold',
         whiteSpace: 'pre-wrap',
-        width: widthWindow * 0.24390243902
+        width: widthWindow * 0.30
     },
     subTitleText: {
-        fontSize: 12,
+        fontSize: 13,
         textAlign: 'center',
         fontFamily: 'clearSansRegular',
         whiteSpace: 'pre-wrap',
         color: 'gray',
-        width: widthWindow * 0.24390243902
+        width: widthWindow * 0.30
     }
 });

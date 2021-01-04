@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         borderRadius: 8
     },
     titleText: {
-        fontSize: 14,
+        fontSize: 16,
         fontFamily: 'clearSansBold',
         whiteSpace: 'pre-wrap',
         color: 'white',
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         textShadowRadius: 5
     },
     subTitleText: {
-        fontSize: 12,
+        fontSize: 13,
         fontFamily: 'clearSansRegular',
         whiteSpace: 'pre-wrap',
         color: 'white',
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     wrapperTimer: {
         flexDirection: 'row',
         backgroundColor: '#00000073',
-        width: 50,
+        minWidth: 50,
         height: 30,
         alignItems: 'center',
         justifyContent: 'center',
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     },
     timerText: {
         color: 'white',
-        fontSize: 11,
+        fontSize: 12,
         marginLeft: 2,
         fontFamily: 'clearSansRegular'
     }

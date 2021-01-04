@@ -32,8 +32,8 @@ const SpotifyApi = {
             }
         });
     },
-    getCurrentPlayingTrack: (): Promise<AxiosResponse<any>> => {
-        return api.get('v1/me/player/currently-playing');
+    getCurrentUserProfile: (): Promise<AxiosResponse<any>> => {
+        return api.get('v1/me');
     }
 }
 

@@ -34,19 +34,21 @@ export default function RankingTopArtists(props: RankingTopArtistsProps) {
                 image: item.images[0]
             }))}/>
 
-            { 
-                artists.slice(3).map((item, index) => {
-                    return (
-                        <RankingPosition
-                            key={index}
-                            title={item.name} 
-                            id={item.id} 
-                            image={item.images[0]}
-                            position={index + 4} 
-                        />
-                    )
-                }) 
-            }
+            <View style={{marginTop: 8}}>
+                { 
+                    artists.slice(3).map((item, index) => {
+                        return (
+                            <RankingPosition
+                                key={index}
+                                title={item.name} 
+                                id={item.id} 
+                                image={item.images[0]}
+                                position={index + 4} 
+                            />
+                        )
+                    }) 
+                }
+            </View>
         </View>
     );
 }

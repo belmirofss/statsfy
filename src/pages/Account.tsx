@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useContext } from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import SpotifyAccountInfo from '../components/SpotifyAccountInfo';
 import AuthContext from '../contexts/Auth';
 
 export default function Account() {
@@ -28,6 +29,8 @@ export default function Account() {
 
     return (
         <View style={styles.container}>
+            <SpotifyAccountInfo />
+
             <TouchableOpacity style={styles.loginButton} onPress={() => logout()}>
                 <Text style={styles.loginText}>Log out</Text>
             </TouchableOpacity>
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
         paddingVertical: 16,
         width: '100%',
         borderRadius: 100,
-        
+        marginTop: 24
     },
     loginText: {
         textAlign: 'center',

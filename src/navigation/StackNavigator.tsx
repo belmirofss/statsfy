@@ -93,7 +93,7 @@ const ResumeStackNavigator = () => {
                 component={Resume}
                 options={{
                     title: 'Resume',
-                    headerRight: () => <HeaderRight showAccountButton/>
+                    headerRight: () => <HeaderRight showAccountButton showSearchButton/>
                 }}
             />
         </StackNavigator.Navigator>
@@ -108,7 +108,7 @@ const TopTracksStackNavigator = () => {
                 component={TopTabTracksNavigator}
                 options={{
                     title: 'Top tracks',
-                    headerRight: () => <HeaderRight showAccountButton/>
+                    headerRight: () => <HeaderRight showAccountButton showSearchButton/>
                 }}
             />
         </StackNavigator.Navigator>
@@ -123,7 +123,7 @@ const TopArtistsStackNavigator = () => {
                 component={TopTabArtistsNavigator}
                 options={{
                     title: 'Top artists',
-                    headerRight: () => <HeaderRight showAccountButton/>
+                    headerRight: () => <HeaderRight showAccountButton showSearchButton/>
                 }}
             />
         </StackNavigator.Navigator>

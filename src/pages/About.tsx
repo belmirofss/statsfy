@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'clearSansBold',
-        fontSize: 18
+        fontSize: 24
     },
     text: {
         fontFamily: 'clearSansRegular',
-        fontSize: 14,
+        fontSize: 16,
         marginTop: 6
     }
 })

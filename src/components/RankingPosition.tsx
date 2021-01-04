@@ -70,12 +70,12 @@ const styles = StyleSheet.create({
         borderRadius: 100
     },
     titleText: {
-        fontSize: 14,
+        fontSize: 16,
         fontFamily: 'clearSansBold',
         whiteSpace: 'pre-wrap',
     },
     subTitleText: {
-        fontSize: 12,
+        fontSize: 13,
         fontFamily: 'clearSansRegular',
         whiteSpace: 'pre-wrap',
         color: 'gray',

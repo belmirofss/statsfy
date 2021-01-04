@@ -35,20 +35,22 @@ export default function RankingTopTracks(props: RankingTopTracksProps) {
                 image: item.album.images[0]
             }))}/>
 
-            { 
-                tracks.slice(3).map((item, index) => {
-                    return (
-                        <RankingPosition
-                            key={index}
-                            title={item.name} 
-                            id={item.id} 
-                            subTitle={item.artists.map(item => item.name).join(', ')}
-                            image={item.album.images[0]}
-                            position={index + 4} 
-                        />
-                    )
-                }) 
-            }
+            <View style={{marginTop: 8}}>
+                { 
+                    tracks.slice(3).map((item, index) => {
+                        return (
+                            <RankingPosition
+                                key={index}
+                                title={item.name} 
+                                id={item.id} 
+                                subTitle={item.artists.map(item => item.name).join(', ')}
+                                image={item.album.images[0]}
+                                position={index + 4} 
+                            />
+                        )
+                    }) 
+                }
+            </View>
         </View>
     );
 }

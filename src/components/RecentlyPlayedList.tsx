@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         height: 300
     },
     titleText: {
-        fontSize: 18,
+        fontSize: 24,
         fontFamily: 'clearSansBold',
     }
 });

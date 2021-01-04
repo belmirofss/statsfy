@@ -1,5 +1,6 @@
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons  } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { HeaderRightProps } from '../interfaces/HeaderRightProps';
@@ -11,6 +12,12 @@ export default function HeaderRight(props: HeaderRightProps) {
 
     return (
         <View style={styles.container}>
+            {props.showSearchButton && (
+                <TouchableOpacity style={styles.button} onPress={() => null}>
+                    <Ionicons name="search" size={iconSize} />
+                </TouchableOpacity>
+            )}
+
             {props.showBackButton && (
                 <TouchableOpacity style={styles.button} onPress={() => navigation.goBack()}>
                     <MaterialCommunityIcons name="keyboard-backspace" size={iconSize} />
@@ -32,6 +39,7 @@ const styles = StyleSheet.create({
         paddingRight: 14
     },
     button: {
-
+        width: 36,
+        justifyContent: 'center'
     }
 });

@@ -85,7 +85,7 @@ export default function ResumeTops() {
             </View>
             
             <Text style={styles.subTitleText}>
-                Past 4 weeks
+                Last 4 weeks
             </Text>
 
             <PodiumToShow mode={mode}/>
@@ -102,16 +102,16 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     titleText: {
-        fontSize: 18,
+        fontSize: 24,
         fontFamily: 'clearSansBold',
     },
     subTitleText: {
-        fontSize: 14,
+        fontSize: 16,
         fontFamily: 'clearSansRegular'
     },
     pickerTracksOrArtists: {
         marginLeft: 4,
-        fontSize: 18,
+        fontSize: 24,
         fontFamily: 'clearSansBold',
         width: 150,
         borderRadius: 100,
