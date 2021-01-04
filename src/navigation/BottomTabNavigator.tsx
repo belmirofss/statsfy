@@ -46,7 +46,7 @@ export default function BottomTabNavigator() {
         />
         <Tab.Screen 
           name="TopArtistsStackNavigator" 
-          component={TopTracksStackNavigator}
+          component={TopArtistsStackNavigator}
           options={{
             title: 'Top artists',
             tabBarIcon: ({ color }) => {
