@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         paddingVertical: 16,
         width: '100%',
         borderRadius: 100,
-        marginTop: 64
+        marginTop: 48
     },
     loginText: {
         textAlign: 'center',

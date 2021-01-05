@@ -13,7 +13,7 @@ export default function HeaderRight(props: HeaderRightProps) {
     return (
         <View style={styles.container}>
             {props.showSearchButton && (
-                <TouchableOpacity style={styles.button} onPress={() => null}>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Search')}>
                     <Ionicons name="search" size={iconSize} />
                 </TouchableOpacity>
             )}

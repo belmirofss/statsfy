@@ -3,6 +3,8 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 
 import logo from '../images/logo_statsfy.png';
 
+import appInfo from '../../app.json';
+
 export default function About() {
     return (
         <View style={styles.container}>
@@ -22,6 +24,10 @@ export default function About() {
 
                 <Text style={styles.text}>
                     This app has no relationship or affliction with Spotify.
+                </Text>
+
+                <Text style={styles.versionText}>
+                    Version: {appInfo.expo.version}
                 </Text>
             </View>            
         </View>
@@ -49,5 +55,11 @@ const styles = StyleSheet.create({
         fontFamily: 'clearSansRegular',
         fontSize: 16,
         marginTop: 6
+    },
+    versionText: {
+        fontFamily: 'clearSansBold',
+        fontSize: 12,
+        marginTop: 24,
+        textAlign: 'center'
     }
 })

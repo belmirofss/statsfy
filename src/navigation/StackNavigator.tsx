@@ -13,6 +13,7 @@ import BottomTabNavigator from './BottomTabNavigator';
 import { TopTabArtistsNavigator, TopTabTracksNavigator } from './TopTabNavigator';
 import Account from '../pages/Account';
 import About from '../pages/About';
+import Search from '../pages/Search';
 
 const screenOptionStyle: StackNavigationOptions  = {
     headerTitleAlign: 'left',
@@ -69,6 +70,14 @@ const AppStackNavigator = () => {
                 component={Account}
                 options={{
                     title: 'Account',
+                    headerRight: () => <HeaderRight showBackButton/>
+                }}
+            />
+            <StackNavigator.Screen
+                name="Search"
+                component={Search}
+                options={{
+                    title: 'Search',
                     headerRight: () => <HeaderRight showBackButton/>
                 }}
             />

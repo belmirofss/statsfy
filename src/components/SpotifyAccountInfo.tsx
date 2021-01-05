@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column'
     },
     loadingContainer: {
-        height: 200
+        height: 170
     },
     profileImage: {
         borderRadius: 100,
