@@ -100,12 +100,12 @@ const styles = StyleSheet.create({
     },
     welcomeText: {
       marginTop: 64,
-      fontSize: 32,
+      fontSize: 28,
       fontFamily: 'clearSansBold',
       textAlign: 'center'
     },
     continueText: {
-      fontSize: 24,
+      fontSize: 18,
       textAlign: 'center',
       marginTop: 8,
       fontFamily: 'clearSansRegular'
@@ -114,21 +114,20 @@ const styles = StyleSheet.create({
       marginTop: 64,
       backgroundColor: '#1ED760',
       paddingHorizontal: 8,
-      paddingVertical: 16,
+      paddingVertical: 12,
       width: '100%',
-      borderRadius: 100,
-      
+      borderRadius: 100
     },
     loginText: {
       textAlign: 'center',
       color: 'white',
       fontSize: 24,
-      fontFamily: 'clearSansBold',
+      fontFamily: 'clearSansBold'
     },
     aboutButton: {
       backgroundColor: 'gainsboro',
       paddingHorizontal: 8,
-      paddingVertical: 16,
+      paddingVertical: 12,
       width: '100%',
       borderRadius: 100,
       marginTop: 8

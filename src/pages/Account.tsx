@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     loginButton: {
         backgroundColor: 'red',
         paddingHorizontal: 8,
-        paddingVertical: 16,
+        paddingVertical: 12,
         width: '100%',
         borderRadius: 100,
         marginTop: 48
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     aboutButton: {
         backgroundColor: 'gainsboro',
         paddingHorizontal: 8,
-        paddingVertical: 16,
+        paddingVertical: 12,
         width: '100%',
         borderRadius: 100,
         marginTop: 8
