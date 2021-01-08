@@ -12,12 +12,6 @@ export default function HeaderRight(props: HeaderRightProps) {
 
     return (
         <View style={styles.container}>
-            {props.showSearchButton && (
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Search')}>
-                    <Ionicons name="search" size={iconSize} />
-                </TouchableOpacity>
-            )}
-
             {props.showBackButton && (
                 <TouchableOpacity style={styles.button} onPress={() => navigation.goBack()}>
                     <MaterialCommunityIcons name="keyboard-backspace" size={iconSize} />

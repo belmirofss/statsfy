@@ -11,6 +11,6 @@ export default function MyStats() {
 
 const styles = StyleSheet.create({
     container: {
-
+        width: 300,
     }
 });

@@ -55,18 +55,16 @@ const styles = StyleSheet.create({
         height: 125
     },
     nameText: {
-        fontSize: 16,
+        fontSize: 14,
         marginTop: 6,
         textAlign: 'center',
         fontFamily: 'clearSansBold',
-        whiteSpace: 'pre-wrap',
         width: widthWindow
     },
     emailText: {
-        fontSize: 13,
+        fontSize: 12,
         textAlign: 'center',
         fontFamily: 'clearSansRegular',
-        whiteSpace: 'pre-wrap',
         color: 'gray',
         width: widthWindow
     }

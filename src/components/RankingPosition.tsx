@@ -18,8 +18,8 @@ export default function RankingPosition(props: RankingPositionProps) {
                 />
 
                 <View style={styles.wrapperTitleAndSubTitle}>
-                    <Text style={styles.titleText}>{ props.title }</Text>
-                    { props.subTitle && <Text style={styles.subTitleText}>{ props.subTitle }</Text> }
+                    <Text style={styles.titleText} numberOfLines={2}>{ props.title }</Text>
+                    { props.subTitle && <Text style={styles.subTitleText} numberOfLines={2}>{ props.subTitle }</Text> }
                 </View>
             </View>
         </View>
@@ -36,15 +36,11 @@ const styles = StyleSheet.create({
         height: 100,
         flex: 1,
         alignItems: 'center',
-        padding: 8,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
+        paddingRight: 24,
+        paddingLeft: 12,
+        paddingVertical: 12,
+        borderWidth: 1,
+        borderColor: 'gainsboro',
         borderRadius: 100,
     },
     wrapperTitleAndSubTitle: {
@@ -70,14 +66,12 @@ const styles = StyleSheet.create({
         borderRadius: 100
     },
     titleText: {
-        fontSize: 16,
-        fontFamily: 'clearSansBold',
-        whiteSpace: 'pre-wrap',
+        fontSize: 14,
+        fontFamily: 'clearSansBold'
     },
     subTitleText: {
-        fontSize: 13,
+        fontSize: 12,
         fontFamily: 'clearSansRegular',
-        whiteSpace: 'pre-wrap',
         color: 'gray',
     }
 });

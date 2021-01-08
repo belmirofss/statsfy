@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, View, StyleSheet, Text, ScrollView } from 'react-native';
 
 import logo from '../images/logo_statsfy.png';
 
@@ -7,36 +7,38 @@ import appInfo from '../../app.json';
 
 export default function About() {
     return (
-        <View style={styles.container}>
-            <Image
-                style={styles.logoImage}
-                source={logo}
-            />
+        <ScrollView>
+            <View style={styles.container}>
+                <Image
+                    style={styles.logoImage}
+                    source={logo}
+                />
 
-            <Text style={styles.title}>
-                All your data is saved solely and exclusively on your device.
-            </Text>
-
-            <View style={styles.wrapperText}>
-                <Text style={styles.text}>
-                    The app will never save or collect any information about you or your account.
+                <Text style={styles.title}>
+                    All your data is saved solely and exclusively on your device.
                 </Text>
 
-                <Text style={styles.text}>
-                    This app has no relationship or affliction with Spotify.
-                </Text>
+                <View style={styles.wrapperText}>
+                    <Text style={styles.text}>
+                        The app will never save or collect any information about you or your account.
+                    </Text>
 
-                <Text style={styles.versionText}>
-                    Version: {appInfo.expo.version}
-                </Text>
-            </View>            
-        </View>
+                    <Text style={styles.text}>
+                        This app has no relationship or affliction with Spotify.
+                    </Text>
+
+                    <Text style={styles.versionText}>
+                        Version: {appInfo.expo.version}
+                    </Text>
+                </View>            
+            </View>
+        </ScrollView> 
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 24
+        padding: 24
     },
     logoImage: {
         width: 150, 

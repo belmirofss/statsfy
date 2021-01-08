@@ -92,24 +92,22 @@ const podiumStyles = StyleSheet.create({
         borderRadius: 100
     },
     positionText: {
-        fontSize: 22,
+        fontSize: 18,
         marginBottom: 6,
         textAlign: 'center',
         fontFamily: 'clearSansBold',
     },
     titleText: {
-        fontSize: 16,
+        fontSize: 14,
         marginTop: 6,
         textAlign: 'center',
         fontFamily: 'clearSansBold',
-        whiteSpace: 'pre-wrap',
         width: widthWindow * 0.30
     },
     subTitleText: {
-        fontSize: 13,
+        fontSize: 12,
         textAlign: 'center',
         fontFamily: 'clearSansRegular',
-        whiteSpace: 'pre-wrap',
         color: 'gray',
         width: widthWindow * 0.30
     }

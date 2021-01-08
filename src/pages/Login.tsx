@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      paddingHorizontal: 24
+      padding: 24
     },
     logoImage: {
       width: 200, 
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     loginText: {
       textAlign: 'center',
       color: 'white',
-      fontSize: 24,
+      fontSize: 18,
       fontFamily: 'clearSansBold'
     },
     aboutButton: {
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     aboutText: {
       textAlign: 'center',
       color: 'black',
-      fontSize: 24,
+      fontSize: 18,
       fontFamily: 'clearSansBold',
     }
 });

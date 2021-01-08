@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useContext } from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, View, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
 import SpotifyAccountInfo from '../components/SpotifyAccountInfo';
 import AuthContext from '../contexts/Auth';
 
@@ -28,23 +28,25 @@ export default function Account() {
     }
 
     return (
-        <View style={styles.container}>
-            <SpotifyAccountInfo />
+        <ScrollView>
+            <View style={styles.container}>
+                <SpotifyAccountInfo />
 
-            <TouchableOpacity style={styles.loginButton} onPress={() => logout()}>
-                <Text style={styles.loginText}>Log out</Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.loginButton} onPress={() => logout()}>
+                    <Text style={styles.loginText}>Log out</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.aboutButton} onPress={() => navigation.navigate('About')}>
-                <Text style={styles.aboutText}>About the app</Text>
-            </TouchableOpacity>
-        </View>
+                <TouchableOpacity style={styles.aboutButton} onPress={() => navigation.navigate('About')}>
+                    <Text style={styles.aboutText}>About the app</Text>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 24
+        padding: 24
     },
     loginButton: {
         backgroundColor: 'red',
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
     loginText: {
         textAlign: 'center',
         color: 'white',
-        fontSize: 24,
+        fontSize: 18,
         fontFamily: 'clearSansBold',
     },
     aboutButton: {
@@ -71,7 +73,7 @@ const styles = StyleSheet.create({
     aboutText: {
         textAlign: 'center',
         color: 'black',
-        fontSize: 24,
+        fontSize: 18,
         fontFamily: 'clearSansBold',
     }
 });

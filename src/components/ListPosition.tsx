@@ -78,9 +78,8 @@ const styles = StyleSheet.create({
         borderRadius: 8
     },
     titleText: {
-        fontSize: 16,
+        fontSize: 14,
         fontFamily: 'clearSansBold',
-        whiteSpace: 'pre-wrap',
         color: 'white',
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowOffset: {
@@ -90,9 +89,8 @@ const styles = StyleSheet.create({
         textShadowRadius: 5
     },
     subTitleText: {
-        fontSize: 13,
+        fontSize: 12,
         fontFamily: 'clearSansRegular',
-        whiteSpace: 'pre-wrap',
         color: 'white',
         textShadowColor: 'rgba(0, 0, 0, 1)',
         textShadowOffset: {

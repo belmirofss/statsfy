@@ -17,7 +17,7 @@ export default function BottomTabNavigator() {
             backgroundColor: 'white'
           },
           labelStyle: {
-            fontSize: 14,
+            fontSize: 12,
             fontFamily: 'clearSansBold'
           }
         }}

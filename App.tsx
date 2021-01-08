@@ -11,6 +11,7 @@ import Routes from './src/routes/Routes';
 import { AuthProvider } from './src/contexts/Auth';
 
 import AppLoading from 'expo-app-loading';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {  
   const [fontsLoaded] = useFonts({
@@ -31,6 +32,7 @@ export default function App() {
         <AuthProvider>
           <Routes />
         </AuthProvider>
+        <StatusBar hidden />
     </NavigationContainer>
   );
 }

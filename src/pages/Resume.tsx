@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import RecentlyPlayedList from '../components/RecentlyPlayedList';
 import ResumeTops from '../components/ResumeTops';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -10,59 +10,55 @@ export default function Resume() {
     const [modalVisible, setModalVisible] = useState(false);
     
     return (
-        <View style={styles.container}>
-            <Modal
-                animationType="slide"
-                transparent={false}
-                visible={modalVisible}>
-                <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
-                        <MyStats />
-                    </View>
+        <ScrollView>
+            <View style={styles.container}>
+                <Modal
+                    animationType="fade"
+                    transparent={true}
+                    visible={modalVisible}>
+                        <TouchableOpacity style={styles.centeredView} onPress={() => setModalVisible(false)}>
+                            <View style={styles.modalView}>
+                                <MyStats />
+                            </View>
+                        </TouchableOpacity>
+                </Modal>
+
+                <View style={styles.wrapperButtonshareMyStats}>
+                    <TouchableOpacity style={styles.shareMyStatsButton} onPress={() => setModalVisible(true)}>
+                        <MaterialCommunityIcons name="share" size={32} color="white" />
+                        <Text style={styles.shareMyStatsText}>Share my stats</Text>
+                    </TouchableOpacity>
                 </View>
-            </Modal>
 
-            <View style={styles.wrapperButtonshareMyStats}>
-                <TouchableOpacity style={styles.shareMyStatsButton} onPress={() => setModalVisible(true)}>
-                    <MaterialCommunityIcons name="share" size={32} color="white" />
-                    <Text style={styles.shareMyStatsText}>Share my stats</Text>
-                </TouchableOpacity>
-            </View>
+                <View style={styles.marginTop}>
+                    <ResumeTops />
+                </View>
 
-            <View style={styles.marginTop}>
-                <ResumeTops />
+                <View style={styles.marginTop}>
+                    <RecentlyPlayedList />
+                </View>
             </View>
-
-            <View style={styles.marginTop}>
-                <RecentlyPlayedList />
-            </View>
-        </View>
+        </ScrollView>  
     );
 }
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      paddingHorizontal: 24
+      padding: 24
     },
     centeredView: {
         flex: 1,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        backgroundColor: '#rgba(0, 0, 0, 0.75)',
+        width: '100%'
     },
     modalView: {
         backgroundColor: "white",
-        borderRadius: 20,
+        borderRadius: 6,
         padding: 12,
-        alignItems: "center",
-        shadowColor: "#000",
-        shadowOffset: {
-          width: 0,
-          height: 2
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5
+        alignItems: "center"
     },
     wrapperButtonshareMyStats: {
         flexDirection: 'row',
@@ -80,7 +76,7 @@ const styles = StyleSheet.create({
     shareMyStatsText: {
         textAlign: 'center',
         color: 'white',
-        fontSize: 24,
+        fontSize: 18,
         fontFamily: 'clearSansBold',
         marginLeft: 4
     },

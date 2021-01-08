@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Loading from './Loading';
-import {Picker} from '@react-native-picker/picker';
+import RNPickerSelect from 'react-native-picker-select';
 import { SimplifiedTrack } from '../interfaces/SimplifiedTrack';
 import SpotifyApi from '../services/SpotifyApi';
 import { SimplifiedArtist } from '../interfaces/SimplifiedArtist';
@@ -74,14 +74,31 @@ export default function ResumeTops() {
         <View>
             <View style={styles.wrapperTitle}>
                 <Text style={styles.titleText}>Top</Text>
-                <Picker
-                    style={styles.pickerTracksOrArtists}
-                    itemStyle={styles.pickerItem}
-                    selectedValue={mode} 
-                    onValueChange={(value) => setMode(value as 'tracks' | 'artists')}>
-                    <Picker.Item label="Tracks" value="tracks" />
-                    <Picker.Item label="Artists" value="artists" />
-                </Picker>
+                <RNPickerSelect
+                    onValueChange={(value) => setMode(value as 'tracks' | 'artists')}
+                    items={[
+                        { label: 'Tracks', value: 'tracks' },
+                        { label: 'Artists', value: 'artists' }
+                    ]}
+                    placeholder={{}}
+                    style={{
+                        inputAndroid: {
+                            color: 'black',
+                            fontSize: 24,
+                            fontFamily: 'clearSansBold',
+                            padding: 8
+                        },
+                        inputAndroidContainer: {
+                            borderWidth: 1,
+                            borderColor: 'gainsboro',
+                            borderRadius: 100,
+                            width: 150,
+                            marginLeft: 4
+                        }
+                    }}
+                    useNativeAndroidPickerStyle={false}
+                    value={mode}
+                />
             </View>
             
             <Text style={styles.subTitleText}>
@@ -103,21 +120,10 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 24,
-        fontFamily: 'clearSansBold',
+        fontFamily: 'clearSansBold'
     },
     subTitleText: {
         fontSize: 16,
         fontFamily: 'clearSansRegular'
-    },
-    pickerTracksOrArtists: {
-        marginLeft: 4,
-        fontSize: 24,
-        fontFamily: 'clearSansBold',
-        width: 150,
-        borderRadius: 100,
-        backgroundColor: 'white'
-    },
-    pickerItem: {
-        color: 'black'
     }
 })
