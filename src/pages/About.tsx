@@ -38,7 +38,7 @@ export default function About() {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 24
+        padding: 16
     },
     logoImage: {
         width: 150, 

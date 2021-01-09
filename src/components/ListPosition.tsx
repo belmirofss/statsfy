@@ -49,8 +49,8 @@ export default function ListPosition(props: ListPositionProps) {
                         <Text style={styles.timerText}>{calculateDifferenceToNow(props.date)}</Text>
                     </View>
                     <LinearGradient colors={['transparent', 'rgba(0,0,0,0.8)']} style={styles.linearGradient}>
-                        <Text style={styles.titleText}>{ props.title }</Text>
-                        <Text style={styles.subTitleText}>{ props.subTitle }</Text>
+                        <Text style={styles.titleText} numberOfLines={3}>{ props.title }</Text>
+                        <Text style={styles.subTitleText} numberOfLines={3}>{ props.subTitle }</Text>
                     </LinearGradient>
             </ImageBackground>
         </View>

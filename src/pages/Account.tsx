@@ -32,8 +32,8 @@ export default function Account() {
             <View style={styles.container}>
                 <SpotifyAccountInfo />
 
-                <TouchableOpacity style={styles.loginButton} onPress={() => logout()}>
-                    <Text style={styles.loginText}>Log out</Text>
+                <TouchableOpacity style={styles.logoutButton} onPress={() => logout()}>
+                    <Text style={styles.logoutText}>Log out</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.aboutButton} onPress={() => navigation.navigate('About')}>
@@ -46,9 +46,9 @@ export default function Account() {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 24
+        padding: 16
     },
-    loginButton: {
+    logoutButton: {
         backgroundColor: 'red',
         paddingHorizontal: 8,
         paddingVertical: 12,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         marginTop: 48
     },
-    loginText: {
+    logoutText: {
         textAlign: 'center',
         color: 'white',
         fontSize: 18,

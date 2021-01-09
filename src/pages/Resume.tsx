@@ -15,17 +15,16 @@ export default function Resume() {
                 <Modal
                     animationType="fade"
                     transparent={true}
-                    visible={modalVisible}>
-                        <TouchableOpacity style={styles.centeredView} onPress={() => setModalVisible(false)}>
-                            <View style={styles.modalView}>
-                                <MyStats />
-                            </View>
-                        </TouchableOpacity>
+                    visible={modalVisible}
+                    onRequestClose={() => setModalVisible(false)}>
+                        <View style={styles.centeredView}>
+                            <MyStats onClose={() => setModalVisible(false)}/>
+                        </View>
                 </Modal>
 
                 <View style={styles.wrapperButtonshareMyStats}>
                     <TouchableOpacity style={styles.shareMyStatsButton} onPress={() => setModalVisible(true)}>
-                        <MaterialCommunityIcons name="share" size={32} color="white" />
+                        <MaterialCommunityIcons name="share" size={24} color="white" />
                         <Text style={styles.shareMyStatsText}>Share my stats</Text>
                     </TouchableOpacity>
                 </View>
@@ -45,20 +44,13 @@ export default function Resume() {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 24
+      padding: 16
     },
     centeredView: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: '#rgba(0, 0, 0, 0.75)',
-        width: '100%'
-    },
-    modalView: {
-        backgroundColor: "white",
-        borderRadius: 6,
-        padding: 12,
-        alignItems: "center"
+        backgroundColor: '#rgba(0, 0, 0, 0.75)'
     },
     wrapperButtonshareMyStats: {
         flexDirection: 'row',

@@ -6,6 +6,7 @@ import { SimplifiedTrack } from '../interfaces/SimplifiedTrack';
 import SpotifyApi from '../services/SpotifyApi';
 import { SimplifiedArtist } from '../interfaces/SimplifiedArtist';
 import Podium from './Podium';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const PodiumToShow = (props: { 
     mode: 'tracks' | 'artists' 
@@ -99,6 +100,11 @@ export default function ResumeTops() {
                     useNativeAndroidPickerStyle={false}
                     value={mode}
                 />
+                <MaterialCommunityIcons 
+                    style={styles.iconRNPicker} 
+                    name="chevron-down" 
+                    color="gainsboro" 
+                    size={24} />
             </View>
             
             <Text style={styles.subTitleText}>
@@ -125,5 +131,10 @@ const styles = StyleSheet.create({
     subTitleText: {
         fontSize: 16,
         fontFamily: 'clearSansRegular'
+    },
+    iconRNPicker: {
+        position: 'absolute',
+        left: 165,
+        top: 16
     }
 })
