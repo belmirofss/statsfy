@@ -45,7 +45,7 @@ export default function Login() {
       ],
       usePKCE: false,
       redirectUri: makeRedirectUri({
-        native: 'statsfy://redirect',
+        native: 'com.yabcompany.statsfy://redirect',
       }),
     },
     discovery
