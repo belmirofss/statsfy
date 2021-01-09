@@ -11,6 +11,7 @@ import SpotifyApi from '../services/SpotifyApi';
 import Podium from './Podium';
 
 import * as Sharing from 'expo-sharing'; 
+import Admob from '../services/Admob';
 
 export default function MyStats(props: {
     onClose: Function
@@ -29,7 +30,6 @@ export default function MyStats(props: {
     }
 
     const openShareDialogAsync = async () => {
-        console.log(viewDimensions);
         if (!(await Sharing.isAvailableAsync())) {
             Alert.alert(
                 "Uh oh, sharing isn't available on your device!",
@@ -49,6 +49,8 @@ export default function MyStats(props: {
         };
 
         await Sharing.shareAsync(uri, options);
+
+        Admob.showInterstitial();
     };
 
     React.useEffect(() => {
@@ -87,7 +89,7 @@ export default function MyStats(props: {
                              }}>
                             <View>
                                 <Text style={styles.nameText}>{spotifyAccountInfo.display_name}</Text>
-                                <Text style={styles.sectionSubTitle}>Stats last 4 weeks</Text>
+                                <Text style={styles.sectionSubTitle}>Spotify stats last 4 weeks</Text>
                             </View>
                             <View style={styles.section}>
                                 <Text style={styles.sectionTitle}>Top tracks</Text>

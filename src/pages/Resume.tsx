@@ -5,9 +5,14 @@ import RecentlyPlayedList from '../components/RecentlyPlayedList';
 import ResumeTops from '../components/ResumeTops';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import MyStats from '../components/MyStats';
+import Admob from '../services/Admob';
 
 export default function Resume() {
     const [modalVisible, setModalVisible] = useState(false);
+
+    React.useEffect(() => {
+        Admob.showInterstitial()
+    }, []);
     
     return (
         <ScrollView>

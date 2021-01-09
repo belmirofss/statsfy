@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "statsfy",
+    "name": "Statsfy",
     "slug": "statsfy",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,6 +23,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-6575307967199593~5384184850"
       }
     },
     "web": {
