@@ -29,7 +29,8 @@
       },
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-6575307967199593~5384184850"
-      }
+      },
+      "permissions": []
     },
     "web": {
       "favicon": "./assets/favicon.png"
