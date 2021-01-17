@@ -8,9 +8,20 @@ interface PickerProps {
     items: { label: string, value: any }[];
     value: any;
     children: ReactNode;
+    width: number;
+    fontSize: number;
 }
 
 export default function Picker(props: PickerProps) {
+    
+    const styles = StyleSheet.create({
+        iconRNPicker: {
+            position: 'absolute',
+            right: 10,
+            top: props.fontSize * 0.65
+        }
+    });
+
     return (
         <View>
             <RNPickerSelect
@@ -20,7 +31,7 @@ export default function Picker(props: PickerProps) {
                     style={{
                         inputAndroid: {
                             color: 'black',
-                            fontSize: 24,
+                            fontSize: props.fontSize,
                             fontFamily: 'clearSansBold',
                             padding: 8
                         },
@@ -28,7 +39,7 @@ export default function Picker(props: PickerProps) {
                             borderWidth: 1,
                             borderColor: 'gainsboro',
                             borderRadius: 100,
-                            width: 150,
+                            width: props.width,
                             marginLeft: 4
                         }
                     }}
@@ -43,11 +54,3 @@ export default function Picker(props: PickerProps) {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    iconRNPicker: {
-        position: 'absolute',
-        left: 165,
-        top: 16
-    }
-});

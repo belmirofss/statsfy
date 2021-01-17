@@ -23,7 +23,7 @@ export default function Resume() {
                     visible={modalVisible}
                     onRequestClose={() => setModalVisible(false)}>
                         <View style={styles.centeredView}>
-                            <MyStats onClose={() => setModalVisible(false)}/>
+                            <MyStats close={() => setModalVisible(false)}/>
                         </View>
                 </Modal>
 

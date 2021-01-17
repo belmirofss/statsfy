@@ -80,7 +80,9 @@ export default function ResumeTops() {
                         { label: 'Tracks', value: 'tracks' },
                         { label: 'Artists', value: 'artists' }
                     ]}
-                    value={mode}>
+                    value={mode}
+                    width={150}
+                    fontSize={24}>
                 </Picker>
             </View>
             
