@@ -1,6 +1,14 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { RankingPositionProps } from '../interfaces/RankingPositionProps';
+import { ImageSpotify } from '../interfaces/ImageSpotify';
+
+interface RankingPositionProps {
+    position: number;
+    title: string;
+    image: ImageSpotify;
+    subTitle?: string;
+    id: string;
+}
 
 export default function RankingPosition(props: RankingPositionProps) {
     return (

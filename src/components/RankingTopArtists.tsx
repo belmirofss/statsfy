@@ -1,12 +1,15 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { RankingTopArtistsProps } from '../interfaces/RankingTopArtistsProps';
 import { SimplifiedArtist } from '../interfaces/SimplifiedArtist';
 import SpotifyApi from '../services/SpotifyApi';
 import Loading from './Loading';
 import Podium from './Podium';
 import RankingPosition from './RankingPosition';
+
+interface RankingTopArtistsProps {
+    timeRange: 'long_term' | 'medium_term' | 'short_term';
+}
 
 export default function RankingTopArtists(props: RankingTopArtistsProps) {
     const [artists, setArtists] = React.useState<SimplifiedArtist[]>([]);

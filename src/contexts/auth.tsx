@@ -23,7 +23,7 @@ export function AuthProvider(props: Props) {
             if (error.response.status === 401) {
                 Alert.alert(
                     "Your session has expired!",
-                    "To continue, please log in again please",
+                    "To continue, please log in again",
                     [{ text: "OK", onPress: () => null }],
                     { cancelable: false }
                 );

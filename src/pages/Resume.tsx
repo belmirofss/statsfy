@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import { Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Modal, ScrollView, StyleSheet, View } from "react-native";
 import RecentlyPlayedList from '../components/RecentlyPlayedList';
 import ResumeTops from '../components/ResumeTops';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import MyStats from '../components/MyStats';
 import Admob from '../services/Admob';
+import RountedButton from '../components/RoundedButton';
 
 export default function Resume() {
     const [modalVisible, setModalVisible] = useState(false);
@@ -28,10 +28,12 @@ export default function Resume() {
                 </Modal>
 
                 <View style={styles.wrapperButtonshareMyStats}>
-                    <TouchableOpacity style={styles.shareMyStatsButton} onPress={() => setModalVisible(true)}>
-                        <MaterialCommunityIcons name="share" size={24} color="white" />
-                        <Text style={styles.shareMyStatsText}>Share my stats</Text>
-                    </TouchableOpacity>
+                    <RountedButton
+                        onPress={() => setModalVisible(true)}
+                        color="white"
+                        backgroundColor="#1ED760"
+                        label="Share my stats">
+                    </RountedButton>
                 </View>
 
                 <View style={styles.marginTop}>
@@ -60,22 +62,6 @@ const styles = StyleSheet.create({
     wrapperButtonshareMyStats: {
         flexDirection: 'row',
         justifyContent: 'center'
-    },
-    shareMyStatsButton: {
-        backgroundColor: '#1ED760',
-        paddingHorizontal: 8,
-        paddingVertical: 12,
-        width: '100%',
-        borderRadius: 100,
-        flexDirection: 'row',
-        justifyContent: 'center'
-    },
-    shareMyStatsText: {
-        textAlign: 'center',
-        color: 'white',
-        fontSize: 18,
-        fontFamily: 'clearSansBold',
-        marginLeft: 4
     },
     marginTop: {
         marginTop: 12

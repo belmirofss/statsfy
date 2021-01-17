@@ -1,8 +1,8 @@
-import { Image } from './Image';
+import { ImageSpotify } from './ImageSpotify';
 
 export interface PodiumItem {
     id: string;
     title: string;
-    image: Image;
+    image: ImageSpotify;
     subTitle?: string;
 }

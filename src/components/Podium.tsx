@@ -2,7 +2,6 @@ import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
 
 import { PodiumItem } from '../interfaces/PodiumItem';
-import { PodiumProps } from '../interfaces/PodiumProps';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -11,6 +10,10 @@ interface OtherPodiumProps extends PodiumItem {
 }
 
 interface WinnerPodiumProps extends PodiumItem {}
+
+interface PodiumProps {
+    data: PodiumItem[];
+}
 
 const WinnerPodium = (props: WinnerPodiumProps) => {
     const winnerStyles = {

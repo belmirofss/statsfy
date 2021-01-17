@@ -1,7 +1,6 @@
 import React from 'react';
-import { Alert, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Loading from './Loading';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ViewShot from "react-native-view-shot";
 import logo from '../images/logo_statsfy.png';
 import { SimplifiedTrack } from '../interfaces/SimplifiedTrack';
@@ -12,6 +11,7 @@ import Podium from './Podium';
 
 import * as Sharing from 'expo-sharing'; 
 import Admob from '../services/Admob';
+import RountedButton from './RoundedButton';
 
 export default function MyStats(props: {
     onClose: Function
@@ -86,7 +86,7 @@ export default function MyStats(props: {
                             onLayout={(event) => { 
                                 viewDimensions.width = event.nativeEvent.layout.width;
                                 viewDimensions.height = event.nativeEvent.layout.height;
-                             }}>
+                            }}>
                             <View>
                                 <Text style={styles.nameText}>{spotifyAccountInfo.display_name}</Text>
                                 <Text style={styles.sectionSubTitle}>Spotify stats last 4 weeks</Text>
@@ -124,14 +124,22 @@ export default function MyStats(props: {
                     </ViewShot>
 
                     <View style={styles.wrapperButtons}>
-                        <TouchableOpacity style={styles.shareMyStatsButton} onPress={() => openShareDialogAsync()}>
-                            <MaterialCommunityIcons name="share" size={24} color="white" />
-                            <Text style={styles.shareMyStatsText}>Share</Text>
-                        </TouchableOpacity>
+                        <RountedButton
+                            onPress={() => openShareDialogAsync()}
+                            color="white"
+                            backgroundColor="#1ED760"
+                            label="Share">
+                        </RountedButton>
 
-                        <TouchableOpacity style={styles.closeModalButton} onPress={() => props.onClose()}>
-                            <Text style={styles.closeModalText}>Close</Text>
-                        </TouchableOpacity>
+                        <RountedButton
+                            onPress={() => props.onClose()}
+                            color="white"
+                            backgroundColor="red"
+                            label="Close"
+                            styles={{
+                                marginTop: 8
+                            }}>
+                        </RountedButton>
                     </View>
                 </View>
             </ScrollView>
@@ -168,33 +176,5 @@ const styles = StyleSheet.create({
         width: '100%',
         paddingHorizontal: 16,
         paddingBottom: 16
-    },
-    shareMyStatsButton: {
-        backgroundColor: '#1ED760',
-        paddingHorizontal: 8,
-        paddingVertical: 12,
-        borderRadius: 100,
-        flexDirection: 'row',
-        justifyContent: 'center'
-    },
-    shareMyStatsText: {
-        textAlign: 'center',
-        color: 'white',
-        fontSize: 18,
-        fontFamily: 'clearSansBold',
-        marginLeft: 4
-    },
-    closeModalButton: {
-        backgroundColor: 'red',
-        paddingHorizontal: 8,
-        paddingVertical: 12,
-        borderRadius: 100,
-        marginTop: 8
-    },
-    closeModalText: {
-        textAlign: 'center',
-        color: 'white',
-        fontSize: 18,
-        fontFamily: 'clearSansBold',
     }
 });

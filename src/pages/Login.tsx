@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Image, Text } from 'react-native';
 
 import * as WebBrowser from 'expo-web-browser';
 import { makeRedirectUri, useAuthRequest, ResponseType } from 'expo-auth-session';
@@ -7,6 +7,7 @@ import { makeRedirectUri, useAuthRequest, ResponseType } from 'expo-auth-session
 import logo from '../images/logo_statsfy.png';
 import AuthContext from '../contexts/Auth';
 import { useNavigation } from '@react-navigation/native';
+import RountedButton from '../components/RoundedButton';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -73,16 +74,26 @@ export default function Login() {
           Please log in with your Spotify account to see your stats
       </Text>
 
-      <TouchableOpacity 
-        style={styles.loginButton} 
+      <RountedButton
         onPress={() => promptAsync()}
-        disabled={!request}>
-          <Text style={styles.loginText}>Log in</Text>
-      </TouchableOpacity>
+        disabled={!request}
+        color="white"
+        backgroundColor="#1ED760"
+        label="Log in"
+        styles={{
+          marginTop: 64
+        }}>
+      </RountedButton>
 
-      <TouchableOpacity style={styles.aboutButton} onPress={() => navigation.navigate('About')}>
-        <Text style={styles.aboutText}>About the app</Text>
-      </TouchableOpacity>
+      <RountedButton
+        onPress={() => navigation.navigate('About')}
+        color="black"
+        backgroundColor="gainsboro"
+        label="About the app"
+        styles={{
+          marginTop: 8
+        }}>
+      </RountedButton>
     </View>
   );
 }
@@ -109,34 +120,6 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       marginTop: 8,
       fontFamily: 'clearSansRegular'
-    },
-    loginButton: {
-      marginTop: 64,
-      backgroundColor: '#1ED760',
-      paddingHorizontal: 8,
-      paddingVertical: 12,
-      width: '100%',
-      borderRadius: 100
-    },
-    loginText: {
-      textAlign: 'center',
-      color: 'white',
-      fontSize: 18,
-      fontFamily: 'clearSansBold'
-    },
-    aboutButton: {
-      backgroundColor: 'gainsboro',
-      paddingHorizontal: 8,
-      paddingVertical: 12,
-      width: '100%',
-      borderRadius: 100,
-      marginTop: 8
-    },
-    aboutText: {
-      textAlign: 'center',
-      color: 'black',
-      fontSize: 18,
-      fontFamily: 'clearSansBold',
     }
 });
   

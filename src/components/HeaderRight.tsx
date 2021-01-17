@@ -2,7 +2,10 @@ import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { HeaderRightProps } from '../interfaces/HeaderRightProps';
+interface HeaderRightProps {
+    showBackButton?: boolean;
+    showAccountButton?: boolean;
+}
 
 export default function HeaderRight(props: HeaderRightProps) {
     const navigation = useNavigation();

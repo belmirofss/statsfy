@@ -1,9 +1,14 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { Dimensions, ImageBackground, StyleSheet, Text, View } from 'react-native';
-import { ListPositionProps } from '../interfaces/ListPositionProps';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+import { ImageSpotify } from '../interfaces/ImageSpotify';
+interface ListPositionProps {
+    image: ImageSpotify;
+    title: string;
+    subTitle: string;
+    date: string;
+}
 
 export default function ListPosition(props: ListPositionProps) {
     const calculateDifferenceToNow = (timestamp: string): string => {

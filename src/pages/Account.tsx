@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useContext } from 'react';
-import { Alert, View, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { Alert, View, StyleSheet, ScrollView } from 'react-native';
+import RountedButton from '../components/RoundedButton';
 import SpotifyAccountInfo from '../components/SpotifyAccountInfo';
 import AuthContext from '../contexts/Auth';
 
@@ -32,13 +33,25 @@ export default function Account() {
             <View style={styles.container}>
                 <SpotifyAccountInfo />
 
-                <TouchableOpacity style={styles.logoutButton} onPress={() => logout()}>
-                    <Text style={styles.logoutText}>Log out</Text>
-                </TouchableOpacity>
+                <RountedButton
+                    onPress={() => logout()}
+                    color="white"
+                    backgroundColor="red"
+                    label="Log out"
+                    styles={{
+                        marginTop: 48
+                    }}>
+                </RountedButton>
 
-                <TouchableOpacity style={styles.aboutButton} onPress={() => navigation.navigate('About')}>
-                    <Text style={styles.aboutText}>About the app</Text>
-                </TouchableOpacity>
+                <RountedButton
+                    onPress={() => navigation.navigate('About')}
+                    color="black"
+                    backgroundColor="gainsboro"
+                    label="About the app"
+                    styles={{
+                        marginTop: 8
+                    }}>
+                </RountedButton>
             </View>
         </ScrollView>
     );
@@ -47,33 +60,5 @@ export default function Account() {
 const styles = StyleSheet.create({
     container: {
         padding: 16
-    },
-    logoutButton: {
-        backgroundColor: 'red',
-        paddingHorizontal: 8,
-        paddingVertical: 12,
-        width: '100%',
-        borderRadius: 100,
-        marginTop: 48
-    },
-    logoutText: {
-        textAlign: 'center',
-        color: 'white',
-        fontSize: 18,
-        fontFamily: 'clearSansBold',
-    },
-    aboutButton: {
-        backgroundColor: 'gainsboro',
-        paddingHorizontal: 8,
-        paddingVertical: 12,
-        width: '100%',
-        borderRadius: 100,
-        marginTop: 8
-    },
-    aboutText: {
-        textAlign: 'center',
-        color: 'black',
-        fontSize: 18,
-        fontFamily: 'clearSansBold',
     }
 });

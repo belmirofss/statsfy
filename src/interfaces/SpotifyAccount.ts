@@ -1,4 +1,4 @@
-import { Image } from './Image';
+import { ImageSpotify } from './ImageSpotify';
 
 export interface SpotifyAccount {
     country: string;
@@ -7,7 +7,7 @@ export interface SpotifyAccount {
         total: number
     },
     id: string;
-    images: Image[];
+    images: ImageSpotify[];
     product: "free" | "premium";
     email: string;
 }

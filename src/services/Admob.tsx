@@ -9,7 +9,7 @@ const adUnitID = Constants.isDevice && !__DEV__ ? productionId : testID;
 
 const Admob = {
     showInterstitial: async () => {
-        await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712'); // Test ID, Replace with your-admob-unit-id
+        await AdMobInterstitial.setAdUnitID(adUnitID);
         await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
         await AdMobInterstitial.showAdAsync();
     }

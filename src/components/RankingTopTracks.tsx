@@ -1,12 +1,15 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { RankingTopTracksProps } from '../interfaces/RankingTopTracksProps';
 import { SimplifiedTrack } from '../interfaces/SimplifiedTrack';
 import SpotifyApi from '../services/SpotifyApi';
 import Loading from './Loading';
 import Podium from './Podium';
 import RankingPosition from './RankingPosition';
+
+interface RankingTopTracksProps {
+    timeRange: 'long_term' | 'medium_term' | 'short_term';
+}
 
 export default function RankingTopTracks(props: RankingTopTracksProps) {
     const [tracks, setTracks] = React.useState<SimplifiedTrack[]>([]);
