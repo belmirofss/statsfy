@@ -3,6 +3,7 @@ import React from 'react';
 import { Dimensions, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ImageSpotify } from '../interfaces/ImageSpotify';
+import { Constants } from '../constants/Constants';
 interface ListPositionProps {
     image: ImageSpotify;
     title: string;
@@ -46,16 +47,22 @@ export default function ListPosition(props: ListPositionProps) {
     return (
         <View style={styles.container}>
             <ImageBackground 
-                source={{uri: props.image.url}} 
+                source={{uri: props.image ? props.image.url : Constants.NO_IMAGE_FOUND}} 
                 style={styles.containerImageBackground}
                 imageStyle={styles.image}>
                     <View style={styles.wrapperTimer}>
                         <MaterialCommunityIcons name="progress-clock" size={18} color='white' />
-                        <Text style={styles.timerText}>{calculateDifferenceToNow(props.date)}</Text>
+                        <Text style={styles.timerText}>
+                            {calculateDifferenceToNow(props.date)}
+                        </Text>
                     </View>
                     <LinearGradient colors={['transparent', 'rgba(0,0,0,0.8)']} style={styles.linearGradient}>
-                        <Text style={styles.titleText} numberOfLines={3}>{ props.title }</Text>
-                        <Text style={styles.subTitleText} numberOfLines={3}>{ props.subTitle }</Text>
+                        <Text style={styles.titleText} numberOfLines={3}>
+                            { props.title?.length > 0 ? props.title : '-' }
+                        </Text>
+                        <Text style={styles.subTitleText} numberOfLines={3}>
+                            { props.subTitle?.length > 0 ? props.subTitle : ' ' }
+                        </Text>
                     </LinearGradient>
             </ImageBackground>
         </View>

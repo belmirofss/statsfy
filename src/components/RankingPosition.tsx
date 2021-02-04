@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import { Constants } from '../constants/Constants';
 import { ImageSpotify } from '../interfaces/ImageSpotify';
 
 interface RankingPositionProps {
@@ -11,6 +12,17 @@ interface RankingPositionProps {
 }
 
 export default function RankingPosition(props: RankingPositionProps) {
+
+    function getSubtitle(subtitle: string | undefined) {
+        if (subtitle && subtitle.length > 0) {
+            return (
+                <Text style={styles.subTitleText} numberOfLines={2}>
+                    { subtitle }
+                </Text> 
+            )
+        }
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.positionWrapper}>
@@ -21,13 +33,15 @@ export default function RankingPosition(props: RankingPositionProps) {
                 <Image
                     style={styles.image}
                     source={{
-                        uri: props.image.url
+                        uri: props.image ? props.image.url : Constants.NO_IMAGE_FOUND
                     }}
                 />
 
                 <View style={styles.wrapperTitleAndSubTitle}>
-                    <Text style={styles.titleText} numberOfLines={2}>{ props.title }</Text>
-                    { props.subTitle && <Text style={styles.subTitleText} numberOfLines={2}>{ props.subTitle }</Text> }
+                    <Text style={styles.titleText} numberOfLines={2}>
+                        { props.title?.length > 0 ? props.title : '-' }
+                    </Text>
+                    {getSubtitle(props.subTitle)}
                 </View>
             </View>
         </View>

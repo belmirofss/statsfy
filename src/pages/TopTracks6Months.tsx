@@ -1,9 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-
 import RankingTopTracks from '../components/RankingTopTracks';
 
-export default function TopTracks6Months() {
+export default function TopTracksAllTime() {
     return (
         <ScrollView>
             <View style={styles.container}>

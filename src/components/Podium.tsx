@@ -4,6 +4,7 @@ import { View, StyleSheet, Image, Text } from 'react-native';
 import { PodiumItem } from '../interfaces/PodiumItem';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Constants } from '../constants/Constants';
 
 interface OtherPodiumProps extends PodiumItem {
     position: number;
@@ -13,6 +14,16 @@ interface WinnerPodiumProps extends PodiumItem {}
 
 interface PodiumProps {
     data: PodiumItem[];
+}
+
+function getSubtitle(subtitle: string | undefined, width: number) {
+    if (subtitle && subtitle.length > 0) {
+        return (
+            <Text style={{...podiumStyles.subTitleText, width}}>
+                { subtitle }
+            </Text> 
+        )
+    }
 }
 
 const WinnerPodium = (props: WinnerPodiumProps) => {
@@ -31,19 +42,14 @@ const WinnerPodium = (props: WinnerPodiumProps) => {
             <Image
                 style={winnerStyles.image}
                 source={{
-                    uri: props.image.url
+                    uri: props.image ? props.image.url : Constants.NO_IMAGE_FOUND
                 }}
             />
 
             <Text style={{...podiumStyles.titleText, width: 125}}>
-                { props.title }
+                { props.title?.length > 0 ? props.title : '-' }
             </Text>
-            { 
-                props.subTitle && 
-                <Text style={{...podiumStyles.subTitleText, width: 125}}>
-                    { props.subTitle }
-                </Text> 
-            }
+            { getSubtitle(props.subTitle, 125) }
         </View>
     );
 }
@@ -68,19 +74,14 @@ const OtherPodium = (props: OtherPodiumProps) => {
             <Image
                 style={otherStyles.image}
                 source={{
-                    uri: props.image.url
+                    uri: props.image ? props.image.url : Constants.NO_IMAGE_FOUND
                 }}
             />
 
             <Text style={{...podiumStyles.titleText, width: 85}}>
-                { props.title }
+                { props.title?.length > 0 ? props.title : '-' }
             </Text>
-            { 
-                props.subTitle && 
-                <Text style={{...podiumStyles.subTitleText, width: 85}}>
-                    { props.subTitle }
-                </Text>
-            }
+            { getSubtitle(props.subTitle, 85) }
         </View>
     );
 }
