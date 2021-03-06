@@ -3,7 +3,6 @@ import { Props } from '../interfaces/Props';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SpotifyApi from '../services/SpotifyApi';
 import { Alert } from 'react-native';
-import Loading from '../components/Loading';
 
 interface AuthContextData {
     isAuthenticated: boolean;
@@ -35,7 +34,6 @@ export function AuthProvider(props: Props) {
     );
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
 
     const authenticate = async (accessToken: string) => {
         const setToken = async (access_token: string) => {
@@ -55,12 +53,6 @@ export function AuthProvider(props: Props) {
     React.useEffect(() => {
         AsyncStorage.removeItem(ACCESS_TOKEN_KEY);
     }, []);
-
-    if (isLoading) {
-        return (
-            <Loading />
-        );
-    }
 
     return (
         <AuthContext.Provider value={{isAuthenticated, authenticate, logout}}>
