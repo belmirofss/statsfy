@@ -53,18 +53,7 @@ export function AuthProvider(props: Props) {
     }
 
     React.useEffect(() => {
-        const loadToken =  () => {
-            setIsLoading(true);
-            setTimeout(async () => {
-                const access_token = await AsyncStorage.getItem(ACCESS_TOKEN_KEY);
-                if (access_token) {
-                    await authenticate(access_token);
-                }
-                setIsLoading(false);
-            }, 1000); 
-        }
-
-        loadToken();
+        AsyncStorage.removeItem(ACCESS_TOKEN_KEY);
     }, []);
 
     if (isLoading) {
