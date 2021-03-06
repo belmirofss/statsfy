@@ -46,7 +46,7 @@ const WinnerPodium = (props: WinnerPodiumProps) => {
                 }}
             />
 
-            <Text style={{...podiumStyles.titleText, width: 125}}>
+            <Text style={{...podiumStyles.titleText, width: 125}} numberOfLines={3}>
                 { props.title?.length > 0 ? props.title : '-' }
             </Text>
             { getSubtitle(props.subTitle, 125) }
@@ -78,7 +78,7 @@ const OtherPodium = (props: OtherPodiumProps) => {
                 }}
             />
 
-            <Text style={{...podiumStyles.titleText, width: 85}}>
+            <Text style={{...podiumStyles.titleText, width: 85}} numberOfLines={3}>
                 { props.title?.length > 0 ? props.title : '-' }
             </Text>
             { getSubtitle(props.subTitle, 85) }
