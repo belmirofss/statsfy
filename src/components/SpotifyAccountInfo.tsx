@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { Constants } from '../constants/Constants';
 import { SpotifyAccount } from '../interfaces/SpotifyAccount';
 import SpotifyApi from '../services/SpotifyApi';
 import Loading from './Loading';
@@ -29,7 +30,7 @@ export default function SpotifyAccountInfo() {
             <Image
                 style={styles.profileImage}
                 source={{
-                    uri: spotifyAccountInfo.images[0].url
+                    uri: spotifyAccountInfo.images[0] ? spotifyAccountInfo.images[0].url : Constants.NO_IMAGE_FOUND
                 }}
             />
 
