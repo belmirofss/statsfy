@@ -1,3 +1,5 @@
+![Statsfy](https://i.imgur.com/dDoWnR7.png "Statsfy")
+
 # Statsfy
 Curious to know which artist has listened to the most? Statsfy is an app to discover not only that, but also the music you have been listening to the most and share it with your friends!
 
