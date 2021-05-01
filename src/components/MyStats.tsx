@@ -12,7 +12,6 @@ import Picker from './Picker';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import * as Sharing from 'expo-sharing'; 
-import Admob from '../services/Admob';
 
 interface MyStatsProps {
     close: Function;
@@ -53,8 +52,6 @@ export default function MyStats(props: MyStatsProps) {
         };
 
         await Sharing.shareAsync(uri, options);
-
-        Admob.showInterstitial();
     };
 
     React.useEffect(() => {

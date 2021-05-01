@@ -4,15 +4,10 @@ import { Modal, ScrollView, StyleSheet, View } from "react-native";
 import RecentlyPlayedList from '../components/RecentlyPlayedList';
 import ResumeTops from '../components/ResumeTops';
 import MyStats from '../components/MyStats';
-import Admob from '../services/Admob';
 import RountedButton from '../components/RoundedButton';
 
 export default function Resume() {
     const [modalVisible, setModalVisible] = useState(false);
-
-    React.useEffect(() => {
-        Admob.showInterstitial()
-    }, []);
     
     return (
         <ScrollView>
