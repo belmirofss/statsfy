@@ -1,13 +1,11 @@
-import axios, { AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
+import API from './API';
 
-const api = axios.create({
-    baseURL: 'https://api.spotify.com'
-});
+
 
 const SpotifyApi = {
-    api,
     listTopTracks: (timeRange: 'long_term' | 'medium_term' | 'short_term', limit: number = 50): Promise<AxiosResponse<any>> => {
-        return api.get('v1/me/top/tracks', {
+        return API.get('v1/me/top/tracks', {
             params: {
                 limit,
                 offset: 0,
@@ -16,7 +14,7 @@ const SpotifyApi = {
         });
     },
     listTopArtists: (timeRange: 'long_term' | 'medium_term' | 'short_term', limit: number = 50): Promise<AxiosResponse<any>> => {
-        return api.get('v1/me/top/artists', {
+        return API.get('v1/me/top/artists', {
             params: {
                 limit,
                 offset: 0,
@@ -25,7 +23,7 @@ const SpotifyApi = {
         });
     },
     listRecentlyPlayedTracks: (): Promise<AxiosResponse<any>> => {
-        return api.get('v1/me/player/recently-played', {
+        return API.get('v1/me/player/recently-played', {
             params: {
                 limit: 50,
                 offset: 0
@@ -33,7 +31,7 @@ const SpotifyApi = {
         });
     },
     getCurrentUserProfile: (): Promise<AxiosResponse<any>> => {
-        return api.get('v1/me');
+        return API.get('v1/me');
     }
 }
 

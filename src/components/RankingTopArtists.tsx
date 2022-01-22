@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-
 import { SimplifiedArtist } from '../interfaces/SimplifiedArtist';
 import SpotifyApi from '../services/SpotifyApi';
 import Loading from './Loading';
@@ -12,6 +11,7 @@ interface RankingTopArtistsProps {
 }
 
 export default function RankingTopArtists(props: RankingTopArtistsProps) {
+
     const [artists, setArtists] = React.useState<SimplifiedArtist[]>([]);
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
@@ -26,7 +26,7 @@ export default function RankingTopArtists(props: RankingTopArtistsProps) {
     if (isLoading) {
         return (
             <Loading />
-        )
+        );
     }
     
     return (

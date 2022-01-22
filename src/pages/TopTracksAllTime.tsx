@@ -3,6 +3,7 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import RankingTopTracks from '../components/RankingTopTracks';
 
 export default function TopTracksAllTime() {
+
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -15,7 +16,8 @@ export default function TopTracksAllTime() {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      padding: 16
+        backgroundColor: 'white',
+        flex: 1,
+        padding: 16
     }
 });

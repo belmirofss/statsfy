@@ -1,13 +1,13 @@
 import React, { createContext, useState } from 'react';
 import { Props } from '../interfaces/Props';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import SpotifyApi from '../services/SpotifyApi';
 import { Alert } from 'react-native';
+import API from '../services/API';
 
 interface AuthContextData {
     isAuthenticated: boolean;
-    authenticate: Function;
-    logout: Function;
+    authenticate(accessToken: string): void;
+    logout(): void;
 }
 
 const ACCESS_TOKEN_KEY = '@Statsfy:access_token';
@@ -16,7 +16,7 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export function AuthProvider(props: Props) {
 
-    SpotifyApi.api.interceptors.response.use(
+    API.interceptors.response.use(
         response => response,
         async error => {
             if (error.response.status === 401) {
@@ -41,12 +41,12 @@ export function AuthProvider(props: Props) {
         }
         
         await setToken(accessToken);
-        SpotifyApi.api.defaults.headers['Authorization'] = 'Bearer ' + accessToken;
+        API.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken;
         setIsAuthenticated(true);
     }
 
     const logout = () => {
-        delete SpotifyApi.api.defaults.headers['Authorization'];
+        delete API.defaults.headers.common['Authorization'];
         AsyncStorage.clear().then(() => setIsAuthenticated(false));
     }
 

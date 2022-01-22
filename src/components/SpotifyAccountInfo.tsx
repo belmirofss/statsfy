@@ -6,6 +6,7 @@ import SpotifyApi from '../services/SpotifyApi';
 import Loading from './Loading';
 
 export default function SpotifyAccountInfo() {
+
     const [isLoading, setIsLoading] = React.useState<boolean>(true);
     const [spotifyAccountInfo, setSpotifyAccountInfo] = React.useState<SpotifyAccount>({} as SpotifyAccount);
 

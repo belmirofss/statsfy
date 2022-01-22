@@ -14,6 +14,7 @@ import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'expo-status-bar';
 
 export default function App() {  
+
   const [fontsLoaded] = useFonts({
     clearSansRegular,
     clearSansBold,
@@ -22,9 +23,7 @@ export default function App() {
   React.useEffect(() => {}, [fontsLoaded]);
 
   if(!fontsLoaded) {
-    return (
-      <AppLoading />
-    );
+    return <AppLoading />;
   }
 
   return (

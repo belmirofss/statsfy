@@ -1,26 +1,32 @@
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import { BottomTabNavigationOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ResumeStackNavigator, TopTracksStackNavigator, TopArtistsStackNavigator } from './StackNavigator'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
+const screenOptions: BottomTabNavigationOptions = {
+  tabBarActiveTintColor: '#1ED760',
+  tabBarInactiveTintColor: 'black',
+  tabBarStyle: {
+    borderTopWidth: 0,
+    backgroundColor: 'white',
+    height: 56
+  },
+  tabBarLabelStyle: {
+    fontSize: 12,
+    fontFamily: 'clearSansBold',
+    paddingBottom: 4
+  },
+  header: () => null
+}
+
+const iconSize = 28;
+
 export default function BottomTabNavigator() {
     return (
       <Tab.Navigator 
-        tabBarOptions={{
-          activeTintColor: '#1ED760',
-          inactiveTintColor: 'black',
-          tabStyle: {
-            borderTopWidth: 0,
-            backgroundColor: 'white'
-          },
-          labelStyle: {
-            fontSize: 12,
-            fontFamily: 'clearSansBold'
-          }
-        }}
+        screenOptions={screenOptions}
         sceneContainerStyle={{
           backgroundColor: 'white'
         }}>
@@ -30,7 +36,7 @@ export default function BottomTabNavigator() {
           options={{
             title: 'Resume',
             tabBarIcon: ({ color }) => {
-              return <MaterialCommunityIcons name="home-outline" size={24} color={color} />; 
+              return <MaterialCommunityIcons name="home-outline" size={iconSize} color={color} />; 
             }
           }}
         />
@@ -40,7 +46,7 @@ export default function BottomTabNavigator() {
           options={{
             title: 'Top tracks',
             tabBarIcon: ({ color }) => {
-              return <MaterialCommunityIcons name="music" size={24} color={color} />; 
+              return <MaterialCommunityIcons name="music" size={iconSize} color={color} />; 
             }
           }}
         />
@@ -50,7 +56,7 @@ export default function BottomTabNavigator() {
           options={{
             title: 'Top artists',
             tabBarIcon: ({ color }) => {
-              return <MaterialCommunityIcons name="star-outline" size={24} color={color} />; 
+              return <MaterialCommunityIcons name="star-outline" size={iconSize} color={color} />; 
             }
           }}
         />

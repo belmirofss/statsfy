@@ -79,21 +79,21 @@ export default function Login() {
         disabled={!request}
         color="white"
         backgroundColor="#1ED760"
-        label="Log in"
+        label="Log in with Spotify"
         styles={{
           marginTop: 64
-        }}>
-      </RountedButton>
+        }}
+      />
 
       <RountedButton
-        onPress={() => navigation.navigate('About')}
+        onPress={() => navigation.navigate('About' as never)}
         color="black"
         backgroundColor="gainsboro"
         label="About the app"
         styles={{
           marginTop: 8
-        }}>
-      </RountedButton>
+        }}
+      />
     </View>
   );
 }

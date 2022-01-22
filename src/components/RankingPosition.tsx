@@ -13,7 +13,7 @@ interface RankingPositionProps {
 
 export default function RankingPosition(props: RankingPositionProps) {
 
-    function getSubtitle(subtitle: string | undefined) {
+    const getSubtitle = (subtitle: string | undefined) => {
         if (subtitle && subtitle.length > 0) {
             return (
                 <Text style={styles.subTitleText} numberOfLines={2}>

@@ -7,6 +7,7 @@ import MyStats from '../components/MyStats';
 import RountedButton from '../components/RoundedButton';
 
 export default function Resume() {
+
     const [modalVisible, setModalVisible] = useState(false);
     
     return (
@@ -27,8 +28,8 @@ export default function Resume() {
                         onPress={() => setModalVisible(true)}
                         color="white"
                         backgroundColor="#1ED760"
-                        label="Share my stats">
-                    </RountedButton>
+                        label="Share my stats"
+                    />
                 </View>
 
                 <View style={styles.marginTop}>

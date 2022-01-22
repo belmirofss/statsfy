@@ -10,14 +10,14 @@ import SpotifyApi from '../services/SpotifyApi';
 import Podium from './Podium';
 import Picker from './Picker';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
 import * as Sharing from 'expo-sharing'; 
 
 interface MyStatsProps {
-    close: Function;
+    close(): void;
 }
 
 export default function MyStats(props: MyStatsProps) {
+
     const [tracks, setTracks] = React.useState<SimplifiedTrack[]>([]);
     const [artists, setArtists] = React.useState<SimplifiedArtist[]>([]);
     const [spotifyAccountInfo, setSpotifyAccountInfo] = React.useState<SpotifyAccount>({} as SpotifyAccount);
@@ -37,7 +37,9 @@ export default function MyStats(props: MyStatsProps) {
             Alert.alert(
                 "Uh oh, sharing isn't available on your device!",
                 "",
-                [{ text: "OK", onPress: () => null }],
+                [
+                    { text: "OK", onPress: () => null }
+                ],
                 { cancelable: false }
             );
           return;
@@ -69,7 +71,7 @@ export default function MyStats(props: MyStatsProps) {
             <View style={{ height: '80%', width: 250}}>
                 <Loading />
             </View>
-        )
+        );
     }
 
     return (

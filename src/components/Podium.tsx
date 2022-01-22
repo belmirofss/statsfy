@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image, Text } from 'react-native';
+import { View, StyleSheet, Image, Text, Dimensions } from 'react-native';
 
 import { PodiumItem } from '../interfaces/PodiumItem';
 
@@ -27,10 +27,12 @@ function getSubtitle(subtitle: string | undefined, width: number) {
 }
 
 const WinnerPodium = (props: WinnerPodiumProps) => {
+    const cardSize = Dimensions.get('window').width / 3 * 1.25 - 20;
+
     const winnerStyles = {
         image: {
-            height: 125,
-            width: 125,
+            height: cardSize,
+            width: cardSize,
             borderRadius: 100
         }
     }
@@ -46,20 +48,24 @@ const WinnerPodium = (props: WinnerPodiumProps) => {
                 }}
             />
 
-            <Text style={{...podiumStyles.titleText, width: 125}} numberOfLines={3}>
+            <Text style={{...podiumStyles.titleText, width: cardSize}} numberOfLines={3}>
                 { props.title?.length > 0 ? props.title : '-' }
             </Text>
-            { getSubtitle(props.subTitle, 125) }
+
+            { getSubtitle(props.subTitle, cardSize) }
         </View>
     );
 }
 
 const OtherPodium = (props: OtherPodiumProps) => {
-    const otherStyles = {
+    const cardSize = Dimensions.get('window').width / 3 * 0.875 - 20;
+
+    const otherStyles= {
         image: {
-            height: 85,
-            width: 85,
-            borderRadius: 100
+            height: cardSize,
+            width: cardSize,
+            borderRadius: 100,
+            marginTop: cardSize / 4
         }
     }
 
@@ -78,44 +84,45 @@ const OtherPodium = (props: OtherPodiumProps) => {
                 }}
             />
 
-            <Text style={{...podiumStyles.titleText, width: 85}} numberOfLines={3}>
+            <Text style={{...podiumStyles.titleText, width: cardSize}} numberOfLines={3}>
                 { props.title?.length > 0 ? props.title : '-' }
             </Text>
-            { getSubtitle(props.subTitle, 85) }
+
+            { getSubtitle(props.subTitle, cardSize) }
         </View>
     );
 }
 
 export default function Podium(props: PodiumProps) {
+
     const items = props.data;
     
-    if (items.length > 2) {
-        return (
-            <View style={styles.container}>
-                <OtherPodium 
-                    position={2} 
-                    id={items[1].id} 
-                    title={items[1].title} 
-                    subTitle={items[1].subTitle} 
-                    image={items[1].image}/>
+    return (
+        <View style={styles.container}>
+            <OtherPodium 
+                position={2} 
+                id={items[1].id} 
+                title={items[1].title} 
+                subTitle={items[1].subTitle} 
+                image={items[1].image}
+            />
 
-                <WinnerPodium 
-                    id={items[0].id} 
-                    title={items[0].title} 
-                    subTitle={items[0].subTitle} 
-                    image={items[0].image}/>
+            <WinnerPodium 
+                id={items[0].id} 
+                title={items[0].title} 
+                subTitle={items[0].subTitle} 
+                image={items[0].image}
+            />
 
-                <OtherPodium 
-                    position={3} 
-                    id={items[2].id} 
-                    title={items[2].title} 
-                    subTitle={items[2].subTitle} 
-                    image={items[2].image}/>
-            </View>
-        );
-    } else {
-        return null;
-    }
+            <OtherPodium 
+                position={3} 
+                id={items[2].id} 
+                title={items[2].title} 
+                subTitle={items[2].subTitle} 
+                image={items[2].image}
+            />
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({

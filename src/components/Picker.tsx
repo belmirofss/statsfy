@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import RNPickerSelect from 'react-native-picker-select';
 
 interface PickerProps {
-    onValueChange: Function;
+    onValueChange(value: any): void;
     items: { label: string, value: any }[];
     value: any;
     children: ReactNode;
@@ -25,32 +25,33 @@ export default function Picker(props: PickerProps) {
     return (
         <View>
             <RNPickerSelect
-                    onValueChange={(value) => props.onValueChange(value)}
-                    items={props.items}
-                    placeholder={{}}
-                    style={{
-                        inputAndroid: {
-                            color: 'black',
-                            fontSize: props.fontSize,
-                            fontFamily: 'clearSansBold',
-                            padding: 8
-                        },
-                        inputAndroidContainer: {
-                            borderWidth: 1,
-                            borderColor: 'gainsboro',
-                            borderRadius: 100,
-                            width: props.width,
-                            marginLeft: 4
-                        }
-                    }}
-                    useNativeAndroidPickerStyle={false}
-                    value={props.value}
-                />
-                <MaterialCommunityIcons 
-                    style={styles.iconRNPicker} 
-                    name="chevron-down" 
-                    color="gainsboro" 
-                    size={24} />
+                onValueChange={value => props.onValueChange(value)}
+                items={props.items}
+                placeholder={{}}
+                style={{
+                    inputAndroid: {
+                        color: 'black',
+                        fontSize: props.fontSize,
+                        fontFamily: 'clearSansBold',
+                        padding: 8
+                    },
+                    inputAndroidContainer: {
+                        borderWidth: 1,
+                        borderColor: 'gainsboro',
+                        borderRadius: 100,
+                        width: props.width,
+                        marginLeft: 4
+                    }
+                }}
+                useNativeAndroidPickerStyle={false}
+                value={props.value}
+            />
+            <MaterialCommunityIcons 
+                style={styles.iconRNPicker} 
+                name="chevron-down" 
+                color="gainsboro" 
+                size={24}
+            />
         </View>
     );
 }

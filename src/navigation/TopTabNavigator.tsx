@@ -1,8 +1,5 @@
 import React from 'react';
-import { createMaterialTopTabNavigator, MaterialTopTabBarOptions } from '@react-navigation/material-top-tabs';
-
-const Tab = createMaterialTopTabNavigator();
-
+import { createMaterialTopTabNavigator, MaterialTopTabNavigationOptions } from '@react-navigation/material-top-tabs';
 import TopArtistsAllTime from '../pages/TopArtistsAllTime';
 import TopArtists6Months from '../pages/TopArtists6Months';
 import TopArtists4Weeks from '../pages/TopArtists4Weeks';
@@ -11,29 +8,24 @@ import TopTracks6Months from '../pages/TopTracks6Months';
 import TopTracks4Weeks from '../pages/TopTracks4Weeks';
 import { StyleProp, ViewStyle } from 'react-native';
 
-const tabBarOptions: MaterialTopTabBarOptions = {
-    activeTintColor: '#1ED760',
-    inactiveTintColor: 'black',
-    labelStyle: {
+const screenOptions: MaterialTopTabNavigationOptions = {
+    tabBarActiveTintColor: '#1ED760',
+    tabBarInactiveTintColor: 'black',
+    tabBarLabelStyle: {
         fontSize: 14,
         fontFamily: 'clearSansBold',
         textTransform: 'none'
     },
-    indicatorStyle: {
+    tabBarIndicatorStyle: {
         backgroundColor: '#1ED760'
     }
 }
 
-const sceneContainerStyle: StyleProp<ViewStyle> = {
-    backgroundColor: 'white'
-}
+const Tab = createMaterialTopTabNavigator();
 
 const TopTabArtistsNavigator = () => {
     return (
-        <Tab.Navigator 
-            tabBarOptions={tabBarOptions} 
-            lazy={true}
-            sceneContainerStyle={sceneContainerStyle}>
+        <Tab.Navigator screenOptions={screenOptions}>
             <Tab.Screen 
                 name="TopArtistsAllTime" 
                 component={TopArtistsAllTime} 
@@ -61,10 +53,7 @@ const TopTabArtistsNavigator = () => {
 
 const TopTabTracksNavigator = () => {
     return (
-        <Tab.Navigator 
-            tabBarOptions={tabBarOptions} 
-            lazy={true}
-            sceneContainerStyle={sceneContainerStyle}>
+        <Tab.Navigator screenOptions={screenOptions}>
             <Tab.Screen 
                 name="TopTracksAllTime" 
                 component={TopTracksAllTime} 

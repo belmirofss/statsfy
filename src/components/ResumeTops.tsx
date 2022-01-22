@@ -10,6 +10,7 @@ import Picker from './Picker';
 const PodiumToShow = (props: { 
     mode: 'tracks' | 'artists' 
 }) => {
+
     const [isLoading, setIsLoading] = React.useState<boolean>(true);
     const [tracks, setTracks] = React.useState<SimplifiedTrack[]>([]);
     const [artists, setArtists] = React.useState<SimplifiedArtist[]>([]);

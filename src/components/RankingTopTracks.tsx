@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-
 import { SimplifiedTrack } from '../interfaces/SimplifiedTrack';
 import SpotifyApi from '../services/SpotifyApi';
 import Loading from './Loading';
@@ -12,6 +11,7 @@ interface RankingTopTracksProps {
 }
 
 export default function RankingTopTracks(props: RankingTopTracksProps) {
+
     const [tracks, setTracks] = React.useState<SimplifiedTrack[]>([]);
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
@@ -26,7 +26,7 @@ export default function RankingTopTracks(props: RankingTopTracksProps) {
     if (isLoading) {
         return (
             <Loading />
-        )
+        );
     }
 
     return (

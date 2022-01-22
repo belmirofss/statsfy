@@ -6,15 +6,18 @@ import ListPosition from './ListPosition';
 import Loading from './Loading';
 
 export default function RecentlyPlayedList() {
+
     const [history, setHistory] = React.useState<PlayHistoryTrack[]>([]);
     const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
     React.useEffect(() => {
         setIsLoading(true);
-        SpotifyApi.listRecentlyPlayedTracks().then(response => {
-            setHistory(response.data.items);
-            setIsLoading(false);
-        })
+        SpotifyApi.listRecentlyPlayedTracks().then(
+            response => {
+                setHistory(response.data.items);
+                setIsLoading(false);
+            }
+        );
     }, []);
 
     if (isLoading) {
@@ -43,7 +46,6 @@ export default function RecentlyPlayedList() {
                     }) 
                 }
             </View>
-            
         </View>
     );
 }

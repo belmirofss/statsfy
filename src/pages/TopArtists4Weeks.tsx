@@ -3,6 +3,7 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import RankingTopArtists from '../components/RankingTopArtists';
 
 export default function TopArtists4Weeks() {
+
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -14,7 +15,8 @@ export default function TopArtists4Weeks() {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      padding: 16
+        backgroundColor: 'white',
+        flex: 1,
+        padding: 16
     }
 });

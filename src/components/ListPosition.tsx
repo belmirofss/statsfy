@@ -12,6 +12,7 @@ interface ListPositionProps {
 }
 
 export default function ListPosition(props: ListPositionProps) {
+
     const calculateDifferenceToNow = (timestamp: string): string => {
         const date = new Date(timestamp);
         const now = new Date();
@@ -69,13 +70,13 @@ export default function ListPosition(props: ListPositionProps) {
     );
 }
 
-const widthWindow = Dimensions.get('window').width;
+const cardSize = Dimensions.get('window').width / 2 - 20;
 
 const styles = StyleSheet.create({
     container: {
         marginVertical: 4,
-        height: widthWindow * 0.425,
-        width: widthWindow * 0.425,
+        height: cardSize,
+        width: cardSize,
     },
     containerImageBackground: {
         justifyContent: 'flex-end',
