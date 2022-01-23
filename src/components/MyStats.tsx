@@ -112,7 +112,7 @@ export default function MyStats(props: MyStatsProps) {
                             onLayout={(event) => { 
                                 viewDimensions.width = event.nativeEvent.layout.width;
                                 viewDimensions.height = event.nativeEvent.layout.height;
-                             }}>
+                            }}>
                             <View>
                                 <Text style={styles.nameText}>{spotifyAccountInfo.display_name}</Text>
                                 <Text style={styles.sectionSubTitle}>
@@ -127,14 +127,16 @@ export default function MyStats(props: MyStatsProps) {
                             </View>
                             <View style={styles.section}>
                                 <Text style={styles.sectionTitle}>Top tracks</Text>
-
+                                
                                 <Podium 
                                     data={tracks.map(item => ({
                                         id: item.id,
                                         title: item.name,
                                         subTitle: item.artists.map(item => item.name).join(', '),
                                         image: item.album.images[0]
-                                    }))}/>
+                                    }))}
+                                />
+                                
                             </View>
                             
                             <View style={styles.section}>
@@ -145,7 +147,8 @@ export default function MyStats(props: MyStatsProps) {
                                         id: item.id,
                                         title: item.name,
                                         image: item.images[0]
-                                    }))}/>
+                                    }))}
+                                />
                             </View>
 
                             <View style={{marginTop: 32}}>

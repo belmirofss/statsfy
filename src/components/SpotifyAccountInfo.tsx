@@ -1,9 +1,9 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
-import { Constants } from '../constants/Constants';
 import { SpotifyAccount } from '../interfaces/SpotifyAccount';
 import SpotifyApi from '../services/SpotifyApi';
 import Loading from './Loading';
+import notFound from '../images/not_found.png';
 
 export default function SpotifyAccountInfo() {
 
@@ -30,9 +30,9 @@ export default function SpotifyAccountInfo() {
         <View style={styles.container}>
             <Image
                 style={styles.profileImage}
-                source={{
-                    uri: spotifyAccountInfo.images[0] ? spotifyAccountInfo.images[0].url : Constants.NO_IMAGE_FOUND
-                }}
+                source={spotifyAccountInfo.images[0] ? {
+                    uri: spotifyAccountInfo.images[0].url
+                } : notFound}
             />
 
             <Text style={styles.nameText}>[{spotifyAccountInfo.country.toUpperCase()}] { spotifyAccountInfo.display_name }</Text>
@@ -54,7 +54,9 @@ const styles = StyleSheet.create({
     profileImage: {
         borderRadius: 100,
         width: 125,
-        height: 125
+        height: 125,
+        borderColor: 'whitesmoke',
+        borderWidth: 1
     },
     nameText: {
         fontSize: 14,

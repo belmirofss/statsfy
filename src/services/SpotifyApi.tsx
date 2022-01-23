@@ -25,7 +25,7 @@ const SpotifyApi = {
     listRecentlyPlayedTracks: (): Promise<AxiosResponse<any>> => {
         return API.get('v1/me/player/recently-played', {
             params: {
-                limit: 50,
+                limit: 30,
                 offset: 0
             }
         });

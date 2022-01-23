@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { Constants } from '../constants/Constants';
 import { ImageSpotify } from '../interfaces/ImageSpotify';
+import notFound from '../images/not_found.png';
 
 interface RankingPositionProps {
     position: number;
@@ -32,9 +32,9 @@ export default function RankingPosition(props: RankingPositionProps) {
             <View style={styles.innerContainer}>
                 <Image
                     style={styles.image}
-                    source={{
-                        uri: props.image ? props.image.url : Constants.NO_IMAGE_FOUND
-                    }}
+                    source={props.image ? {
+                        uri: props.image.url
+                    } : notFound}
                 />
 
                 <View style={styles.wrapperTitleAndSubTitle}>
@@ -85,7 +85,9 @@ const styles = StyleSheet.create({
     image: {
         height: 75,
         width: 75,
-        borderRadius: 100
+        borderRadius: 100,
+        borderWidth: 1,
+        borderColor: 'whitesmoke'
     },
     titleText: {
         fontSize: 14,

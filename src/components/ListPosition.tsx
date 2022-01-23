@@ -3,7 +3,7 @@ import React from 'react';
 import { Dimensions, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ImageSpotify } from '../interfaces/ImageSpotify';
-import { Constants } from '../constants/Constants';
+import notFoundImg from '../images/not_found.png';
 interface ListPositionProps {
     image: ImageSpotify;
     title: string;
@@ -48,16 +48,16 @@ export default function ListPosition(props: ListPositionProps) {
     return (
         <View style={styles.container}>
             <ImageBackground 
-                source={{uri: props.image ? props.image.url : Constants.NO_IMAGE_FOUND}} 
+                source={props.image ? {uri: props.image.url} : notFoundImg} 
                 style={styles.containerImageBackground}
                 imageStyle={styles.image}>
                     <View style={styles.wrapperTimer}>
-                        <MaterialCommunityIcons name="progress-clock" size={18} color='white' />
+                        <MaterialCommunityIcons name="progress-clock" size={12} color='white' />
                         <Text style={styles.timerText}>
                             {calculateDifferenceToNow(props.date)}
                         </Text>
                     </View>
-                    <LinearGradient colors={['transparent', 'rgba(0,0,0,0.8)']} style={styles.linearGradient}>
+                    <LinearGradient colors={['transparent', 'rgba(0,0,0,0.9)']} style={styles.linearGradient}>
                         <Text style={styles.titleText} numberOfLines={3}>
                             { props.title?.length > 0 ? props.title : '-' }
                         </Text>
@@ -70,13 +70,14 @@ export default function ListPosition(props: ListPositionProps) {
     );
 }
 
-const cardSize = Dimensions.get('window').width / 2 - 20;
+const cardSize = Dimensions.get('window').width / 3 - 20;
 
 const styles = StyleSheet.create({
     container: {
         marginVertical: 4,
         height: cardSize,
         width: cardSize,
+        borderRadius: 8
     },
     containerImageBackground: {
         justifyContent: 'flex-end',
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
         borderRadius: 8
     },
     titleText: {
-        fontSize: 14,
+        fontSize: 12,
         fontFamily: 'clearSansBold',
         color: 'white',
         textShadowColor: 'rgba(0, 0, 0, 1)',
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
         textShadowRadius: 5
     },
     subTitleText: {
-        fontSize: 12,
+        fontSize: 10,
         fontFamily: 'clearSansRegular',
         color: 'white',
         textShadowColor: 'rgba(0, 0, 0, 1)',
@@ -115,8 +116,7 @@ const styles = StyleSheet.create({
     wrapperTimer: {
         flexDirection: 'row',
         backgroundColor: '#00000073',
-        minWidth: 50,
-        height: 30,
+        padding: 4,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 100,
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     },
     timerText: {
         color: 'white',
-        fontSize: 12,
+        fontSize: 9,
         marginLeft: 2,
         fontFamily: 'clearSansRegular'
     }

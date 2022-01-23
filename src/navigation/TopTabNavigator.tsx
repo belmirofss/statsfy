@@ -25,7 +25,11 @@ const Tab = createMaterialTopTabNavigator();
 
 const TopTabArtistsNavigator = () => {
     return (
-        <Tab.Navigator screenOptions={screenOptions}>
+        <Tab.Navigator
+            screenOptions={screenOptions}
+            sceneContainerStyle={{
+                backgroundColor: 'white'
+            }}>
             <Tab.Screen 
                 name="TopArtistsAllTime" 
                 component={TopArtistsAllTime} 
@@ -53,7 +57,11 @@ const TopTabArtistsNavigator = () => {
 
 const TopTabTracksNavigator = () => {
     return (
-        <Tab.Navigator screenOptions={screenOptions}>
+        <Tab.Navigator
+            screenOptions={screenOptions}
+            sceneContainerStyle={{
+                backgroundColor: 'white'
+            }}>
             <Tab.Screen 
                 name="TopTracksAllTime" 
                 component={TopTracksAllTime} 

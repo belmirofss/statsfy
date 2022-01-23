@@ -1,9 +1,7 @@
 import React, { useContext } from 'react';
 import { StyleSheet, View, Image, Text } from 'react-native';
-
 import * as WebBrowser from 'expo-web-browser';
 import { makeRedirectUri, useAuthRequest, ResponseType } from 'expo-auth-session';
-
 import logo from '../images/logo_statsfy.png';
 import AuthContext from '../contexts/Auth';
 import { useNavigation } from '@react-navigation/native';

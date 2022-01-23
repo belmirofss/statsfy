@@ -1,8 +1,6 @@
 import React from 'react';
 import { Image, View, StyleSheet, Text, ScrollView } from 'react-native';
-
 import logo from '../images/logo_statsfy.png';
-
 import appInfo from '../../app.json';
 
 export default function About() {
