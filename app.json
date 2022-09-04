@@ -2,7 +2,7 @@
   "expo": {
     "name": "Statsfy",
     "slug": "statsfy",
-    "version": "1.2.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "com.yabcompany.statsfy",
@@ -22,7 +22,7 @@
     },
     "android": {
       "package": "com.yabcompany.statsfy",
-      "versionCode": 6,
+      "versionCode": 7,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

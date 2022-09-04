@@ -1,43 +1,54 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Theme } from "../theme";
 
-interface RountedButtonProps {
-    onPress(): void;
-    backgroundColor: string;
-    color: string;
-    label: string;
-    disabled?: boolean;
-    styles?: Object;
-}
+type Props = {
+  label: string;
+  type: "primary" | "warn" | "neutral";
+  onPress: () => void;
+};
 
-export default function RountedButton(props: RountedButtonProps) {
+export default function RountedButton({ label, type, onPress }: Props) {
+  const getStyle = (): { background: string; color: string } => {
+    if (type === "primary") {
+      return {
+        background: Theme.colors.primary,
+        color: Theme.colors.white,
+      };
+    }
 
-    const styles = StyleSheet.create({
-        button: {
-            backgroundColor: props.backgroundColor,
-            paddingHorizontal: 8,
-            paddingVertical: 12,
-            width: '100%',
-            borderRadius: 100,
-            ... props.styles
-        },
-        text: {
-            textAlign: 'center',
-            color: props.color,
-            fontSize: 18,
-            fontFamily: 'clearSansBold'
-        }
-    });
+    if (type === "warn") {
+      return {
+        background: Theme.colors.warn,
+        color: Theme.colors.white,
+      };
+    }
 
-    return (
-        <View style={{ width: '100%' }}>
-            <TouchableOpacity 
-                style={styles.button} 
-                onPress={() => props.onPress()}
-                disabled={props.disabled}>
-                <Text style={styles.text}>{props.label}</Text>
-            </TouchableOpacity>
-        </View>
-    );
+    return {
+      background: Theme.colors.gray,
+      color: Theme.colors.black,
+    };
+  };
+
+  const styles = StyleSheet.create({
+    button: {
+      backgroundColor: getStyle().background,
+      paddingHorizontal: 8,
+      paddingVertical: 12,
+      width: "100%",
+      borderRadius: 100,
+    },
+    text: {
+      textAlign: "center",
+      color: getStyle().color,
+      fontSize: 18,
+      fontFamily: Theme.fonts.bold,
+    },
+  });
+
+  return (
+    <TouchableOpacity style={styles.button} onPress={onPress}>
+      <Text style={styles.text}>{label}</Text>
+    </TouchableOpacity>
+  );
 }

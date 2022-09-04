@@ -1,93 +1,94 @@
-import React from 'react';
-import { createMaterialTopTabNavigator, MaterialTopTabNavigationOptions } from '@react-navigation/material-top-tabs';
-import TopArtistsAllTime from '../pages/TopArtistsAllTime';
-import TopArtists6Months from '../pages/TopArtists6Months';
-import TopArtists4Weeks from '../pages/TopArtists4Weeks';
-import TopTracksAllTime from '../pages/TopTracksAllTime';
-import TopTracks6Months from '../pages/TopTracks6Months';
-import TopTracks4Weeks from '../pages/TopTracks4Weeks';
-import { StyleProp, ViewStyle } from 'react-native';
+import React from "react";
+import {
+  createMaterialTopTabNavigator,
+  MaterialTopTabNavigationOptions,
+} from "@react-navigation/material-top-tabs";
+import { Theme } from "../theme";
+import TopArtists from "../pages/TopArtists";
+import { SpotifyTimeRanges } from "../types";
+import TopTracks from "../pages/TopTracks";
 
 const screenOptions: MaterialTopTabNavigationOptions = {
-    tabBarActiveTintColor: '#1ED760',
-    tabBarInactiveTintColor: 'black',
-    tabBarLabelStyle: {
-        fontSize: 14,
-        fontFamily: 'clearSansBold',
-        textTransform: 'none'
-    },
-    tabBarIndicatorStyle: {
-        backgroundColor: '#1ED760'
-    }
-}
+  tabBarActiveTintColor: Theme.colors.primary,
+  tabBarInactiveTintColor: Theme.colors.black,
+  tabBarLabelStyle: {
+    fontSize: Theme.fontSizes.medium,
+    fontFamily: Theme.fonts.bold,
+    textTransform: "none",
+  },
+  tabBarIndicatorStyle: {
+    backgroundColor: Theme.colors.primary,
+  },
+  lazy: true,
+  lazyPreloadDistance: 1,
+};
 
 const Tab = createMaterialTopTabNavigator();
 
 const TopTabArtistsNavigator = () => {
-    return (
-        <Tab.Navigator
-            screenOptions={screenOptions}
-            sceneContainerStyle={{
-                backgroundColor: 'white'
-            }}>
-            <Tab.Screen 
-                name="TopArtistsAllTime" 
-                component={TopArtistsAllTime} 
-                options={{
-                    title: 'All time',
-                }}
-            />
-            <Tab.Screen 
-                name="TopArtists6Months" 
-                component={TopArtists6Months}
-                options={{
-                    title: 'Last 6 months',
-                }}
-            />
-            <Tab.Screen 
-                name="TopArtists4Weeks" 
-                component={TopArtists4Weeks}
-                options={{
-                    title: 'Last 4 weeks',
-                }}
-            />
-        </Tab.Navigator>
-    );
-}
+  return (
+    <Tab.Navigator
+      screenOptions={screenOptions}
+      sceneContainerStyle={{
+        backgroundColor: Theme.colors.white,
+      }}
+    >
+      <Tab.Screen
+        name="TopArtistsAllTime"
+        component={() => <TopArtists timeRange={SpotifyTimeRanges.LONG} />}
+        options={{
+          title: "All time",
+        }}
+      />
+      <Tab.Screen
+        name="TopArtists6Months"
+        component={() => <TopArtists timeRange={SpotifyTimeRanges.MEDIUM} />}
+        options={{
+          title: "Last 6 months",
+        }}
+      />
+      <Tab.Screen
+        name="TopArtists4Weeks"
+        component={() => <TopArtists timeRange={SpotifyTimeRanges.SHORT} />}
+        options={{
+          title: "Last 4 weeks",
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
 
 const TopTabTracksNavigator = () => {
-    return (
-        <Tab.Navigator
-            screenOptions={screenOptions}
-            sceneContainerStyle={{
-                backgroundColor: 'white'
-            }}>
-            <Tab.Screen 
-                name="TopTracksAllTime" 
-                component={TopTracksAllTime} 
-                options={{
-                    title: 'All time',
-                }}
-            />
-            <Tab.Screen 
-                name="TopTracks6Months" 
-                component={TopTracks6Months}
-                options={{
-                    title: 'Last 6 months',
-                }}
-            />
-            <Tab.Screen 
-                name="TopTracks4Weeks" 
-                component={TopTracks4Weeks}
-                options={{
-                    title: 'Last 4 weeks',
-                }}
-            />
-        </Tab.Navigator>
-    );
-}
-
-export {
-    TopTabTracksNavigator,
-    TopTabArtistsNavigator
+  return (
+    <Tab.Navigator
+      screenOptions={screenOptions}
+      sceneContainerStyle={{
+        backgroundColor: Theme.colors.white,
+      }}
+    >
+      <Tab.Screen
+        name="TopTracksAllTime"
+        component={() => <TopTracks timeRange={SpotifyTimeRanges.LONG} />}
+        options={{
+          title: "All time",
+        }}
+      />
+      <Tab.Screen
+        name="TopTracks6Months"
+        component={() => <TopTracks timeRange={SpotifyTimeRanges.MEDIUM} />}
+        options={{
+          title: "Last 6 months",
+        }}
+      />
+      <Tab.Screen
+        name="TopTracks4Weeks"
+        component={() => <TopTracks timeRange={SpotifyTimeRanges.SHORT} />}
+        options={{
+          title: "Last 4 weeks",
+        }}
+      />
+    </Tab.Navigator>
+  );
 };
+
+export { TopTabTracksNavigator, TopTabArtistsNavigator };

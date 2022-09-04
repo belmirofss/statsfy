@@ -1,101 +1,102 @@
-import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { ImageSpotify } from '../interfaces/ImageSpotify';
-import notFound from '../images/not_found.png';
+import React from "react";
+import { Image, StyleSheet, Text, View } from "react-native";
+import NOT_FOUND_IMG from "../images/not_found.png";
+import { Theme } from "../theme";
+import { SpotifyImage } from "../types";
 
-interface RankingPositionProps {
-    position: number;
-    title: string;
-    image: ImageSpotify;
-    subTitle?: string;
-    id: string;
-}
+type Props = {
+  position: number;
+  title: string;
+  image: SpotifyImage;
+  subTitle?: string;
+};
 
-export default function RankingPosition(props: RankingPositionProps) {
+export default function RankingPosition({
+  position,
+  title,
+  image,
+  subTitle,
+}: Props) {
+  return (
+    <View style={styles.container}>
+      <View style={styles.wrapperPosition}>
+        <Text style={styles.position}>{position}</Text>
+      </View>
 
-    const getSubtitle = (subtitle: string | undefined) => {
-        if (subtitle && subtitle.length > 0) {
-            return (
-                <Text style={styles.subTitleText} numberOfLines={2}>
-                    { subtitle }
-                </Text> 
-            )
-        }
-    }
+      <View style={styles.content}>
+        <Image
+          style={styles.image}
+          source={
+            image
+              ? {
+                  uri: image.url,
+                }
+              : NOT_FOUND_IMG
+          }
+        />
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.positionWrapper}>
-                <Text style={styles.positionText}>{props.position}</Text>
-            </View>
-
-            <View style={styles.innerContainer}>
-                <Image
-                    style={styles.image}
-                    source={props.image ? {
-                        uri: props.image.url
-                    } : notFound}
-                />
-
-                <View style={styles.wrapperTitleAndSubTitle}>
-                    <Text style={styles.titleText} numberOfLines={2}>
-                        { props.title?.length > 0 ? props.title : '-' }
-                    </Text>
-                    {getSubtitle(props.subTitle)}
-                </View>
-            </View>
+        <View style={styles.wrapperTitleAndSubTitle}>
+          <Text style={styles.title} numberOfLines={2}>
+            {title || "-"}
+          </Text>
+          {subTitle && (
+            <Text style={styles.subTitle} numberOfLines={2}>
+              {subTitle}
+            </Text>
+          )}
         </View>
-    );
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flexDirection: 'row',
-      marginVertical: 4
-    },
-    innerContainer: {
-        flexDirection: 'row',
-        height: 100,
-        flex: 1,
-        alignItems: 'center',
-        paddingRight: 24,
-        paddingLeft: 12,
-        paddingVertical: 12,
-        borderWidth: 1,
-        borderColor: 'gainsboro',
-        borderRadius: 100,
-    },
-    wrapperTitleAndSubTitle: {
-        marginLeft: 8,
-        justifyContent: 'center',
-        flex: 1
-    },
-    positionWrapper: {
-        width: 36,
-        justifyContent: 'center',
-    },
-    positionText: {
-        display: 'flex',
-        fontSize: 18,
-        textAlign: 'center',
-        fontFamily: 'clearSansBold',
-        width: 36,
-        justifyContent: 'center'
-    },
-    image: {
-        height: 75,
-        width: 75,
-        borderRadius: 100,
-        borderWidth: 1,
-        borderColor: 'whitesmoke'
-    },
-    titleText: {
-        fontSize: 14,
-        fontFamily: 'clearSansBold'
-    },
-    subTitleText: {
-        fontSize: 12,
-        fontFamily: 'clearSansRegular',
-        color: 'gray',
-    }
+  container: {
+    flexDirection: "row",
+    marginVertical: 4,
+  },
+  content: {
+    flexDirection: "row",
+    height: 100,
+    flex: 1,
+    alignItems: "center",
+    paddingRight: 24,
+    paddingLeft: 12,
+    paddingVertical: 12,
+    borderWidth: 2,
+    borderColor: Theme.colors.gray,
+    borderRadius: 100,
+  },
+  wrapperTitleAndSubTitle: {
+    marginLeft: 8,
+    justifyContent: "center",
+    flex: 1,
+  },
+  wrapperPosition: {
+    width: 36,
+    justifyContent: "center",
+  },
+  position: {
+    display: "flex",
+    fontSize: Theme.fontSizes.medium,
+    textAlign: "center",
+    fontFamily: Theme.fonts.bold,
+    width: 36,
+    justifyContent: "center",
+  },
+  image: {
+    height: 75,
+    width: 75,
+    borderRadius: 100,
+    borderWidth: 2,
+    borderColor: Theme.colors.black,
+  },
+  title: {
+    fontSize: Theme.fontSizes.small,
+    fontFamily: Theme.fonts.bold,
+  },
+  subTitle: {
+    fontSize: Theme.fontSizes.extraSmall,
+    fontFamily: Theme.fonts.regular,
+  },
 });

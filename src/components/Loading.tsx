@@ -1,21 +1,20 @@
-import React from 'react';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import React from "react";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { Theme } from "../theme";
 
 export default function Loading() {
-
-    return (
-        <View style={styles.container}>
-            <ActivityIndicator size="small" color="#1ED760"/>
-        </View>
-    );
+  return (
+    <View style={styles.container}>
+      <ActivityIndicator size="large" color={Theme.colors.primary} />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        backgroundColor: 'white',
-        height: '100%'
-    }
-})
-
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: Theme.colors.white,
+    height: "100%",
+  },
+});
