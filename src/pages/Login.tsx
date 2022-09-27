@@ -11,6 +11,8 @@ import { useNavigation } from "@react-navigation/native";
 import RountedButton from "../components/RoundedButton";
 import LogoImage from "../components/LogoImage";
 import { Theme } from "../theme";
+import Constants from "expo-constants";
+import { AdMobInterstitial } from "expo-ads-admob";
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -54,10 +56,23 @@ export default function Login() {
     discovery
   );
 
+  const showAd = async () => {
+    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true });
+    await AdMobInterstitial.showAdAsync();
+  };
+
+  useEffect(() => {
+    const testID = "ca-app-pub-3940256099942544/1033173712";
+    const productionID = "ca-app-pub-6575307967199593/9387604814";
+    const adUnitID = Constants.isDevice && !__DEV__ ? productionID : testID;
+    AdMobInterstitial.setAdUnitID(adUnitID).catch((err) => console.log(err));
+  }, []);
+
   useEffect(() => {
     if (response?.type === "success") {
       const { access_token } = response.params;
       authenticate(access_token);
+      showAd();
     }
   }, [response]);
 

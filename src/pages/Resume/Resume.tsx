@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, ScrollView, StyleSheet, View } from "react-native";
 import RecentlyPlayedList from "./RecentlyPlayedList";
 import ResumeTops from "./ResumeTops";
@@ -21,6 +21,7 @@ export default function Resume() {
     artists,
     isLoading: isLoadingTopsData,
   } = useSpotifyTopsData({ timeRange: SpotifyTimeRanges.SHORT });
+
   const { recentlyPlayed, isLoading: isLoadingRecentlyPlayed } =
     useSpotifyRecentlyPlayed();
 

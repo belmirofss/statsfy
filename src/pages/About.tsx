@@ -21,6 +21,8 @@ export default function About() {
           This app has no relationship or affliction with Spotify.
         </Text>
 
+        <Text style={styles.text}>The ads help us mantein the app.</Text>
+
         <View style={styles.wrapperLogoImage}>
           <LogoImage size="small" />
         </View>

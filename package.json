@@ -20,6 +20,7 @@
     "@react-navigation/stack": "6.0.11",
     "axios": "^0.27.2",
     "expo": "^46.0.0",
+    "expo-ads-admob": "^13.0.0",
     "expo-app-loading": "~2.1.0",
     "expo-auth-session": "~3.7.1",
     "expo-font": "~10.2.0",
@@ -27,6 +28,7 @@
     "expo-random": "~12.3.0",
     "expo-sharing": "~10.3.0",
     "expo-status-bar": "~1.4.0",
+    "expo-updates": "~0.14.5",
     "expo-web-browser": "~11.0.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
@@ -39,8 +41,7 @@
     "react-native-screens": "~3.15.0",
     "react-native-tab-view": "3.1.1",
     "react-native-view-shot": "3.3.0",
-    "react-native-web": "~0.18.7",
-    "expo-updates": "~0.14.5"
+    "react-native-web": "~0.18.7"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
