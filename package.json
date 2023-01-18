@@ -19,7 +19,7 @@
     "@react-navigation/native": "6.0.6",
     "@react-navigation/stack": "6.0.11",
     "axios": "^0.27.2",
-    "expo": "^1.0.0",
+    "expo": "^46.0.0",
     "expo-ads-admob": "^13.0.0",
     "expo-app-loading": "~2.1.0",
     "expo-auth-session": "^1.0.1",
