@@ -1,0 +1,295 @@
+diff --git a/node_modules/react-native/index.js b/node_modules/react-native/index.js
+index d59ba34..1a8dcbc 100644
+--- a/node_modules/react-native/index.js
++++ b/node_modules/react-native/index.js
+@@ -11,92 +11,172 @@
+ 'use strict';
+ 
+ // Components
+-import typeof AccessibilityInfo from './Libraries/Components/AccessibilityInfo/AccessibilityInfo';
+-import typeof ActivityIndicator from './Libraries/Components/ActivityIndicator/ActivityIndicator';
+-import typeof Button from './Libraries/Components/Button';
+-import typeof DatePickerIOS from './Libraries/Components/DatePicker/DatePickerIOS';
+-import typeof DrawerLayoutAndroid from './Libraries/Components/DrawerAndroid/DrawerLayoutAndroid';
+-import typeof FlatList from './Libraries/Lists/FlatList';
+-import typeof Image from './Libraries/Image/Image';
+-import typeof ImageBackground from './Libraries/Image/ImageBackground';
+-import typeof InputAccessoryView from './Libraries/Components/TextInput/InputAccessoryView';
+-import typeof KeyboardAvoidingView from './Libraries/Components/Keyboard/KeyboardAvoidingView';
+-import typeof MaskedViewIOS from './Libraries/Components/MaskedView/MaskedViewIOS';
+-import typeof Modal from './Libraries/Modal/Modal';
+-import typeof Pressable from './Libraries/Components/Pressable/Pressable';
+-import typeof ProgressBarAndroid from './Libraries/Components/ProgressBarAndroid/ProgressBarAndroid';
+-import typeof ProgressViewIOS from './Libraries/Components/ProgressViewIOS/ProgressViewIOS';
+-import typeof RefreshControl from './Libraries/Components/RefreshControl/RefreshControl';
+-import typeof SafeAreaView from './Libraries/Components/SafeAreaView/SafeAreaView';
+-import typeof ScrollView from './Libraries/Components/ScrollView/ScrollView';
+-import typeof SectionList from './Libraries/Lists/SectionList';
+-import typeof Slider from './Libraries/Components/Slider/Slider';
+-import typeof StatusBar from './Libraries/Components/StatusBar/StatusBar';
+-import typeof Switch from './Libraries/Components/Switch/Switch';
+-import typeof Text from './Libraries/Text/Text';
+-import typeof TextInput from './Libraries/Components/TextInput/TextInput';
+-import typeof Touchable from './Libraries/Components/Touchable/Touchable';
+-import typeof TouchableHighlight from './Libraries/Components/Touchable/TouchableHighlight';
+-import typeof TouchableNativeFeedback from './Libraries/Components/Touchable/TouchableNativeFeedback';
+-import typeof TouchableOpacity from './Libraries/Components/Touchable/TouchableOpacity';
+-import typeof TouchableWithoutFeedback from './Libraries/Components/Touchable/TouchableWithoutFeedback';
+-import typeof View from './Libraries/Components/View/View';
+-import typeof VirtualizedList from './Libraries/Lists/VirtualizedList';
+-import typeof VirtualizedSectionList from './Libraries/Lists/VirtualizedSectionList';
++import typeof AccessibilityInfo;
++import typeof ActivityIndicator;
++import typeof Button;
++import typeof DatePickerIOS;
++import typeof DrawerLayoutAndroid;
++import typeof FlatList;
++import typeof Image;
++import typeof ImageBackground;
++import typeof InputAccessoryView;
++import typeof KeyboardAvoidingView;
++import typeof MaskedViewIOS;
++import typeof Modal;
++import typeof Pressable;
++import typeof ProgressBarAndroid;
++import typeof ProgressViewIOS;
++import typeof RefreshControl;
++import typeof SafeAreaView;
++import typeof ScrollView;
++import typeof SectionList;
++import typeof Slider;
++import typeof StatusBar;
++import typeof Switch;
++import typeof Text;
++import typeof TextInput;
++import typeof Touchable;
++import typeof TouchableHighlight;
++import typeof TouchableNativeFeedback;
++import typeof TouchableOpacity;
++import typeof TouchableWithoutFeedback;
++import typeof View;
++import typeof VirtualizedList;
++import typeof VirtualizedSectionList;
++from './Libraries/Components/AccessibilityInfo/AccessibilityInfo';
++from './Libraries/Components/ActivityIndicator/ActivityIndicator';
++from './Libraries/Components/Button';
++from './Libraries/Components/DatePicker/DatePickerIOS';
++from './Libraries/Components/DrawerAndroid/DrawerLayoutAndroid';
++from './Libraries/Lists/FlatList';
++from './Libraries/Image/Image';
++from './Libraries/Image/ImageBackground';
++from './Libraries/Components/TextInput/InputAccessoryView';
++from './Libraries/Components/Keyboard/KeyboardAvoidingView';
++from './Libraries/Components/MaskedView/MaskedViewIOS';
++from './Libraries/Modal/Modal';
++from './Libraries/Components/Pressable/Pressable';
++from './Libraries/Components/ProgressBarAndroid/ProgressBarAndroid';
++from './Libraries/Components/ProgressViewIOS/ProgressViewIOS';
++from './Libraries/Components/RefreshControl/RefreshControl';
++from './Libraries/Components/SafeAreaView/SafeAreaView';
++from './Libraries/Components/ScrollView/ScrollView';
++from './Libraries/Lists/SectionList';
++from './Libraries/Components/Slider/Slider';
++from './Libraries/Components/StatusBar/StatusBar';
++from './Libraries/Components/Switch/Switch';
++from './Libraries/Text/Text';
++from './Libraries/Components/TextInput/TextInput';
++from './Libraries/Components/Touchable/Touchable';
++from './Libraries/Components/Touchable/TouchableHighlight';
++from './Libraries/Components/Touchable/TouchableNativeFeedback';
++from './Libraries/Components/Touchable/TouchableOpacity';
++from './Libraries/Components/Touchable/TouchableWithoutFeedback';
++from './Libraries/Components/View/View';
++from './Libraries/Lists/VirtualizedList';
++from './Libraries/Lists/VirtualizedSectionList';
+ 
+ // APIs
+-import typeof ActionSheetIOS from './Libraries/ActionSheetIOS/ActionSheetIOS';
+-import typeof Alert from './Libraries/Alert/Alert';
+-import typeof Animated from './Libraries/Animated/Animated';
+-import typeof Appearance from './Libraries/Utilities/Appearance';
+-import typeof AppRegistry from './Libraries/ReactNative/AppRegistry';
+-import typeof AppState from './Libraries/AppState/AppState';
+-import typeof AsyncStorage from './Libraries/Storage/AsyncStorage';
+-import typeof BackHandler from './Libraries/Utilities/BackHandler';
+-import typeof Clipboard from './Libraries/Components/Clipboard/Clipboard';
+-import typeof DeviceInfo from './Libraries/Utilities/DeviceInfo';
+-import typeof DevSettings from './Libraries/Utilities/DevSettings';
+-import typeof Dimensions from './Libraries/Utilities/Dimensions';
+-import typeof Easing from './Libraries/Animated/Easing';
+-import typeof ReactNative from './Libraries/Renderer/shims/ReactNative';
+-import typeof I18nManager from './Libraries/ReactNative/I18nManager';
+-import typeof ImagePickerIOS from './Libraries/Image/ImagePickerIOS';
+-import typeof InteractionManager from './Libraries/Interaction/InteractionManager';
+-import typeof Keyboard from './Libraries/Components/Keyboard/Keyboard';
+-import typeof LayoutAnimation from './Libraries/LayoutAnimation/LayoutAnimation';
+-import typeof Linking from './Libraries/Linking/Linking';
+-import typeof LogBox from './Libraries/LogBox/LogBox';
+-import typeof NativeDialogManagerAndroid from './Libraries/NativeModules/specs/NativeDialogManagerAndroid';
+-import typeof NativeEventEmitter from './Libraries/EventEmitter/NativeEventEmitter';
+-import typeof Networking from './Libraries/Network/RCTNetworking';
+-import typeof PanResponder from './Libraries/Interaction/PanResponder';
+-import typeof PermissionsAndroid from './Libraries/PermissionsAndroid/PermissionsAndroid';
+-import typeof PixelRatio from './Libraries/Utilities/PixelRatio';
+-import typeof PushNotificationIOS from './Libraries/PushNotificationIOS/PushNotificationIOS';
+-import typeof Settings from './Libraries/Settings/Settings';
+-import typeof Share from './Libraries/Share/Share';
+-import typeof StyleSheet from './Libraries/StyleSheet/StyleSheet';
+-import typeof Systrace from './Libraries/Performance/Systrace';
+-import typeof ToastAndroid from './Libraries/Components/ToastAndroid/ToastAndroid';
+-import typeof * as TurboModuleRegistry from './Libraries/TurboModule/TurboModuleRegistry';
+-import typeof UIManager from './Libraries/ReactNative/UIManager';
+-import typeof useColorScheme from './Libraries/Utilities/useColorScheme';
+-import typeof useWindowDimensions from './Libraries/Utilities/useWindowDimensions';
+-import typeof UTFSequence from './Libraries/UTFSequence';
+-import typeof Vibration from './Libraries/Vibration/Vibration';
+-import typeof YellowBox from './Libraries/YellowBox/YellowBoxDeprecated';
++import typeof ActionSheetIOS;
++import typeof Alert;
++import typeof Animated;
++import typeof Appearance;
++import typeof AppRegistry;
++import typeof AppState;
++import typeof AsyncStorage;
++import typeof BackHandler;
++import typeof Clipboard;
++import typeof DeviceInfo;
++import typeof DevSettings;
++import typeof Dimensions;
++import typeof Easing;
++import typeof ReactNative;
++import typeof I18nManager;
++import typeof ImagePickerIOS;
++import typeof InteractionManager;
++import typeof Keyboard;
++import typeof LayoutAnimation;
++import typeof Linking;
++import typeof LogBox;
++import typeof NativeDialogManagerAndroid;
++import typeof NativeEventEmitter;
++import typeof Networking;
++import typeof PanResponder;
++import typeof PermissionsAndroid;
++import typeof PixelRatio;
++import typeof PushNotificationIOS;
++import typeof Settings;
++import typeof Share;
++import typeof StyleSheet;
++import typeof Systrace;
++import typeof ToastAndroid;
++import typeof * as;
++import typeof UIManager;
++import typeof useColorScheme;
++import typeof useWindowDimensions;
++import typeof UTFSequence;
++import typeof Vibration;
++import typeof YellowBox;
++from './Libraries/ActionSheetIOS/ActionSheetIOS';
++from './Libraries/Alert/Alert';
++from './Libraries/Animated/Animated';
++from './Libraries/Utilities/Appearance';
++from './Libraries/ReactNative/AppRegistry';
++from './Libraries/AppState/AppState';
++from './Libraries/Storage/AsyncStorage';
++from './Libraries/Utilities/BackHandler';
++from './Libraries/Components/Clipboard/Clipboard';
++from './Libraries/Utilities/DeviceInfo';
++from './Libraries/Utilities/DevSettings';
++from './Libraries/Utilities/Dimensions';
++from './Libraries/Animated/Easing';
++from './Libraries/Renderer/shims/ReactNative';
++from './Libraries/ReactNative/I18nManager';
++from './Libraries/Image/ImagePickerIOS';
++from './Libraries/Interaction/InteractionManager';
++from './Libraries/Components/Keyboard/Keyboard';
++from './Libraries/LayoutAnimation/LayoutAnimation';
++from './Libraries/Linking/Linking';
++from './Libraries/LogBox/LogBox';
++from './Libraries/NativeModules/specs/NativeDialogManagerAndroid';
++from './Libraries/EventEmitter/NativeEventEmitter';
++from './Libraries/Network/RCTNetworking';
++from './Libraries/Interaction/PanResponder';
++from './Libraries/PermissionsAndroid/PermissionsAndroid';
++from './Libraries/Utilities/PixelRatio';
++from './Libraries/PushNotificationIOS/PushNotificationIOS';
++from './Libraries/Settings/Settings';
++from './Libraries/Share/Share';
++from './Libraries/StyleSheet/StyleSheet';
++from './Libraries/Performance/Systrace';
++from './Libraries/Components/ToastAndroid/ToastAndroid';
++TurboModuleRegistry from './Libraries/TurboModule/TurboModuleRegistry';
++from './Libraries/ReactNative/UIManager';
++from './Libraries/Utilities/useColorScheme';
++from './Libraries/Utilities/useWindowDimensions';
++from './Libraries/UTFSequence';
++from './Libraries/Vibration/Vibration';
++from './Libraries/YellowBox/YellowBoxDeprecated';
+ 
+ // Plugins
+-import typeof {DynamicColorIOS} from './Libraries/StyleSheet/PlatformColorValueTypesIOS';
+-import typeof NativeModules from './Libraries/BatchedBridge/NativeModules';
+-import typeof Platform from './Libraries/Utilities/Platform';
+-import typeof {PlatformColor} from './Libraries/StyleSheet/PlatformColorValueTypes';
+-import typeof processColor from './Libraries/StyleSheet/processColor';
+-import typeof RCTDeviceEventEmitter from './Libraries/EventEmitter/RCTDeviceEventEmitter';
+-import typeof RCTNativeAppEventEmitter from './Libraries/EventEmitter/RCTNativeAppEventEmitter';
+-import typeof {RootTagContext} from './Libraries/ReactNative/RootTag';
++import typeof { DynamicColorIOS };
++import typeof NativeModules;
++import typeof Platform;
++import typeof { PlatformColor };
++import typeof processColor;
++import typeof RCTDeviceEventEmitter;
++import typeof RCTNativeAppEventEmitter;
++import typeof { RootTagContext };
++from './Libraries/StyleSheet/PlatformColorValueTypesIOS';
++from './Libraries/BatchedBridge/NativeModules';
++from './Libraries/Utilities/Platform';
++from './Libraries/StyleSheet/PlatformColorValueTypes';
++from './Libraries/StyleSheet/processColor';
++from './Libraries/EventEmitter/RCTDeviceEventEmitter';
++from './Libraries/EventEmitter/RCTNativeAppEventEmitter';
++from './Libraries/ReactNative/RootTag';
+ 
+-import type {HostComponent as _HostComponentInternal} from './Libraries/Renderer/shims/ReactNativeTypes';
++import type { HostComponent as _HostComponentInternal } from './Libraries/Renderer/shims/ReactNativeTypes';
+ 
+ export type HostComponent<T> = _HostComponentInternal<T>;
+ 
+@@ -435,32 +515,16 @@ module.exports = {
+   },
+   // Deprecated Prop Types
+   get ColorPropType(): $FlowFixMe {
+-    invariant(
+-      false,
+-      'ColorPropType has been removed from React Native. Migrate to ' +
+-        "ColorPropType exported from 'deprecated-react-native-prop-types'.",
+-    );
++    return require('deprecated-react-native-prop-types').ColorPropType
+   },
+   get EdgeInsetsPropType(): $FlowFixMe {
+-    invariant(
+-      false,
+-      'EdgeInsetsPropType has been removed from React Native. Migrate to ' +
+-        "EdgeInsetsPropType exported from 'deprecated-react-native-prop-types'.",
+-    );
++    return require('deprecated-react-native-prop-types').EdgeInsetsPropType
+   },
+   get PointPropType(): $FlowFixMe {
+-    invariant(
+-      false,
+-      'PointPropType has been removed from React Native. Migrate to ' +
+-        "PointPropType exported from 'deprecated-react-native-prop-types'.",
+-    );
++    return require('deprecated-react-native-prop-types').PointPropType
+   },
+   get ViewPropTypes(): $FlowFixMe {
+-    invariant(
+-      false,
+-      'ViewPropTypes has been removed from React Native. Migrate to ' +
+-        "ViewPropTypes exported from 'deprecated-react-native-prop-types'.",
+-    );
++    return require('deprecated-react-native-prop-types').ViewPropTypes
+   },
+ };
+ 
