@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Podium, { PodiumItem } from "../../components/Podium/Podium";
 import Picker from "../../components/Picker";
-import { SpotifyArtist, SpotifyTrack, SpotifyModes } from "../../types";
+import Podium, { PodiumItem } from "../../components/Podium/Podium";
 import { Theme } from "../../theme";
+import { SpotifyArtist, SpotifyModes, SpotifyTrack } from "../../types";
 
 type Props = {
   tracks: SpotifyTrack[];

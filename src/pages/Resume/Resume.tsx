@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Modal, ScrollView, StyleSheet, View } from "react-native";
-import RecentlyPlayedList from "./RecentlyPlayedList";
-import ResumeTops from "./ResumeTops";
-import MyStatsModal from "./MyStatsModal";
+import Loading from "../../components/Loading";
 import RountedButton from "../../components/RoundedButton";
 import useSpotifyRecentlyPlayed from "../../hooks/useSpotifyRecentlyPlayed";
-import { SpotifyModes, SpotifyTimeRanges } from "../../types";
 import useSpotifyTopsData from "../../hooks/useSpotifyTopsData";
 import { Theme } from "../../theme";
-import Loading from "../../components/Loading";
+import { SpotifyModes, SpotifyTimeRanges } from "../../types";
+import MyStatsModal from "./MyStatsModal";
+import RecentlyPlayedList from "./RecentlyPlayedList";
+import ResumeTops from "./ResumeTops";
 
 export default function Resume() {
   const [selectedMode, setSelectedModel] = useState<SpotifyModes>(

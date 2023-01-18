@@ -1,25 +1,24 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import * as Sharing from "expo-sharing";
 import React, { useRef, useState } from "react";
 import {
-  Alert,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
-import Loading from "../../components/Loading";
 import ViewShot from "react-native-view-shot";
-import Podium from "../../components/Podium/Podium";
-import Picker from "../../components/Picker";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import * as Sharing from "expo-sharing";
-import { SpotifyTimeRanges } from "../../types";
-import useSpotifyTopsData from "../../hooks/useSpotifyTopsData";
-import useSpotifyAccountInfo from "../../hooks/useSpotifyAccountInfo";
-import { Theme } from "../../theme";
+import Loading from "../../components/Loading";
 import LogoImage from "../../components/LogoImage";
+import Picker from "../../components/Picker";
+import Podium from "../../components/Podium/Podium";
 import RountedButton from "../../components/RoundedButton";
 import useAlert from "../../hooks/useAlert";
+import useSpotifyAccountInfo from "../../hooks/useSpotifyAccountInfo";
+import useSpotifyTopsData from "../../hooks/useSpotifyTopsData";
+import { Theme } from "../../theme";
+import { SpotifyTimeRanges } from "../../types";
 
 type Props = {
   close: () => void;

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import Loading from "../components/Loading";
 import Podium from "../components/Podium/Podium";
 import RankingPosition from "../components/RankingPosition";

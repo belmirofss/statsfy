@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import {
@@ -7,11 +8,10 @@ import {
   Text,
   View,
 } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import NOT_FOUND_IMG from "../../images/not_found.png";
+import { Theme } from "../../theme";
 import { SpotifyImage } from "../../types";
 import { calculateTimestampDiffToNow } from "../../utils";
-import { Theme } from "../../theme";
 
 type Props = {
   image: SpotifyImage;

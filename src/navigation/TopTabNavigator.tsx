@@ -1,12 +1,12 @@
-import React from "react";
 import {
   createMaterialTopTabNavigator,
   MaterialTopTabNavigationOptions,
 } from "@react-navigation/material-top-tabs";
-import { Theme } from "../theme";
+import React from "react";
 import TopArtists from "../pages/TopArtists";
-import { SpotifyTimeRanges } from "../types";
 import TopTracks from "../pages/TopTracks";
+import { Theme } from "../theme";
+import { SpotifyTimeRanges } from "../types";
 
 const screenOptions: MaterialTopTabNavigationOptions = {
   tabBarActiveTintColor: Theme.colors.primary,

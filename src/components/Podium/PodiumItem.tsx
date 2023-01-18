@@ -1,9 +1,9 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import NOT_FOUND_IMG from "../../images/not_found.png";
-import { SpotifyImage } from "../../types";
 import { Theme } from "../../theme";
+import { SpotifyImage } from "../../types";
 
 type Props = {
   position: number;

@@ -1,18 +1,18 @@
-import React, { useContext, useEffect } from "react";
-import { StyleSheet, View, Text } from "react-native";
-import * as WebBrowser from "expo-web-browser";
+import { useNavigation } from "@react-navigation/native";
+import { AdMobInterstitial } from "expo-ads-admob";
 import {
   makeRedirectUri,
-  useAuthRequest,
   ResponseType,
+  useAuthRequest,
 } from "expo-auth-session";
-import AuthContext from "../contexts/Auth";
-import { useNavigation } from "@react-navigation/native";
-import RountedButton from "../components/RoundedButton";
-import LogoImage from "../components/LogoImage";
-import { Theme } from "../theme";
 import Constants from "expo-constants";
-import { AdMobInterstitial } from "expo-ads-admob";
+import * as WebBrowser from "expo-web-browser";
+import React, { useContext, useEffect } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import LogoImage from "../components/LogoImage";
+import RountedButton from "../components/RoundedButton";
+import AuthContext from "../contexts/auth";
+import { Theme } from "../theme";
 
 WebBrowser.maybeCompleteAuthSession();
 

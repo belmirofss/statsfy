@@ -1,5 +1,5 @@
-import LOGO_IMG from "../images/logo_statsfy.png";
 import { Image, ImageStyle, StyleProp } from "react-native";
+import LOGO_IMG from "../images/logo_statsfy.png";
 
 type Props = {
   size: "mini" | "small" | "large";

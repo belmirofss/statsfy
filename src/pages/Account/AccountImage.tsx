@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
-import { Theme } from "../../theme";
 import NOT_FOUND_IMG from "../../images/not_found.png";
+import { Theme } from "../../theme";
 import { SpotifyImage } from "../../types";
 
 type Props = {
