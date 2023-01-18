@@ -1,13 +1,13 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject",
-    "build-android": "expo build:android",
-    "build-ios": "expo build:ios"
+    "start": "npx expo start",
+    "android": "npx expo start --android",
+    "ios": "npx expo start --ios",
+    "web": "npx expo start --web",
+    "eject": "npx expo eject",
+    "build-android": "npx expo build:android",
+    "build-ios": "npx expo build:ios"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.17.3",
