@@ -1,9 +1,9 @@
-import { SpotifyTimeRanges } from "../types";
+import { SpotifyTimeRangesEnum } from "../types";
 import useSpotifyTopArtists from "./useSpotifyTopArtists";
 import useSpotifyTopTracks from "./useSpotifyTopTracks";
 
 type Props = {
-  timeRange: SpotifyTimeRanges;
+  timeRange: SpotifyTimeRangesEnum;
 };
 
 export default function useSpotifyTopsData({ timeRange }: Props) {

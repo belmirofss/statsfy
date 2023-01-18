@@ -5,14 +5,14 @@ import RountedButton from "../../components/RoundedButton";
 import useSpotifyRecentlyPlayed from "../../hooks/useSpotifyRecentlyPlayed";
 import useSpotifyTopsData from "../../hooks/useSpotifyTopsData";
 import { Theme } from "../../theme";
-import { SpotifyModes, SpotifyTimeRanges } from "../../types";
+import { SpotifyModesEnum, SpotifyTimeRangesEnum } from "../../types";
 import MyStatsModal from "./MyStatsModal";
 import RecentlyPlayedList from "./RecentlyPlayedList";
 import ResumeTops from "./ResumeTops";
 
 export default function Resume() {
-  const [selectedMode, setSelectedModel] = useState<SpotifyModes>(
-    SpotifyModes.TRACKS
+  const [selectedMode, setSelectedModel] = useState<SpotifyModesEnum>(
+    SpotifyModesEnum.TRACKS
   );
   const [myStatsModalIsVisible, setMyStatsModalIsVisible] = useState(false);
 
@@ -20,7 +20,7 @@ export default function Resume() {
     tracks,
     artists,
     isLoading: isLoadingTopsData,
-  } = useSpotifyTopsData({ timeRange: SpotifyTimeRanges.SHORT });
+  } = useSpotifyTopsData({ timeRange: SpotifyTimeRangesEnum.SHORT });
 
   const { recentlyPlayed, isLoading: isLoadingRecentlyPlayed } =
     useSpotifyRecentlyPlayed();

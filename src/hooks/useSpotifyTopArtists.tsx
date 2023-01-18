@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import SpotifyApi from "../api/spotify-api";
-import { SpotifyArtist, SpotifyTimeRanges } from "../types";
+import { SpotifyArtist, SpotifyTimeRangesEnum } from "../types";
 
 type Props = {
-  timeRange: SpotifyTimeRanges;
+  timeRange: SpotifyTimeRangesEnum;
   limit?: number;
 };
 

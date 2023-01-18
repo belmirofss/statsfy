@@ -4,10 +4,10 @@ import Loading from "../components/Loading";
 import Podium from "../components/Podium/Podium";
 import RankingPosition from "../components/RankingPosition";
 import useSpotifyTopArtists from "../hooks/useSpotifyTopArtists";
-import { SpotifyTimeRanges } from "../types";
+import { SpotifyTimeRangesEnum } from "../types";
 
 type Props = {
-  timeRange: SpotifyTimeRanges;
+  timeRange: SpotifyTimeRangesEnum;
 };
 
 export default function TopArtists({ timeRange }: Props) {

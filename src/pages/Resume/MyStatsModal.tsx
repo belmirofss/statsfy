@@ -18,15 +18,15 @@ import useAlert from "../../hooks/useAlert";
 import useSpotifyAccountInfo from "../../hooks/useSpotifyAccountInfo";
 import useSpotifyTopsData from "../../hooks/useSpotifyTopsData";
 import { Theme } from "../../theme";
-import { SpotifyTimeRanges } from "../../types";
+import { SpotifyTimeRangesEnum } from "../../types";
 
 type Props = {
   close: () => void;
 };
 
 export default function MyStatsModal({ close }: Props) {
-  const [timeRange, setTimeRange] = useState<SpotifyTimeRanges>(
-    SpotifyTimeRanges.SHORT
+  const [timeRange, setTimeRange] = useState<SpotifyTimeRangesEnum>(
+    SpotifyTimeRangesEnum.SHORT
   );
 
   const {
@@ -80,17 +80,19 @@ export default function MyStatsModal({ close }: Props) {
           }}
         >
           <Picker
-            onValueChange={(value) => setTimeRange(value as SpotifyTimeRanges)}
+            onValueChange={(value) =>
+              setTimeRange(value as SpotifyTimeRangesEnum)
+            }
             items={[
               {
                 label: "Stats of last 4 weeks",
-                value: SpotifyTimeRanges.SHORT,
+                value: SpotifyTimeRangesEnum.SHORT,
               },
               {
                 label: "Stats of last 6 months",
-                value: SpotifyTimeRanges.MEDIUM,
+                value: SpotifyTimeRangesEnum.MEDIUM,
               },
-              { label: "Stats of alltime", value: SpotifyTimeRanges.LONG },
+              { label: "Stats of alltime", value: SpotifyTimeRangesEnum.LONG },
             ]}
             value={timeRange}
             width={250}

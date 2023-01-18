@@ -1,9 +1,10 @@
 import { AxiosResponse } from "axios";
+import { SpotifyTimeRange } from "../types";
 import API from "./api";
 
 const SpotifyApi = {
   listTopTracks: (
-    timeRange: "long_term" | "medium_term" | "short_term",
+    timeRange: SpotifyTimeRange,
     limit: number = 50
   ): Promise<AxiosResponse<any>> => {
     return API.get("v1/me/top/tracks", {
@@ -15,7 +16,7 @@ const SpotifyApi = {
     });
   },
   listTopArtists: (
-    timeRange: "long_term" | "medium_term" | "short_term",
+    timeRange: SpotifyTimeRange,
     limit: number = 50
   ): Promise<AxiosResponse<any>> => {
     return API.get("v1/me/top/artists", {

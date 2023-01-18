@@ -7,7 +7,8 @@
     "web": "npx expo start --web",
     "eject": "npx expo eject",
     "build-android": "npx expo build:android",
-    "build-ios": "npx expo build:ios"
+    "build-ios": "npx expo build:ios",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.17.3",
