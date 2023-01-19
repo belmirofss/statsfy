@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
     width: 125,
     height: 125,
     borderColor: Theme.colors.black,
-    borderWidth: 2,
+    borderWidth: 1,
   },
 });

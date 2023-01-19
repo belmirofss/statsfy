@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 100,
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: Theme.colors.black,
   },
   title: {

@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   image: {
     borderRadius: 8,
     borderColor: Theme.colors.black,
-    borderWidth: 2,
+    borderWidth: 1,
   },
   titleText: {
     fontSize: Theme.fontSizes.extraSmall,

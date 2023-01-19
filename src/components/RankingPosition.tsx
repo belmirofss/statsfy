@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     height: 75,
     width: 75,
     borderRadius: 100,
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: Theme.colors.black,
   },
   title: {
