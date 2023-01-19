@@ -13,7 +13,7 @@
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.17.3",
     "@react-native-community/masked-view": "0.1.11",
-    "@react-native-picker/picker": "2.4.8",
+    "@react-native-picker/picker": "^2.4.8",
     "@react-navigation/bottom-tabs": "6.0.9",
     "@react-navigation/drawer": "6.1.8",
     "@react-navigation/material-top-tabs": "6.0.6",
@@ -37,7 +37,7 @@
     "patch-package": "^6.5.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "react-native": "0.69.6",
+    "react-native": "0.69.5",
     "react-native-gesture-handler": "~2.5.0",
     "react-native-pager-view": "5.4.24",
     "react-native-picker-select": "^8.0.4",
@@ -55,9 +55,6 @@
     "@types/react-native": "~0.69.1",
     "eslint": "^8.23.0",
     "typescript": "^4.6.3"
-  },
-  "resolutions": {
-    "react-native-picker-select/@react-native-picker/picker": "2.4.8"
   },
   "private": true
 }
