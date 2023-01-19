@@ -6,8 +6,8 @@
     "ios": "npx expo start --ios",
     "web": "npx expo start --web",
     "eject": "npx expo eject",
-    "build-android": "npx expo build:android",
-    "build-ios": "npx expo build:ios",
+    "build-android": "eas build --platform android",
+    "build-ios": "eas build --platform ios",
     "postinstall": "patch-package"
   },
   "dependencies": {
