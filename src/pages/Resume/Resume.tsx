@@ -45,7 +45,7 @@ export default function Resume() {
 
         <RountedButton
           onPress={() => setMyStatsModalIsVisible(true)}
-          label="Share my stats"
+          label="Share"
           type="primary"
         />
 
