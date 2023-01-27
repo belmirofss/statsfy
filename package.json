@@ -2,6 +2,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "npx expo start",
+    "eas-build-pre-install": "npm config set legacy-peer-deps true",
     "build-android": "eas build --platform android",
     "build-ios": "eas build --platform ios"
   },
