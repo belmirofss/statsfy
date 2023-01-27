@@ -6,7 +6,8 @@ import clearSansBold from "./src/fonts/ClearSans-Bold.ttf";
 import Routes from "./src/Routes";
 import AppLoading from "expo-app-loading";
 import { StatusBar } from "expo-status-bar";
-import { AuthProvider } from "./src/contexts/Auth";
+import { AuthProvider } from "./src/contexts/auth";
+import { Theme } from "./src/theme";
 
 export default function App() {
   const [fontsLoaded] = useFonts({

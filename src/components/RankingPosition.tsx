@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     paddingLeft: 12,
     paddingVertical: 12,
     borderWidth: 2,
-    borderColor: Theme.colors.gray,
+    borderColor: Theme.colors.black,
     borderRadius: 100,
   },
   wrapperTitleAndSubTitle: {

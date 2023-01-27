@@ -74,10 +74,10 @@ const styles = StyleSheet.create({
   },
   linearGradient: {
     padding: 8,
-    borderRadius: 8,
+    borderRadius: 16,
   },
   image: {
-    borderRadius: 8,
+    borderRadius: 16,
     borderColor: Theme.colors.black,
     borderWidth: 2,
   },

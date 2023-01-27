@@ -6,7 +6,7 @@ import {
   useAuthRequest,
   ResponseType,
 } from "expo-auth-session";
-import AuthContext from "../contexts/Auth";
+import AuthContext from "../contexts/auth";
 import { useNavigation } from "@react-navigation/native";
 import RountedButton from "../components/RoundedButton";
 import LogoImage from "../components/LogoImage";

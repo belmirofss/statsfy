@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useContext } from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
 import RountedButton from "../../components/RoundedButton";
-import AuthContext from "../../contexts/Auth";
+import AuthContext from "../../contexts/auth";
 import useSpotifyAccountInfo from "../../hooks/useSpotifyAccountInfo";
 import Loading from "../../components/Loading";
 import AccountImage from "./AccountImage";

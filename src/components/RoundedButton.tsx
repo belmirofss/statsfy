@@ -41,7 +41,7 @@ export default function RountedButton({ label, type, onPress }: Props) {
     text: {
       textAlign: "center",
       color: getStyle().color,
-      fontSize: 18,
+      fontSize: 20,
       fontFamily: Theme.fonts.bold,
     },
   });
