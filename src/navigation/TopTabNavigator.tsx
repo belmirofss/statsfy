@@ -1,12 +1,12 @@
+import React from "react";
 import {
   createMaterialTopTabNavigator,
   MaterialTopTabNavigationOptions,
 } from "@react-navigation/material-top-tabs";
-import React from "react";
-import TopArtists from "../pages/TopArtists";
-import TopTracks from "../pages/TopTracks";
 import { Theme } from "../theme";
-import { SpotifyTimeRangesEnum } from "../types";
+import TopArtists from "../pages/TopArtists";
+import { SpotifyTimeRanges } from "../types";
+import TopTracks from "../pages/TopTracks";
 
 const screenOptions: MaterialTopTabNavigationOptions = {
   tabBarActiveTintColor: Theme.colors.primary,
@@ -35,23 +35,21 @@ const TopTabArtistsNavigator = () => {
     >
       <Tab.Screen
         name="TopArtistsAllTime"
-        component={() => <TopArtists timeRange={SpotifyTimeRangesEnum.LONG} />}
+        component={() => <TopArtists timeRange={SpotifyTimeRanges.LONG} />}
         options={{
           title: "All time",
         }}
       />
       <Tab.Screen
         name="TopArtists6Months"
-        component={() => (
-          <TopArtists timeRange={SpotifyTimeRangesEnum.MEDIUM} />
-        )}
+        component={() => <TopArtists timeRange={SpotifyTimeRanges.MEDIUM} />}
         options={{
           title: "Last 6 months",
         }}
       />
       <Tab.Screen
         name="TopArtists4Weeks"
-        component={() => <TopArtists timeRange={SpotifyTimeRangesEnum.SHORT} />}
+        component={() => <TopArtists timeRange={SpotifyTimeRanges.SHORT} />}
         options={{
           title: "Last 4 weeks",
         }}
@@ -70,21 +68,21 @@ const TopTabTracksNavigator = () => {
     >
       <Tab.Screen
         name="TopTracksAllTime"
-        component={() => <TopTracks timeRange={SpotifyTimeRangesEnum.LONG} />}
+        component={() => <TopTracks timeRange={SpotifyTimeRanges.LONG} />}
         options={{
           title: "All time",
         }}
       />
       <Tab.Screen
         name="TopTracks6Months"
-        component={() => <TopTracks timeRange={SpotifyTimeRangesEnum.MEDIUM} />}
+        component={() => <TopTracks timeRange={SpotifyTimeRanges.MEDIUM} />}
         options={{
           title: "Last 6 months",
         }}
       />
       <Tab.Screen
         name="TopTracks4Weeks"
-        component={() => <TopTracks timeRange={SpotifyTimeRangesEnum.SHORT} />}
+        component={() => <TopTracks timeRange={SpotifyTimeRanges.SHORT} />}
         options={{
           title: "Last 4 weeks",
         }}

@@ -1,15 +1,15 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Picker from "../../components/Picker";
 import Podium, { PodiumItem } from "../../components/Podium/Podium";
+import Picker from "../../components/Picker";
+import { SpotifyArtist, SpotifyTrack, SpotifyModes } from "../../types";
 import { Theme } from "../../theme";
-import { SpotifyArtist, SpotifyModesEnum, SpotifyTrack } from "../../types";
 
 type Props = {
   tracks: SpotifyTrack[];
   artists: SpotifyArtist[];
-  selectedMode: SpotifyModesEnum;
-  onSelectedModeChanges: (selectedMode: SpotifyModesEnum) => void;
+  selectedMode: SpotifyModes;
+  onSelectedModeChanges: (selectedMode: SpotifyModes) => void;
 };
 
 export default function ResumeTops({
@@ -20,7 +20,7 @@ export default function ResumeTops({
 }: Props) {
   let podiumData: PodiumItem[];
 
-  if (selectedMode === SpotifyModesEnum.ARTISTS) {
+  if (selectedMode === SpotifyModes.ARTISTS) {
     podiumData = artists.map((item) => ({
       id: item.id,
       title: item.name,
@@ -41,11 +41,11 @@ export default function ResumeTops({
         <Text style={styles.title}>Top</Text>
         <Picker
           onValueChange={(value) =>
-            onSelectedModeChanges(value as SpotifyModesEnum)
+            onSelectedModeChanges(value as SpotifyModes)
           }
           items={[
-            { label: "Tracks", value: SpotifyModesEnum.TRACKS },
-            { label: "Artists", value: SpotifyModesEnum.ARTISTS },
+            { label: "Tracks", value: SpotifyModes.TRACKS },
+            { label: "Artists", value: SpotifyModes.ARTISTS },
           ]}
           value={selectedMode}
           width={150}

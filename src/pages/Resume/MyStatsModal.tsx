@@ -1,32 +1,33 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import * as Sharing from "expo-sharing";
 import React, { useRef, useState } from "react";
 import {
+  Alert,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
-import ViewShot from "react-native-view-shot";
 import Loading from "../../components/Loading";
-import LogoImage from "../../components/LogoImage";
-import Picker from "../../components/Picker";
+import ViewShot from "react-native-view-shot";
 import Podium from "../../components/Podium/Podium";
+import Picker from "../../components/Picker";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import * as Sharing from "expo-sharing";
+import { SpotifyTimeRanges } from "../../types";
+import useSpotifyTopsData from "../../hooks/useSpotifyTopsData";
+import useSpotifyAccountInfo from "../../hooks/useSpotifyAccountInfo";
+import { Theme } from "../../theme";
+import LogoImage from "../../components/LogoImage";
 import RountedButton from "../../components/RoundedButton";
 import useAlert from "../../hooks/useAlert";
-import useSpotifyAccountInfo from "../../hooks/useSpotifyAccountInfo";
-import useSpotifyTopsData from "../../hooks/useSpotifyTopsData";
-import { Theme } from "../../theme";
-import { SpotifyTimeRangesEnum } from "../../types";
 
 type Props = {
   close: () => void;
 };
 
 export default function MyStatsModal({ close }: Props) {
-  const [timeRange, setTimeRange] = useState<SpotifyTimeRangesEnum>(
-    SpotifyTimeRangesEnum.SHORT
+  const [timeRange, setTimeRange] = useState<SpotifyTimeRanges>(
+    SpotifyTimeRanges.SHORT
   );
 
   const {
@@ -80,19 +81,17 @@ export default function MyStatsModal({ close }: Props) {
           }}
         >
           <Picker
-            onValueChange={(value) =>
-              setTimeRange(value as SpotifyTimeRangesEnum)
-            }
+            onValueChange={(value) => setTimeRange(value as SpotifyTimeRanges)}
             items={[
               {
                 label: "Stats of last 4 weeks",
-                value: SpotifyTimeRangesEnum.SHORT,
+                value: SpotifyTimeRanges.SHORT,
               },
               {
                 label: "Stats of last 6 months",
-                value: SpotifyTimeRangesEnum.MEDIUM,
+                value: SpotifyTimeRanges.MEDIUM,
               },
-              { label: "Stats of alltime", value: SpotifyTimeRangesEnum.LONG },
+              { label: "Stats of alltime", value: SpotifyTimeRanges.LONG },
             ]}
             value={timeRange}
             width={250}

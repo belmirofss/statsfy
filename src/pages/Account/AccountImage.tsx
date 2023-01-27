@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
-import NOT_FOUND_IMG from "../../images/not_found.png";
 import { Theme } from "../../theme";
+import NOT_FOUND_IMG from "../../images/not_found.png";
 import { SpotifyImage } from "../../types";
 
 type Props = {
@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
     width: 125,
     height: 125,
     borderColor: Theme.colors.black,
-    borderWidth: 1,
+    borderWidth: 2,
   },
 });

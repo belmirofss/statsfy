@@ -1,12 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useContext } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import Loading from "../../components/Loading";
+import { View, StyleSheet, Image, Text } from "react-native";
 import RountedButton from "../../components/RoundedButton";
-import AuthContext from "../../contexts/auth";
+import AuthContext from "../../contexts/Auth";
 import useSpotifyAccountInfo from "../../hooks/useSpotifyAccountInfo";
-import { Theme } from "../../theme";
+import Loading from "../../components/Loading";
 import AccountImage from "./AccountImage";
+import { Theme } from "../../theme";
 
 export default function Account() {
   const { spotifyAccountInfo, isLoading } = useSpotifyAccountInfo();

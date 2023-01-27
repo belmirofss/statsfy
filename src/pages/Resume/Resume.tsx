@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, ScrollView, StyleSheet, View } from "react-native";
-import Loading from "../../components/Loading";
-import RountedButton from "../../components/RoundedButton";
-import useSpotifyRecentlyPlayed from "../../hooks/useSpotifyRecentlyPlayed";
-import useSpotifyTopsData from "../../hooks/useSpotifyTopsData";
-import { Theme } from "../../theme";
-import { SpotifyModesEnum, SpotifyTimeRangesEnum } from "../../types";
-import MyStatsModal from "./MyStatsModal";
 import RecentlyPlayedList from "./RecentlyPlayedList";
 import ResumeTops from "./ResumeTops";
+import MyStatsModal from "./MyStatsModal";
+import RountedButton from "../../components/RoundedButton";
+import useSpotifyRecentlyPlayed from "../../hooks/useSpotifyRecentlyPlayed";
+import { SpotifyModes, SpotifyTimeRanges } from "../../types";
+import useSpotifyTopsData from "../../hooks/useSpotifyTopsData";
+import { Theme } from "../../theme";
+import Loading from "../../components/Loading";
 
 export default function Resume() {
-  const [selectedMode, setSelectedModel] = useState<SpotifyModesEnum>(
-    SpotifyModesEnum.TRACKS
+  const [selectedMode, setSelectedModel] = useState<SpotifyModes>(
+    SpotifyModes.TRACKS
   );
   const [myStatsModalIsVisible, setMyStatsModalIsVisible] = useState(false);
 
@@ -20,7 +20,7 @@ export default function Resume() {
     tracks,
     artists,
     isLoading: isLoadingTopsData,
-  } = useSpotifyTopsData({ timeRange: SpotifyTimeRangesEnum.SHORT });
+  } = useSpotifyTopsData({ timeRange: SpotifyTimeRanges.SHORT });
 
   const { recentlyPlayed, isLoading: isLoadingRecentlyPlayed } =
     useSpotifyRecentlyPlayed();
@@ -45,7 +45,7 @@ export default function Resume() {
 
         <RountedButton
           onPress={() => setMyStatsModalIsVisible(true)}
-          label="Share"
+          label="Share my stats"
           type="primary"
         />
 

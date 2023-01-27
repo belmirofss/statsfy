@@ -1,9 +1,9 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import NOT_FOUND_IMG from "../../images/not_found.png";
-import { Theme } from "../../theme";
 import { SpotifyImage } from "../../types";
+import { Theme } from "../../theme";
 
 type Props = {
   position: number;
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 100,
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: Theme.colors.black,
   },
   title: {

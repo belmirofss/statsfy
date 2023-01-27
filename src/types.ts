@@ -40,14 +40,12 @@ export type SpotifyHistoryTrack = {
   played_at: string;
 };
 
-export type SpotifyTimeRange = "long_term" | "medium_term" | "short_term";
-
-export enum SpotifyModesEnum {
+export enum SpotifyModes {
   TRACKS = "tracks",
   ARTISTS = "artists",
 }
 
-export enum SpotifyTimeRangesEnum {
+export enum SpotifyTimeRanges {
   LONG = "long_term",
   MEDIUM = "medium_term",
   SHORT = "short_term",

@@ -1,13 +1,13 @@
 import React from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import Loading from "../components/Loading";
 import Podium from "../components/Podium/Podium";
 import RankingPosition from "../components/RankingPosition";
 import useSpotifyTopTracks from "../hooks/useSpotifyTopTracks";
-import { SpotifyTimeRangesEnum } from "../types";
+import { SpotifyTimeRanges } from "../types";
 
 type Props = {
-  timeRange: SpotifyTimeRangesEnum;
+  timeRange: SpotifyTimeRanges;
 };
 
 export default function TopTracks({ timeRange }: Props) {

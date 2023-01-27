@@ -1,15 +1,15 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import React from "react";
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
-import React from "react";
-import { Theme } from "../theme";
 import {
   ResumeStackNavigator,
-  TopArtistsStackNavigator,
   TopTracksStackNavigator,
+  TopArtistsStackNavigator,
 } from "./StackNavigator";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Theme } from "../theme";
 
 const ICON_SIZE = 28;
 

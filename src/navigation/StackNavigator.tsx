@@ -1,19 +1,19 @@
+import React from "react";
 import {
   createStackNavigator,
   StackNavigationOptions,
 } from "@react-navigation/stack";
-import React from "react";
-import HeaderRight from "../components/HeaderRight";
-import About from "../pages/About";
-import Account from "../pages/Account/Account";
 import Login from "../pages/Login";
 import Resume from "../pages/Resume/Resume";
-import { Theme } from "../theme";
+import HeaderRight from "../components/HeaderRight";
 import BottomTabNavigator from "./BottomTabNavigator";
 import {
   TopTabArtistsNavigator,
   TopTabTracksNavigator,
 } from "./TopTabNavigator";
+import Account from "../pages/Account/Account";
+import About from "../pages/About";
+import { Theme } from "../theme";
 
 const screenOptionStyle: StackNavigationOptions = {
   headerTitleAlign: "left",
