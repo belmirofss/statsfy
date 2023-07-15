@@ -2,7 +2,7 @@
   "expo": {
     "name": "Statsfy",
     "slug": "statsfy",
-    "version": "2.1.1",
+    "version": "3.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "com.yabcompany.statsfy",
@@ -22,7 +22,7 @@
     },
     "android": {
       "package": "com.yabcompany.statsfy",
-      "versionCode": 10,
+      "versionCode": 11,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
@@ -39,6 +39,7 @@
       "eas": {
         "projectId": "7e8846b0-8a32-4165-a97b-3a7cbd5dcd56"
       }
-    }
+    }, 
+    "githubUrl": "https://github.com/belmirofss/statsfy"
   }
 }
