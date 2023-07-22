@@ -5,7 +5,8 @@
     "version": "3.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "scheme": "com.yabcompany.statsfy",
+    "scheme": "com.yabcompany.statsfy3",
+    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -25,10 +26,7 @@
       "versionCode": 11,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "config": {
-        "googleMobileAdsAppId": "ca-app-pub-6575307967199593~5384184850"
+        "backgroundColor": "#ffffff"
       },
       "permissions": []
     },
@@ -39,7 +37,7 @@
       "eas": {
         "projectId": "7e8846b0-8a32-4165-a97b-3a7cbd5dcd56"
       }
-    }, 
-    "githubUrl": "https://github.com/belmirofss/statsfy"
+    },
+    "githubUrl": "https://github.com/belmirofss/statsfy" 
   }
 }

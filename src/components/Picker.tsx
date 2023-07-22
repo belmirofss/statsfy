@@ -1,62 +1,74 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
+import { ComponentProps, useState } from "react";
+import { View, StyleSheet } from "react-native";
+import { Button, Menu, Text } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import RNPickerSelect from "react-native-picker-select";
 import { Theme } from "../theme";
 
 type Props = {
-  onValueChange(value: any): void;
-  items: { label: string; value: any }[];
-  value: any;
-  width: number;
-  fontSize: number;
+  selectedValue: string;
+  items: {
+    value: string;
+    text: string;
+  }[];
+  onSelection: (value: string) => void;
 };
 
-export default function Picker({
-  onValueChange,
+export const Picker = ({
+  selectedValue: _selectedValue,
   items,
-  value,
-  width,
-  fontSize,
-}: Props) {
-  const styles = StyleSheet.create({
-    iconRNPicker: {
-      position: "absolute",
-      right: 10,
-      top: fontSize * 0.65,
-    },
-  });
+  onSelection,
+}: Props) => {
+  const [selectedValue, setSelectedValue] = useState(_selectedValue);
+  const [visible, setVisible] = useState(false);
+
+  const label = items.find((item) => item.value == selectedValue)?.text;
 
   return (
-    <View>
-      <RNPickerSelect
-        onValueChange={(value) => onValueChange(value)}
-        items={items}
-        placeholder={{}}
-        style={{
-          inputAndroid: {
-            color: Theme.colors.black,
-            fontSize: fontSize,
-            fontFamily: Theme.fonts.bold,
-            padding: 8,
-          },
-          inputAndroidContainer: {
-            borderWidth: 1,
-            borderColor: Theme.colors.gray,
-            borderRadius: 100,
-            width: width,
-            marginLeft: 4,
-          },
-        }}
-        useNativeAndroidPickerStyle={false}
-        value={value}
-      />
-      <MaterialCommunityIcons
-        style={styles.iconRNPicker}
-        name="chevron-down"
-        color={Theme.colors.gray}
-        size={Theme.fontSizes.large}
-      />
-    </View>
+    <Menu
+      visible={visible}
+      onDismiss={() => setVisible(false)}
+      anchor={
+        <View style={{ marginBottom: -Theme.space.xs }}>
+          <Button
+            onPress={() => setVisible(true)}
+            style={{}}
+            contentStyle={{
+              borderRadius: 100,
+              borderWidth: 2,
+              borderColor: Theme.colors.gray,
+              flexDirection: "row-reverse",
+            }}
+            icon={() => (
+              <MaterialCommunityIcons
+                name="chevron-down"
+                size={32}
+                color={Theme.colors.gray}
+              />
+            )}
+          >
+            <Text variant="headlineSmall" style={{ fontWeight: "bold" }}>
+              {label}
+            </Text>
+          </Button>
+        </View>
+      }
+      overlayAccessibilityLabel="Close picker"
+      contentStyle={{
+        borderRadius: Theme.roundness,
+        backgroundColor: Theme.colors.light,
+      }}
+    >
+      {items.map((item) => (
+        <Menu.Item
+          onPress={() => {
+            setSelectedValue(item.value);
+            onSelection(item.value);
+            setVisible(false);
+          }}
+          title={item.text}
+          key={item.value}
+        />
+      ))}
+    </Menu>
   );
-}
+};
