@@ -1,5 +1,3 @@
-import { SpotifyTimeRanges } from "./types";
-
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
