@@ -37,6 +37,12 @@ export const BuyMeACoffe = () => {
       visible
       actions={[
         {
+          label: "No",
+          onPress: dismiss,
+          textColor: Theme.colors.darkWithTransparency,
+          buttonColor: Theme.colors.light,
+        },
+        {
           label: "Buy me a coffee",
           onPress: open,
         },
