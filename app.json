@@ -42,15 +42,17 @@
     },
     "githubUrl": "https://github.com/belmirofss/statsfy",
     "plugins": [
-      "expo-build-properties",
-      {
-        "android": {
-          "minSdkVersion": 33
-        },
-        "ios": {
-          "deploymentTarget": "13.0"
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 33
+          },
+          "ios": {
+            "deploymentTarget": "13.0"
+          }
         }
-      }
+      ]
     ]
   },
   "react-native-google-mobile-ads": {
