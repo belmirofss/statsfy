@@ -23,6 +23,7 @@ import {
   SPOTIFY_TOKEN_ENDPOINT,
   AD_UNIT_ID,
 } from "../contants";
+import { Loading } from "../components/Loading";
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -50,7 +51,7 @@ export const Login = () => {
     discovery
   );
 
-  const { load, show } = useInterstitialAd(adUnitId, {
+  const { isLoaded, load, show } = useInterstitialAd(adUnitId, {
     requestNonPersonalizedAdsOnly: true,
   });
 
@@ -65,6 +66,8 @@ export const Login = () => {
   useEffect(() => {
     load();
   }, [load]);
+
+  if (!isLoaded) return <Loading />;
 
   return (
     <ScreenContainer style={{ justifyContent: "flex-end", gap: Theme.space.s }}>
