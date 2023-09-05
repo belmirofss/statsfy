@@ -34,7 +34,7 @@ export const BuyMeACoffe = () => {
 
   return (
     <Banner
-      visible
+      visible={visible}
       actions={[
         {
           label: "No",
@@ -60,8 +60,8 @@ export const BuyMeACoffe = () => {
         backgroundColor: Theme.colors.light,
       }}
     >
-      We do not show ads. If you've enjoyed using this app, consider buying me a
-      coffee as a token of appreciation.
+      If you've enjoyed using this app, consider buying me a coffee as a token
+      of appreciation.
     </Banner>
   );
 };

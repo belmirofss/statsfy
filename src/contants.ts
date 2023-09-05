@@ -24,3 +24,4 @@ export const SPOTIFY_SCOPES = [
 export const SPOTIFY_REDIRECT_URI = "com.yabcompany.statsfy://redirect";
 export const SPOTIFY_API_ENDPOINT = "https://api.spotify.com";
 export const BUY_ME_A_COFFEE_URL = "https://www.buymeacoffee.com/belmirofss"
+export const AD_UNIT_ID = "ca-app-pub-6575307967199593/9387604814"

@@ -2,7 +2,7 @@
   "expo": {
     "name": "Statsfy",
     "slug": "statsfy",
-    "version": "3.0.2",
+    "version": "3.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "com.yabcompany.statsfy3",
@@ -23,7 +23,7 @@
     },
     "android": {
       "package": "com.yabcompany.statsfy",
-      "versionCode": 13,
+      "versionCode": 14,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -39,5 +39,8 @@
       }
     },
     "githubUrl": "https://github.com/belmirofss/statsfy" 
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-6575307967199593~5384184850"
   }
 }

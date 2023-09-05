@@ -8,6 +8,8 @@ import {
   useAuthRequest,
   ResponseType,
 } from "expo-auth-session";
+import { useInterstitialAd, TestIds } from "react-native-google-mobile-ads";
+
 import { ScreenContainer } from "../components/ScreenContainer";
 import { Button } from "../components/Button";
 import { Theme } from "../theme";
@@ -19,6 +21,7 @@ import {
   SPOTIFY_REDIRECT_URI,
   SPOTIFY_SCOPES,
   SPOTIFY_TOKEN_ENDPOINT,
+  AD_UNIT_ID,
 } from "../contants";
 
 WebBrowser.maybeCompleteAuthSession();
@@ -27,6 +30,8 @@ const discovery = {
   authorizationEndpoint: SPOTIFY_AUTHORIZATION_ENDPOINT,
   tokenEndpoint: SPOTIFY_TOKEN_ENDPOINT,
 };
+
+const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : AD_UNIT_ID;
 
 export const Login = () => {
   const { authenticate } = useAppContext();
@@ -45,12 +50,21 @@ export const Login = () => {
     discovery
   );
 
+  const { load, show } = useInterstitialAd(adUnitId, {
+    requestNonPersonalizedAdsOnly: true,
+  });
+
   useEffect(() => {
     if (response?.type === "success") {
       const { access_token } = response.params;
       authenticate(access_token);
+      show();
     }
   }, [response]);
+
+  useEffect(() => {
+    load();
+  }, [load]);
 
   return (
     <ScreenContainer style={{ justifyContent: "flex-end", gap: Theme.space.s }}>
