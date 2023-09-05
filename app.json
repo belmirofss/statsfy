@@ -23,12 +23,14 @@
     },
     "android": {
       "package": "com.yabcompany.statsfy",
-      "versionCode": 15,
+      "versionCode": 16,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "permissions": ["com.google.android.gms.permission.AD_ID"]
+      "permissions": [
+        "com.google.android.gms.permission.AD_ID"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -38,7 +40,18 @@
         "projectId": "7e8846b0-8a32-4165-a97b-3a7cbd5dcd56"
       }
     },
-    "githubUrl": "https://github.com/belmirofss/statsfy" 
+    "githubUrl": "https://github.com/belmirofss/statsfy",
+    "plugins": [
+      "expo-build-properties",
+      {
+        "android": {
+          "minSdkVersion": 33
+        },
+        "ios": {
+          "deploymentTarget": "13.0"
+        }
+      }
+    ]
   },
   "react-native-google-mobile-ads": {
     "android_app_id": "ca-app-pub-6575307967199593~5384184850"
