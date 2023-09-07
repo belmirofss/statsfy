@@ -2,7 +2,7 @@
   "expo": {
     "name": "Statsfy",
     "slug": "statsfy",
-    "version": "3.1.2",
+    "version": "3.1.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "com.yabcompany.statsfy3",
@@ -23,7 +23,7 @@
     },
     "android": {
       "package": "com.yabcompany.statsfy",
-      "versionCode": 18,
+      "versionCode": 19,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -48,8 +48,7 @@
           "android": {
             "compileSdkVersion": 33,
             "targetSdkVersion": 33,
-            "buildToolsVersion": "33.0.0",
-            "minSdkVersion": 33
+            "buildToolsVersion": "33.0.0"
           },
           "ios": {
             "deploymentTarget": "13.0"
