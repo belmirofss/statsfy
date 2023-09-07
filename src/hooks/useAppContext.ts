@@ -2,11 +2,9 @@ import { useContext } from "react";
 import AppContext from "../context";
 
 export const useAppContext = () => {
-  const { isAuthenticated, authenticate, logout } = useContext(AppContext);
+  const contextData = useContext(AppContext);
 
   return {
-    isAuthenticated,
-    authenticate,
-    logout,
+    ...contextData,
   };
 };

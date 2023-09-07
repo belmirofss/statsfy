@@ -6,8 +6,10 @@ import { useAlert } from "./hooks/userAlert";
 
 type AppContextData = {
   isAuthenticated: boolean;
+  adShowed: boolean;
   authenticate: (token: string) => void;
   logout: () => void;
+  markAdAsShowed: () => void;
 };
 
 const AppContext = createContext<AppContextData>({} as AppContextData);
@@ -18,6 +20,7 @@ type AppProviderProps = {
 
 export const AppProvider = ({ children }: AppProviderProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [adShowed, setAdShowed] = useState(false);
 
   const alert = useAlert();
 
@@ -26,6 +29,8 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     API.defaults.headers.common["Authorization"] = "Bearer " + token;
     setIsAuthenticated(true);
   };
+
+  const markAdAsShowed = () => setAdShowed(true);
 
   const logout = () => {
     delete API.defaults.headers.common["Authorization"];
@@ -50,7 +55,15 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ isAuthenticated, authenticate, logout }}>
+    <AppContext.Provider
+      value={{
+        isAuthenticated,
+        adShowed,
+        authenticate,
+        logout,
+        markAdAsShowed,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

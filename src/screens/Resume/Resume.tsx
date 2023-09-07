@@ -1,7 +1,7 @@
+import { useState } from "react";
 import { View } from "react-native";
 import { Text } from "react-native-paper";
 import { ScreenContainer } from "../../components/ScreenContainer";
-import { useState } from "react";
 import { SpotifyModes, SpotifyTimeRanges } from "../../types";
 import { Picker } from "../../components/Picker";
 import { Theme } from "../../theme";
@@ -15,6 +15,7 @@ import { Top3Tracks } from "../../components/Top3/Top3Tracks";
 import { Top3Artists } from "../../components/Top3/Top3Artists";
 import { useNavigation } from "@react-navigation/native";
 import { BuyMeACoffe } from "../../components/BuyMeACoffee";
+import { Ad } from "../../components/Ad";
 
 export const Resume = () => {
   const navigation = useNavigation();
@@ -48,6 +49,7 @@ export const Resume = () => {
 
   return (
     <ScreenContainer>
+      <Ad />
       <Button onPress={() => navigation.navigate("Share")}>Share</Button>
       <View
         style={{
