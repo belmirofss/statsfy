@@ -1,8 +1,8 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import * as SecureStore from "expo-secure-store";
-import { ACCESS_TOKEN_KEY } from "./contants";
+import { ACCESS_TOKEN_KEY } from "./constants";
 import API from "./api";
-import { useAlert } from "./hooks/userAlert";
+import { useAlert } from "./hooks/useAlert";
 
 type AppContextData = {
   isAuthenticated: boolean;

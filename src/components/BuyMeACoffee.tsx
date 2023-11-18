@@ -3,7 +3,7 @@ import { Image } from "react-native";
 import { Banner } from "react-native-paper";
 import * as WebBrowser from "expo-web-browser";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { BUY_ME_A_COFFEE_URL } from "../contants";
+import { BUY_ME_A_COFFEE_URL } from "../constants";
 import { Theme } from "../theme";
 import BUY_ME_A_COFFEEE from "../images/buy_me_a_coffee.png";
 

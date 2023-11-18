@@ -7,7 +7,7 @@ import { SpotifyTimeRanges } from "../types";
 import { useSpotifyTopArtists } from "../hooks/useSpotifyTopArtists";
 import { useSpotifyTopTracks } from "../hooks/useSpotifyTopTracks";
 import { Loading } from "../components/Loading";
-import { useAlert } from "../hooks/userAlert";
+import { useAlert } from "../hooks/useAlert";
 import { ScreenContainer } from "../components/ScreenContainer";
 import { useSpotifyAccount } from "../hooks/useSpotifyAccount";
 import { IconButton, Text } from "react-native-paper";

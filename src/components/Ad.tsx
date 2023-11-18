@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Snackbar, Portal } from "react-native-paper";
 import { useInterstitialAd, TestIds } from "react-native-google-mobile-ads";
 import { useAppContext } from "../hooks/useAppContext";
-import { AD_UNIT_ID } from "../contants";
+import { AD_UNIT_ID } from "../constants";
 
 const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : AD_UNIT_ID;
 

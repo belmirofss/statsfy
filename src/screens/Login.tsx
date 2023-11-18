@@ -19,7 +19,7 @@ import {
   SPOTIFY_REDIRECT_URI,
   SPOTIFY_SCOPES,
   SPOTIFY_TOKEN_ENDPOINT,
-} from "../contants";
+} from "../constants";
 
 WebBrowser.maybeCompleteAuthSession();
 
