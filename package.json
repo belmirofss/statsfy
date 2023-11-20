@@ -2,7 +2,7 @@
   "name": "statsfy",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx expo start",
+    "start": "npx expo start --dev-client",
     "start-dev-client": "npx expo start --dev-client",
     "development-mode": "npx eas-cli build --profile development",
     "build-android": "eas build --platform android",
