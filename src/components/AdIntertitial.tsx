@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { Snackbar, Portal } from "react-native-paper";
 import { useInterstitialAd, TestIds } from "react-native-google-mobile-ads";
 import { useAppContext } from "../hooks/useAppContext";
-import { AD_UNIT_ID } from "../constants";
+import { AD_INTERTITIAL_UNIT_ID } from "../constants";
 
-const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : AD_UNIT_ID;
+const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : AD_INTERTITIAL_UNIT_ID;
 
-export const Ad = () => {
+export const AdIntertitial = () => {
   const [visible, setVisible] = useState(false);
   const { adShowed, markAdAsShowed } = useAppContext();
   const { isLoaded, load, show } = useInterstitialAd(adUnitId, {
@@ -38,9 +38,9 @@ export const Ad = () => {
           label: "Ok",
           onPress: showAd,
         }}
-        duration={5000}
+        duration={3000}
       >
-        Showing ad in 5 seconds. Ad helps us to mantain the app.
+        Showing ad in 3 seconds. Ad helps us to mantain the app.
       </Snackbar>
     </Portal>
   );

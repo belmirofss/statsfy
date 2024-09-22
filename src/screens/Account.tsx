@@ -36,7 +36,7 @@ export const Account = () => {
             borderRadius: 100,
             width: 125,
             height: 125,
-            borderColor: Theme.colors.darkWithTransparency,
+            borderColor: Theme.colors.dark,
             borderWidth: 1,
             marginBottom: Theme.space.xs,
           }}

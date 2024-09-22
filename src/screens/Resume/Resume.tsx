@@ -15,7 +15,9 @@ import { Top3Tracks } from "../../components/Top3/Top3Tracks";
 import { Top3Artists } from "../../components/Top3/Top3Artists";
 import { useNavigation } from "@react-navigation/native";
 import { BuyMeACoffe } from "../../components/BuyMeACoffee";
-import { Ad } from "../../components/Ad";
+import { AdIntertitial } from "../../components/AdIntertitial";
+import { AdBanner } from "../../components/AdBanner";
+import { AD_BANNER_RESUME_UNIT_ID } from "../../constants";
 
 export const Resume = () => {
   const navigation = useNavigation();
@@ -49,7 +51,7 @@ export const Resume = () => {
 
   return (
     <ScreenContainer>
-      <Ad />
+      <AdIntertitial />
       <Button onPress={() => navigation.navigate("Share")}>Share</Button>
       <View
         style={{
@@ -84,9 +86,9 @@ export const Resume = () => {
       {selectedMode === SpotifyModes.ARTISTS && (
         <Top3Artists artists={topArtists} />
       )}
-      <View style={{ marginTop: Theme.space.s }}>
-        <BuyMeACoffe />
-      </View>
+
+      <AdBanner adUnitId={AD_BANNER_RESUME_UNIT_ID} />
+
       <Text
         variant="headlineMedium"
         style={{
@@ -98,6 +100,9 @@ export const Resume = () => {
         Recently played
       </Text>
       <ResumeRecentlyPlayedList recentlyPlayed={recentlyPlayed} />
+      <View style={{ marginTop: Theme.space.s }}>
+        <BuyMeACoffe />
+      </View>
     </ScreenContainer>
   );
 };

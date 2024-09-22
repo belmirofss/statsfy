@@ -17,6 +17,8 @@ import { Theme } from "../theme";
 import { Button } from "../components/Button";
 import { Picker } from "../components/Picker";
 import { useNavigation } from "@react-navigation/native";
+import { AdBanner } from "../components/AdBanner";
+import { AD_BANNER_SHARE_UNIT_ID } from "../constants";
 
 const TIME_RANGE_TEXT = {
   [SpotifyTimeRanges.SHORT]: "last 4 weeks",
@@ -151,6 +153,8 @@ export const Share = () => {
       <View style={{ padding: Theme.space.s }}>
         <Button onPress={openShareDialog}>Share</Button>
       </View>
+
+      <AdBanner adUnitId={AD_BANNER_SHARE_UNIT_ID} />
     </ScreenContainer>
   );
 };

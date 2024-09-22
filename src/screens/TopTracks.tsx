@@ -7,7 +7,8 @@ import { Loading } from "../components/Loading";
 import { Top3 } from "../components/Top3/Top3";
 import { formatArtistsToArtistNames } from "../helpers/formatArtistsToArtistNames";
 import { RankingList } from "../components/RankingList/RankingList";
-import { Theme } from "../theme";
+import { AdBanner } from "../components/AdBanner";
+import { AD_BANNER_TOP_TRACKS_UNIT_ID } from "../constants";
 
 type TopTracksParams = {
   TopTracks: {
@@ -39,11 +40,8 @@ export const TopTracks = () => {
           imageUrl: track.album.images[0].url,
         }))}
       />
-      <View
-        style={{
-          marginTop: Theme.space.s,
-        }}
-      >
+      <AdBanner adUnitId={AD_BANNER_TOP_TRACKS_UNIT_ID} />
+      <View>
         <RankingList
           data={others.map((item, index) => ({
             position: index + 4,

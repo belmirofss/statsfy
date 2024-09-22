@@ -64,8 +64,8 @@ export const Top3Item = ({ title, description, imageUrl, position }: Props) => {
           height: size,
           width: size,
           borderWidth: 1,
-          borderRadius: Theme.roundness,
-          borderColor: Theme.colors.darkWithTransparency,
+          borderRadius: 100,
+          borderColor: Theme.colors.dark,
         }}
         source={
           imageUrl

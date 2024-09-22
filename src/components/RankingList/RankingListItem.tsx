@@ -57,9 +57,9 @@ export const RankingListItem = ({
             style={{
               height: 75,
               width: 75,
-              borderRadius: Theme.roundness,
+              borderRadius: 100,
               borderWidth: 1,
-              borderColor: Theme.colors.darkWithTransparency,
+              borderColor: Theme.colors.dark,
             }}
             source={
               imageUrl

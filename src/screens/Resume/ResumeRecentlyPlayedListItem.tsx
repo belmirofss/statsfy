@@ -37,7 +37,7 @@ export const ResumeRecentlyPlayedListItem = ({
           flex: 1,
         }}
         imageStyle={{
-          borderColor: Theme.colors.darkWithTransparency,
+          borderColor: Theme.colors.dark,
           borderRadius: Theme.roundness,
           borderWidth: 1,
         }}
