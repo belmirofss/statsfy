@@ -15,6 +15,8 @@ Curious to know which artist has listened to the most? Statsfy is an app to disc
 - [Spotify API](https://developer.spotify.com/documentation/web-api)
 - [React Query](https://tanstack.com/query/v3/)
 - [React Native Paper](https://reactnativepaper.com/)
+- [RevenueCat](https://www.revenuecat.com/)
+- [React Native Google Mobile Ads](https://docs.page/invertase/react-native-google-mobile-ads)
 
 ### Run to install
 
