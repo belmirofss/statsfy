@@ -7,12 +7,14 @@ import {
   useForeground,
 } from "react-native-google-mobile-ads";
 import { Theme } from "../theme";
+import { useAppContext } from "../hooks/useAppContext";
 
 type Props = {
   adUnitId: string;
 };
 
 export const AdBanner = ({ adUnitId }: Props) => {
+  const { isSubscribed } = useAppContext();
   const bannerRef = useRef<BannerAd>(null);
 
   const _adUnitId = __DEV__ ? TestIds.BANNER : adUnitId;
@@ -25,6 +27,10 @@ export const AdBanner = ({ adUnitId }: Props) => {
   useForeground(() => {
     Platform.OS === "ios" && bannerRef.current?.load();
   });
+
+  if (isSubscribed) {
+    return null;
+  }
 
   return (
     <View style={{ marginVertical: Theme.space.m }}>

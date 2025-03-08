@@ -1,6 +1,7 @@
 export const ACCESS_TOKEN_KEY = "Statsfy_Access_Token";
 export const SPOTIFY_CLIENT_ID = "049fe9081d41496db42660d5035b8346";
-export const SPOTIFY_AUTHORIZATION_ENDPOINT = "https://accounts.spotify.com/authorize";
+export const SPOTIFY_AUTHORIZATION_ENDPOINT =
+  "https://accounts.spotify.com/authorize";
 export const SPOTIFY_TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 export const SPOTIFY_SCOPES = [
   "user-read-recently-played",
@@ -25,8 +26,12 @@ export const SPOTIFY_REDIRECT_URI = "com.yabcompany.statsfy://redirect";
 export const SPOTIFY_API_ENDPOINT = "https://api.spotify.com";
 export const BUY_ME_A_COFFEE_URL = "https://www.buymeacoffee.com/belmirofss";
 export const AD_INTERTITIAL_UNIT_ID = "ca-app-pub-6575307967199593/9387604814";
-export const AD_BANNER_RESUME_UNIT_ID = "ca-app-pub-6575307967199593/1334614690";
-export const AD_BANNER_TOP_TRACKS_UNIT_ID = "ca-app-pub-6575307967199593/4482424733";
-export const AD_BANNER_TOP_ARTISTS_UNIT_ID = "ca-app-pub-6575307967199593/1330745260";
+export const AD_BANNER_RESUME_UNIT_ID =
+  "ca-app-pub-6575307967199593/1334614690";
+export const AD_BANNER_TOP_TRACKS_UNIT_ID =
+  "ca-app-pub-6575307967199593/4482424733";
+export const AD_BANNER_TOP_ARTISTS_UNIT_ID =
+  "ca-app-pub-6575307967199593/1330745260";
 export const AD_BANNER_SHARE_UNIT_ID = "ca-app-pub-6575307967199593/3841085460";
-
+export const ENTITLEMENT_IDENTIFIER = "No Ads";
+export const RC_GOOGLE_PUBLIC_KEY = "goog_UCYAAjWZGwydlbIrNjsOvWaltfF";

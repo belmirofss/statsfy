@@ -8,7 +8,7 @@ const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : AD_INTERTITIAL_UNIT_ID;
 
 export const AdIntertitial = () => {
   const [visible, setVisible] = useState(false);
-  const { adShowed, markAdAsShowed } = useAppContext();
+  const { adShowed, markAdAsShowed, isSubscribed } = useAppContext();
   const { isLoaded, load, show } = useInterstitialAd(adUnitId, {
     requestNonPersonalizedAdsOnly: true,
   });
@@ -28,6 +28,10 @@ export const AdIntertitial = () => {
     markAdAsShowed();
     setVisible(false);
   };
+
+  if (isSubscribed) {
+    return null;
+  }
 
   return (
     <Portal>

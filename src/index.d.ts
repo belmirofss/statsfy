@@ -4,7 +4,7 @@ export declare global {
       Login: undefined;
       About: undefined;
       Account: undefined;
-      Share: undefined
+      Share: undefined;
     }
   }
 

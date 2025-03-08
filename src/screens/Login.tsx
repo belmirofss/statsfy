@@ -72,7 +72,7 @@ export const Login = () => {
           Hello! Are you looking for your stats?
         </Text>
         <Text variant="titleMedium">
-          Log in with your Spotify account to see your stats
+          Connect with your Spotify account to see your stats
         </Text>
       </View>
 
@@ -82,7 +82,7 @@ export const Login = () => {
             submitLogin(); // should be called directly, and not passed as arg
           }}
         >
-          Log in with Spotify
+          Connect with Spotify
         </Button>
         <Button color="secondary" onPress={() => navigation.navigate("About")}>
           About the app
