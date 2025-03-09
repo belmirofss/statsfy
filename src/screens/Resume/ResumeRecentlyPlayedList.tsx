@@ -19,7 +19,7 @@ export const ResumeRecentlyPlayedList = ({ recentlyPlayed }: Props) => {
     >
       {recentlyPlayed.map((item) => (
         <ResumeRecentlyPlayedListItem
-          key={item.track.id}
+          key={item.played_at}
           title={item.track.name}
           date={item.played_at}
           description={formatArtistsToArtistNames(item.track.artists)}

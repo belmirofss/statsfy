@@ -24,7 +24,6 @@ export const SPOTIFY_SCOPES = [
 ];
 export const SPOTIFY_REDIRECT_URI = "com.yabcompany.statsfy://redirect";
 export const SPOTIFY_API_ENDPOINT = "https://api.spotify.com";
-export const BUY_ME_A_COFFEE_URL = "https://www.buymeacoffee.com/belmirofss";
 export const AD_INTERTITIAL_UNIT_ID = "ca-app-pub-6575307967199593/9387604814";
 export const AD_BANNER_RESUME_UNIT_ID =
   "ca-app-pub-6575307967199593/1334614690";
