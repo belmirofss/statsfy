@@ -8,7 +8,6 @@ import NOT_FOUND_IMG from "../images/not_found.png";
 import { Theme } from "../theme";
 import { Button } from "../components/Button";
 import { useAppContext } from "../hooks/useAppContext";
-import { SubscriptionAd } from "../components/SubscriptionAd";
 
 export const Account = () => {
   const { data, isLoading } = useSpotifyAccount();
@@ -50,10 +49,6 @@ export const Account = () => {
         </Text>
       </View>
       <View style={{ gap: Theme.space.xs }}>
-        <View style={{ marginBottom: Theme.space.s }}>
-          <SubscriptionAd />
-        </View>
-
         <Button color="secondary" onPress={() => navigation.navigate("About")}>
           About the app
         </Button>

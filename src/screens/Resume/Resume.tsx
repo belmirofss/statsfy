@@ -14,8 +14,6 @@ import { Button } from "../../components/Button";
 import { Top3Tracks } from "../../components/Top3/Top3Tracks";
 import { Top3Artists } from "../../components/Top3/Top3Artists";
 import { useNavigation } from "@react-navigation/native";
-import { SubscriptionAd } from "../../components/SubscriptionAd";
-import { AdIntertitial } from "../../components/AdIntertitial";
 import { AdBanner } from "../../components/AdBanner";
 import { AD_BANNER_RESUME_UNIT_ID } from "../../constants";
 
@@ -51,7 +49,6 @@ export const Resume = () => {
 
   return (
     <ScreenContainer>
-      <AdIntertitial />
       <Button onPress={() => navigation.navigate("Share")}>Share</Button>
       <View
         style={{
@@ -100,9 +97,6 @@ export const Resume = () => {
         Recently played
       </Text>
       <ResumeRecentlyPlayedList recentlyPlayed={recentlyPlayed} />
-      <View style={{ marginTop: Theme.space.s }}>
-        <SubscriptionAd />
-      </View>
     </ScreenContainer>
   );
 };

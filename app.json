@@ -2,7 +2,7 @@
   "expo": {
     "name": "Statsfy",
     "slug": "statsfy",
-    "version": "3.3.1",
+    "version": "4.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "com.yabcompany.statsfy3",
@@ -20,16 +20,13 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.yabcompany.statsfy",
+      "package": "com.yabcompany.statsfy2",
       "versionCode": 29,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "permissions": [
-        "com.google.android.gms.permission.AD_ID",
-        "com.android.vending.BILLING"
-      ]
+      "permissions": ["com.google.android.gms.permission.AD_ID"]
     },
     "web": {
       "favicon": "./assets/favicon.png"

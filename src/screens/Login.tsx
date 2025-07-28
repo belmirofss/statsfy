@@ -14,20 +14,14 @@ import { Theme } from "../theme";
 import { Logo } from "../components/Logo";
 import { useAppContext } from "../hooks/useAppContext";
 import {
-  AD_INTERTITIAL_UNIT_ID,
   SPOTIFY_AUTHORIZATION_ENDPOINT,
   SPOTIFY_CLIENT_ID,
   SPOTIFY_REDIRECT_URI,
   SPOTIFY_SCOPES,
   SPOTIFY_TOKEN_ENDPOINT,
 } from "../constants";
-import { InterstitialAd, TestIds } from "react-native-google-mobile-ads";
 
 WebBrowser.maybeCompleteAuthSession();
-
-const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : AD_INTERTITIAL_UNIT_ID;
-
-const interstitial = InterstitialAd.createForAdRequest(adUnitId, {});
 
 const discovery = {
   authorizationEndpoint: SPOTIFY_AUTHORIZATION_ENDPOINT,
@@ -57,11 +51,6 @@ export const Login = () => {
       authenticate(access_token);
     }
   }, [response]);
-
-  useEffect(() => {
-    // Pre-load interstitial ad
-    interstitial.load();
-  }, []);
 
   return (
     <ScreenContainer style={{ justifyContent: "flex-end", gap: Theme.space.s }}>
