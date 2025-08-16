@@ -22,7 +22,7 @@ export const SPOTIFY_SCOPES = [
   "user-library-read",
   "playlist-read-collaborative",
 ];
-export const SPOTIFY_REDIRECT_URI = "com.yabcompany.statsfy://redirect";
+export const SPOTIFY_REDIRECT_URI = "com.yabcompany.statsfy3://redirect";
 export const SPOTIFY_API_ENDPOINT = "https://api.spotify.com";
 export const AD_BANNER_RESUME_UNIT_ID =
   "ca-app-pub-6575307967199593/1334614690";
