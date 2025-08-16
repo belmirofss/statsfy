@@ -4,7 +4,7 @@
 
 Curious to know which artist has listened to the most? Statsfy is an app to discover not only that, but also the tracks you have been listening to the most and share it with your friends!
 
-[Download now](https://play.google.com/store/apps/details?id=com.yabcompany.statsfy3) - More than 10k downloads before my app was banned.
+More than 10k downloads before my app was banned by Google Play :).
 
 ## Project
 
